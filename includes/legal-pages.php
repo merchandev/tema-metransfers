@@ -20,10 +20,10 @@ if ( ! defined( 'ME_TRANSFERS_LEGAL_PAGES_SYNC_VERSION' ) ) {
  */
 function me_transfers_get_legal_pages_catalog() {
 	return array(
-		'privacidad'             => 'Políticas de privacidad',
-		'terminos-y-condiciones' => 'Términos y Condiciones regulan la contratación',
+		'privacidad'             => 'PolÃ­ticas de privacidad',
+		'terminos-y-condiciones' => 'TÃ©rminos y Condiciones regulan la contrataciÃ³n',
 		'aviso-legal'            => 'Aviso Legal',
-		'cookie'                 => 'Política de Cookies',
+		'cookie'                 => 'PolÃ­tica de Cookies',
 	);
 }
 

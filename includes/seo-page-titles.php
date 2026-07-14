@@ -35,16 +35,16 @@ function me_transfers_get_static_seo_page_titles() {
 		'finalizar-pago'         => 'Pago seguro de reserva de traslado privado',
 		'finalizar-reserva'      => 'Confirmar reserva de traslado privado',
 		'reservas-hotel'         => 'Reservas de traslados para hoteles en Barcelona',
-		'privacidad'             => 'Política de privacidad de MeTransfers Barcelona',
-		'privacy-policy'         => 'Política de privacidad de MeTransfers Barcelona',
-		'politica-de-privacidad' => 'Política de privacidad de MeTransfers Barcelona',
-		'politicas-de-privacidad'=> 'Política de privacidad de MeTransfers Barcelona',
-		'terminos-y-condiciones' => 'Términos y condiciones de contratación de MeTransfers Barcelona',
-		'terminos-condiciones'   => 'Términos y condiciones de contratación de MeTransfers Barcelona',
-		'terminos-y-condiciones-regulan-la-contratacion' => 'Términos y condiciones de contratación de MeTransfers Barcelona',
+		'privacidad'             => 'PolÃ­tica de privacidad de MeTransfers Barcelona',
+		'privacy-policy'         => 'PolÃ­tica de privacidad de MeTransfers Barcelona',
+		'politica-de-privacidad' => 'PolÃ­tica de privacidad de MeTransfers Barcelona',
+		'politicas-de-privacidad'=> 'PolÃ­tica de privacidad de MeTransfers Barcelona',
+		'terminos-y-condiciones' => 'TÃ©rminos y condiciones de contrataciÃ³n de MeTransfers Barcelona',
+		'terminos-condiciones'   => 'TÃ©rminos y condiciones de contrataciÃ³n de MeTransfers Barcelona',
+		'terminos-y-condiciones-regulan-la-contratacion' => 'TÃ©rminos y condiciones de contrataciÃ³n de MeTransfers Barcelona',
 		'aviso-legal'            => 'Aviso legal de MeTransfers Barcelona',
-		'cookie'                 => 'Política de cookies de MeTransfers Barcelona',
-		'cookies'                => 'Política de cookies de MeTransfers Barcelona',
+		'cookie'                 => 'PolÃ­tica de cookies de MeTransfers Barcelona',
+		'cookies'                => 'PolÃ­tica de cookies de MeTransfers Barcelona',
 	);
 }
 
@@ -94,7 +94,7 @@ function me_transfers_sync_seo_page_titles() {
 
 	update_option( 'me_transfers_seo_page_titles_version', ME_TRANSFERS_SEO_PAGE_TITLES_VERSION, false );
 }
-add_action( 'init', 'me_transfers_sync_seo_page_titles', 30 );
+// add_action( 'init', 'me_transfers_sync_seo_page_titles', 30 );
 
 /**
  * Forces a resync of page titles on theme activation.
@@ -105,4 +105,4 @@ function me_transfers_force_seo_page_title_sync() {
 	delete_option( 'me_transfers_seo_page_titles_version' );
 	me_transfers_sync_seo_page_titles();
 }
-add_action( 'after_switch_theme', 'me_transfers_force_seo_page_title_sync' );
+// add_action( 'after_switch_theme', 'me_transfers_force_seo_page_title_sync' );

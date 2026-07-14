@@ -40,7 +40,7 @@
 	<?php wp_head(); ?>
 <style>.site-header .btn{min-width:0!important;width:auto!important;padding-inline:clamp(1rem,2vw,1.5rem)!important;flex-shrink:1!important} @media (max-width: 991px) { .site-header .hdr-cta { display: none !important; } .hero-container { padding-top: 0 !important; padding-inline: 0 !important; } .container { margin-left: 34px !important; margin-right: 34px !important; width: auto !important; max-width: none !important; } .hero-section { padding-top: 8.5rem !important; } .hero-badge { justify-self: center !important; margin-inline: auto !important; } .hero-content { background: linear-gradient(145deg, rgba(3, 13, 30, 0.7) 0%, rgba(3, 13, 30, 0.4) 100%) !important; padding: 2rem 1rem 1.5rem !important; border-radius: 24px !important; backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; border: 1px solid rgba(255,255,255,0.08) !important; box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important; margin-bottom: 1.5rem !important; } .hero-stats { display: flex !important; justify-content: center !important; text-align: center !important; gap: 1.5rem !important; } } .hero-video-bg { position: absolute !important; top: 50% !important; left: 50% !important; width: 100vw !important; height: 56.25vw !important; max-width: none !important; max-height: none !important; transform: translate(-50%, -50%) scale(1.05) !important; pointer-events: none; z-index: 0; } @media (max-aspect-ratio: 16/9) { .hero-video-bg { height: 500vw !important; width: 888.88vw !important; } } @media (min-width: 992px) { .header-right { align-items: center !important; } .header-right .gtranslate_wrapper, .header-right .gtranslate_wrapper select, .header-right .gtranslate_wrapper a.glink, .header-right .hdr-cta { height: 44px !important; min-height: 44px !important; max-height: 44px !important; display: inline-flex !important; align-items: center !important; box-sizing: border-box !important; margin: 0 !important; } .header-right .hdr-cta { justify-content: center !important; } }</style>
 <style>
-  /* NUEVO DISEÑO PREMIUM PARA EL FORMULARIO (FONDO VERDE) */
+  /* NUEVO DISEÃ‘O PREMIUM PARA EL FORMULARIO (FONDO VERDE) */
   .hero-booking-card {
       background: linear-gradient(145deg, rgba(5, 33, 20, 0.85) 0%, rgba(3, 22, 12, 0.65) 100%) !important;
       backdrop-filter: blur(12px) !important;
@@ -93,7 +93,7 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 <header id="masthead" class="site-header" role="banner">
 	<div class="container header-inner">
 
-		<!-- ① Logo -->
+		<!-- â‘  Logo -->
 		<div class="site-branding">
 			<?php if ( has_custom_logo() ) :
 				the_custom_logo();
@@ -112,8 +112,8 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 			<?php endif; ?>
 		</div>
 
-		<!-- ② Nav Desktop -->
-		<nav class="main-navigation" id="main-nav" aria-label="Menú principal">
+		<!-- â‘¡ Nav Desktop -->
+		<nav class="main-navigation" id="main-nav" aria-label="MenÃº principal">
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -125,7 +125,7 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 			?>
 		</nav>
 
-		<!-- ③ Acciones: Traductor + Botón + Hamburger -->
+		<!-- â‘¢ Acciones: Traductor + BotÃ³n + Hamburger -->
 		<div class="header-right">
 
 			<!-- Selector de idioma -->
@@ -133,11 +133,11 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 				<?php echo do_shortcode( '[google_translate]' ); ?>
 			<?php endif; ?>
 
-			<!-- CTA botón -->
+			<!-- CTA botÃ³n -->
 			<a href="<?php echo esc_url( me_transfers_get_section_url( 'search' ) ); ?>" class="btn btn-primary hdr-cta">Reservar Ya</a>
 
 			<!-- Hamburger -->
-			<button class="burger" id="burger-btn" aria-label="Abrir menú" aria-controls="mob-menu" aria-expanded="false">
+			<button class="burger" id="burger-btn" aria-label="Abrir menÃº" aria-controls="mob-menu" aria-expanded="false">
 				<span></span><span></span><span></span>
 			</button>
 
@@ -157,7 +157,7 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
             'fallback_cb'    => 'me_transfers_fallback_menu',
         ) );
         ?>
-        <!-- Logo en el menú mobile (oculto a SEO para no duplicar) -->
+        <!-- Logo en el menÃº mobile (oculto a SEO para no duplicar) -->
         <div class="mob-logo" aria-hidden="true">
             <img
                 src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/MT - MeTransfers.png' ); ?>"

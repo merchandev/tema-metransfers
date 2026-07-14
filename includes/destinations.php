@@ -75,22 +75,22 @@ function me_transfers_get_destination_catalog() {
 			'order'       => $index + 1,
 			'summary'     => sprintf(
 				/* translators: %s: destination title. */
-				__( 'Solicita información para tu traslado privado a %s con recogida en Barcelona, aeropuerto, hotel o puerto y un servicio premium adaptado a tu itinerario.', 'me-transfers' ),
+				__( 'Solicita informaciÃ³n para tu traslado privado a %s con recogida en Barcelona, aeropuerto, hotel o puerto y un servicio premium adaptado a tu itinerario.', 'me-transfers' ),
 				$title
 			),
 			'travel_note' => sprintf(
 				/* translators: %s: destination title. */
-				__( 'Coordinamos traslados hacia %s para viajeros particulares, familias, empresas, hoteles y eventos, con chófer profesional y atención personalizada.', 'me-transfers' ),
+				__( 'Coordinamos traslados hacia %s para viajeros particulares, familias, empresas, hoteles y eventos, con chÃ³fer profesional y atenciÃ³n personalizada.', 'me-transfers' ),
 				$title
 			),
 			'highlights'  => array(
-				__( 'Recogida puerta a puerta y presupuesto personalizado según horario, punto de salida y número de pasajeros.', 'me-transfers' ),
+				__( 'Recogida puerta a puerta y presupuesto personalizado segÃºn horario, punto de salida y nÃºmero de pasajeros.', 'me-transfers' ),
 				sprintf(
 					/* translators: %s: destination title. */
-					__( 'Opciones de ida, ida y vuelta o disposición por horas para viajes hacia %s.', 'me-transfers' ),
+					__( 'Opciones de ida, ida y vuelta o disposiciÃ³n por horas para viajes hacia %s.', 'me-transfers' ),
 					$title
 				),
-				__( 'Vehículos premium, seguimiento operativo y asistencia para hoteles, aeropuertos, cruceros y reuniones corporativas.', 'me-transfers' ),
+				__( 'VehÃ­culos premium, seguimiento operativo y asistencia para hoteles, aeropuertos, cruceros y reuniones corporativas.', 'me-transfers' ),
 			),
 		);
 	}
@@ -282,7 +282,7 @@ function me_transfers_sync_destination_pages() {
 
 	update_option( 'me_transfers_destinations_sync_version', ME_TRANSFERS_DESTINATIONS_SYNC_VERSION, false );
 }
-add_action( 'init', 'me_transfers_sync_destination_pages', 20 );
+// add_action( 'init', 'me_transfers_sync_destination_pages', 20 );
 
 /**
  * Runs the destination sync after theme activation and in wp-admin when needed.
@@ -296,7 +296,7 @@ function me_transfers_maybe_sync_destination_pages() {
 
 	me_transfers_sync_destination_pages();
 }
-add_action( 'admin_init', 'me_transfers_maybe_sync_destination_pages' );
+// add_action( 'admin_init', 'me_transfers_maybe_sync_destination_pages' );
 
 /**
  * Forces a destination sync when the theme is activated.
@@ -307,7 +307,7 @@ function me_transfers_force_destination_page_sync() {
 	delete_option( 'me_transfers_destinations_sync_version' );
 	me_transfers_sync_destination_pages();
 }
-add_action( 'after_switch_theme', 'me_transfers_force_destination_page_sync' );
+// add_action( 'after_switch_theme', 'me_transfers_force_destination_page_sync' );
 
 /**
  * Returns the request notice for one destination page.
@@ -326,13 +326,13 @@ function me_transfers_get_destination_request_notice( $slug ) {
 	if ( 'success' === $status ) {
 		return array(
 			'type'    => 'success',
-			'message' => __( 'Hemos recibido tu solicitud. Te contactaremos lo antes posible con la información del traslado.', 'me-transfers' ),
+			'message' => __( 'Hemos recibido tu solicitud. Te contactaremos lo antes posible con la informaciÃ³n del traslado.', 'me-transfers' ),
 		);
 	}
 
 	return array(
 		'type'    => 'error',
-		'message' => __( 'No pudimos enviar la solicitud. Revisa los campos obligatorios e inténtalo de nuevo.', 'me-transfers' ),
+		'message' => __( 'No pudimos enviar la solicitud. Revisa los campos obligatorios e intÃ©ntalo de nuevo.', 'me-transfers' ),
 	);
 }
 
@@ -372,7 +372,7 @@ function me_transfers_render_destination_request_form( $destination ) {
 					</div>
 
 					<div class="destination-request-field">
-						<label for="mt-phone"><?php esc_html_e( 'Teléfono', 'me-transfers' ); ?></label>
+						<label for="mt-phone"><?php esc_html_e( 'TelÃ©fono', 'me-transfers' ); ?></label>
 						<input id="mt-phone" type="tel" name="phone">
 					</div>
 
@@ -399,7 +399,7 @@ function me_transfers_render_destination_request_form( $destination ) {
 					<div class="destination-request-field">
 						<label for="mt-trip-type"><?php esc_html_e( 'Tipo de servicio', 'me-transfers' ); ?></label>
 						<select id="mt-trip-type" name="trip_type">
-							<option value=""><?php esc_html_e( 'Selecciona una opción', 'me-transfers' ); ?></option>
+							<option value=""><?php esc_html_e( 'Selecciona una opciÃ³n', 'me-transfers' ); ?></option>
 							<option value="solo-ida"><?php esc_html_e( 'Solo ida', 'me-transfers' ); ?></option>
 							<option value="ida-vuelta"><?php esc_html_e( 'Ida y vuelta', 'me-transfers' ); ?></option>
 							<option value="por-horas"><?php esc_html_e( 'Servicio por horas', 'me-transfers' ); ?></option>
@@ -409,7 +409,7 @@ function me_transfers_render_destination_request_form( $destination ) {
 
 				<div class="destination-request-field destination-request-field--full">
 					<label for="mt-message"><?php esc_html_e( 'Detalles del traslado', 'me-transfers' ); ?></label>
-					<textarea id="mt-message" name="message" rows="6" placeholder="<?php esc_attr_e( 'Indícanos horarios, puntos de recogida, equipaje, niños, necesidades especiales o cualquier dato relevante.', 'me-transfers' ); ?>" required></textarea>
+					<textarea id="mt-message" name="message" rows="6" placeholder="<?php esc_attr_e( 'IndÃ­canos horarios, puntos de recogida, equipaje, niÃ±os, necesidades especiales o cualquier dato relevante.', 'me-transfers' ); ?>" required></textarea>
 				</div>
 
 				<div class="destination-request-consent">
@@ -418,7 +418,7 @@ function me_transfers_render_destination_request_form( $destination ) {
 						<span>
 							<?php esc_html_e( 'Acepto que mis datos se utilicen para responder a esta solicitud.', 'me-transfers' ); ?>
 							<?php if ( $privacy_url ) : ?>
-								<a href="<?php echo esc_url( $privacy_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Política de privacidad', 'me-transfers' ); ?></a>
+								<a href="<?php echo esc_url( $privacy_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'PolÃ­tica de privacidad', 'me-transfers' ); ?></a>
 							<?php endif; ?>
 						</span>
 					</label>
@@ -429,7 +429,7 @@ function me_transfers_render_destination_request_form( $destination ) {
 					<input id="mt-company" type="text" name="company" tabindex="-1" autocomplete="off">
 				</div>
 
-				<button type="submit" class="btn btn-primary destination-request-submit"><?php esc_html_e( 'Solicitar información', 'me-transfers' ); ?></button>
+				<button type="submit" class="btn btn-primary destination-request-submit"><?php esc_html_e( 'Solicitar informaciÃ³n', 'me-transfers' ); ?></button>
 			</form>
 		</div>
 	<?php
@@ -504,7 +504,7 @@ function me_transfers_handle_destination_request() {
 			'Destino: ' . $destination['title'],
 			'Nombre: ' . $full_name,
 			'Email: ' . $email,
-			'Teléfono: ' . ( $phone ? $phone : __( 'No indicado', 'me-transfers' ) ),
+			'TelÃ©fono: ' . ( $phone ? $phone : __( 'No indicado', 'me-transfers' ) ),
 			'Origen: ' . $origin,
 			'Fecha estimada: ' . ( $date ? $date : __( 'No indicada', 'me-transfers' ) ),
 			'Pasajeros: ' . ( $passenger ? (string) $passenger : __( 'No indicado', 'me-transfers' ) ),

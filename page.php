@@ -22,14 +22,14 @@ get_header();
 			?>
 			<section class="destinations-hub-hero">
 				<div class="container destinations-hub-hero__inner gs-reveal-up">
-					<span class="destinations-hub-eyebrow"><?php esc_html_e( 'Destinos más solicitados', 'me-transfers' ); ?></span>
+					<span class="destinations-hub-eyebrow"><?php esc_html_e( 'Destinos mÃ¡s solicitados', 'me-transfers' ); ?></span>
 					<h1 class="destinations-hub-title"><?php esc_html_e( 'Destinos', 'me-transfers' ); ?></h1>
 					<p class="destinations-hub-intro">
 						<?php
 						if ( $hub_content_plain ) {
 							echo esc_html( $hub_content_plain );
 						} else {
-							esc_html_e( 'Explora los destinos más solicitados y accede a una ficha rápida para pedir información de traslados privados, recogidas en aeropuerto, hoteles, puertos y rutas personalizadas.', 'me-transfers' );
+							esc_html_e( 'Explora los destinos mÃ¡s solicitados y accede a una ficha rÃ¡pida para pedir informaciÃ³n de traslados privados, recogidas en aeropuerto, hoteles, puertos y rutas personalizadas.', 'me-transfers' );
 						}
 						?>
 					</p>
@@ -55,7 +55,7 @@ get_header();
 									?>
 								</p>
 								<a href="<?php echo esc_url( me_transfers_get_destination_url( $destination, true ) ); ?>" class="destination-card-link">
-									<?php esc_html_e( 'Solicitar información', 'me-transfers' ); ?>
+									<?php esc_html_e( 'Solicitar informaciÃ³n', 'me-transfers' ); ?>
 								</a>
 							</article>
 						<?php endforeach; ?>
@@ -103,7 +103,7 @@ get_header();
 					<span class="faq-page-kicker"><?php esc_html_e( 'Centro de ayuda', 'me-transfers' ); ?></span>
 					<h1 class="faq-page-title">Preguntas Frecuentes</h1>
 					<p class="faq-page-summary">
-						Encuentra respuestas claras y rápidas a las dudas más comunes sobre nuestros servicios de transporte privado. Desde reservas y tarifas hasta detalles sobre nuestras rutas y vehículos, aquí encontrarás toda la información que necesitas para planificar tu traslado con metransfers.es. ¿Tienes más preguntas frecuentes? Contáctanos y estaremos encantados de ayudarte.
+						Encuentra respuestas claras y rÃ¡pidas a las dudas mÃ¡s comunes sobre nuestros servicios de transporte privado. Desde reservas y tarifas hasta detalles sobre nuestras rutas y vehÃ­culos, aquÃ­ encontrarÃ¡s toda la informaciÃ³n que necesitas para planificar tu traslado con metransfers.es. Â¿Tienes mÃ¡s preguntas frecuentes? ContÃ¡ctanos y estaremos encantados de ayudarte.
 					</p>
 				</div>
 			</section>
@@ -112,7 +112,7 @@ get_header();
 				<div class="container faq-page-shell">
 					<div class="faq-page-intro">
 						<h2>Todo lo que necesitas saber antes de reservar</h2>
-						<p>Hemos reunido las consultas más habituales sobre reservas, vehículos, aeropuertos, pagos, cancelaciones y atención al cliente para que encuentres la información de forma rápida y ordenada.</p>
+						<p>Hemos reunido las consultas mÃ¡s habituales sobre reservas, vehÃ­culos, aeropuertos, pagos, cancelaciones y atenciÃ³n al cliente para que encuentres la informaciÃ³n de forma rÃ¡pida y ordenada.</p>
 					</div>
 
 					<div class="faq-accordion">
@@ -131,15 +131,15 @@ get_header();
 									<?php if ( 2 === $index ) : ?>
 										<p>
 											<?php if ( $cancellation_url ) : ?>
-												Puedes acceder a nuestra política de cancelación completa <a href="<?php echo esc_url( $cancellation_url ); ?>">haciendo clic aquí</a>.
+												Puedes acceder a nuestra polÃ­tica de cancelaciÃ³n completa <a href="<?php echo esc_url( $cancellation_url ); ?>">haciendo clic aquÃ­</a>.
 											<?php else : ?>
-												Puedes consultar nuestra política de cancelación completa contactando con nuestro equipo.
+												Puedes consultar nuestra polÃ­tica de cancelaciÃ³n completa contactando con nuestro equipo.
 											<?php endif; ?>
 										</p>
 									<?php endif; ?>
 
 									<?php if ( 10 === $index && $privacy_url ) : ?>
-										<p>Puedes acceder a nuestra política de privacidad completa <a href="<?php echo esc_url( $privacy_url ); ?>">haciendo clic aquí</a>.</p>
+										<p>Puedes acceder a nuestra polÃ­tica de privacidad completa <a href="<?php echo esc_url( $privacy_url ); ?>">haciendo clic aquÃ­</a>.</p>
 									<?php endif; ?>
 								</div>
 							</details>
@@ -148,8 +148,8 @@ get_header();
 
 					<div class="faq-page-cta">
 						<span class="faq-page-cta__kicker">Reserva Ahora</span>
-						<h2>Reserva online, rápido y con pago seguro</h2>
-						<p>metransfers.es es una de las principales agencias de transporte privado en Barcelona. Reserva online, rápido y con pago seguro. Ofrecemos alquiler de coches con conductor, visitas guiadas y servicio de chofer 24/7.</p>
+						<h2>Reserva online, rÃ¡pido y con pago seguro</h2>
+						<p>metransfers.es es una de las principales agencias de transporte privado en Barcelona. Reserva online, rÃ¡pido y con pago seguro. Ofrecemos alquiler de coches con conductor, visitas guiadas y servicio de chofer 24/7.</p>
 						<a href="<?php echo esc_url( me_transfers_get_section_url( 'search' ) ); ?>" class="btn btn-primary">Reservar ahora</a>
 					</div>
 				</div>
@@ -493,8 +493,8 @@ get_header();
 
 					<div class="destination-page-pills">
 						<span><?php esc_html_e( 'Puerta a puerta', 'me-transfers' ); ?></span>
-						<span><?php esc_html_e( 'Chófer profesional', 'me-transfers' ); ?></span>
-						<span><?php esc_html_e( 'Respuesta rápida', 'me-transfers' ); ?></span>
+						<span><?php esc_html_e( 'ChÃ³fer profesional', 'me-transfers' ); ?></span>
+						<span><?php esc_html_e( 'Respuesta rÃ¡pida', 'me-transfers' ); ?></span>
 					</div>
 				</div>
 			</section>
@@ -503,7 +503,7 @@ get_header();
 				<div class="container destination-page-layout">
 					<div class="destination-page-copy">
 						<div class="destination-copy-card">
-							<h2><?php echo esc_html( sprintf( __( 'Información para traslados a %s', 'me-transfers' ), $current_destination['title'] ) ); ?></h2>
+							<h2><?php echo esc_html( sprintf( __( 'InformaciÃ³n para traslados a %s', 'me-transfers' ), $current_destination['title'] ) ); ?></h2>
 
 							<?php if ( $page_content ) : ?>
 								<div class="entry-content luxury-prose">
@@ -517,7 +517,7 @@ get_header();
 										echo esc_html(
 											sprintf(
 												/* translators: %s: destination title. */
-												__( 'Si estás organizando un traslado hacia %s, podemos prepararte una propuesta adaptada al punto de recogida, número de pasajeros, fecha estimada y tipo de servicio que necesites.', 'me-transfers' ),
+												__( 'Si estÃ¡s organizando un traslado hacia %s, podemos prepararte una propuesta adaptada al punto de recogida, nÃºmero de pasajeros, fecha estimada y tipo de servicio que necesites.', 'me-transfers' ),
 												$current_destination['title']
 											)
 										);
@@ -560,8 +560,8 @@ get_header();
 					<aside id="destination-request" class="destination-page-sidebar">
 						<div class="destination-form-card">
 							<span class="destination-form-card__eyebrow"><?php esc_html_e( 'Formulario de contacto', 'me-transfers' ); ?></span>
-							<h2><?php echo esc_html( sprintf( __( 'Pide información para %s', 'me-transfers' ), $current_destination['title'] ) ); ?></h2>
-							<p><?php esc_html_e( 'Cuéntanos origen, fechas y necesidades del servicio. Te responderemos con disponibilidad y propuesta personalizada.', 'me-transfers' ); ?></p>
+							<h2><?php echo esc_html( sprintf( __( 'Pide informaciÃ³n para %s', 'me-transfers' ), $current_destination['title'] ) ); ?></h2>
+							<p><?php esc_html_e( 'CuÃ©ntanos origen, fechas y necesidades del servicio. Te responderemos con disponibilidad y propuesta personalizada.', 'me-transfers' ); ?></p>
 							<?php echo me_transfers_render_destination_request_form( $current_destination ); ?>
 						</div>
 					</aside>
@@ -645,7 +645,7 @@ get_header();
 								</svg>
 							</div>
 							<h2>Reservas Flexibles</h2>
-							<p>Metransfers Barcelona ofrece una cancelación gratuita hasta 24 horas antes de su actividad, siempre hay espacio para un cambio de planes.</p>
+							<p>Metransfers Barcelona ofrece una cancelaciÃ³n gratuita hasta 24 horas antes de su actividad, siempre hay espacio para un cambio de planes.</p>
 						</article>
 
 						<article class="destination-benefit-card destination-benefit-card--support">
@@ -656,8 +656,8 @@ get_header();
 									<path d="M15 3a9 9 0 0 1 9 9"/>
 								</svg>
 							</div>
-							<h2>Soporte Telefónico 24 Horas</h2>
-							<p>Servicio 24/7 para que tu experiencia sea inolvidable, ya sea por teléfono, email o WhatsApp.</p>
+							<h2>Soporte TelefÃ³nico 24 Horas</h2>
+							<p>Servicio 24/7 para que tu experiencia sea inolvidable, ya sea por telÃ©fono, email o WhatsApp.</p>
 						</article>
 					</div>
 				</div>
@@ -903,7 +903,7 @@ get_header();
 								}
 								?>
 								<?php if ( ! empty( $service['features'] ) ) : ?>
-								<h3 style="color: #ffffff; margin-top: 3rem; margin-bottom: 1.25rem;">Características Destacadas</h3>
+								<h3 style="color: #ffffff; margin-top: 3rem; margin-bottom: 1.25rem;">CaracterÃ­sticas Destacadas</h3>
 								<ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem;">
 									<?php foreach ( $service['features'] as $feature ) : ?>
 									<li style="display: flex; align-items: flex-start; gap: 0.75rem; color: #ffffff !important;">
@@ -925,7 +925,7 @@ get_header();
 									<h3 style="margin: 0; font-size: 1.4rem; color: #fff;">Resumen</h3>
 								</div>
 
-								<h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem;">¿Qué incluye?</h4>
+								<h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem;">Â¿QuÃ© incluye?</h4>
 								<ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; display: grid; gap: 0.85rem; color: var(--text-on-dark-2); font-size: 0.95rem;">
 									<?php foreach ( $service['bullets'] as $b ) : ?>
 										<li style="display: flex; align-items: center; gap: 0.5rem;">
@@ -935,10 +935,10 @@ get_header();
 									<?php endforeach; ?>
 								</ul>
 
-								<?php $wa_text = urlencode('Hola, quiero información sobre el servicio de ' . $service['title']); ?>
+								<?php $wa_text = urlencode('Hola, quiero informaciÃ³n sobre el servicio de ' . $service['title']); ?>
 								<a href="https://wa.me/34662024136?text=<?php echo esc_attr( $wa_text ); ?>" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.1rem;">Reservar Servicio <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 								
-								<p style="text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); margin: 1rem 0 0 0;">Confirmación inmediata. Pago seguro.</p>
+								<p style="text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); margin: 1rem 0 0 0;">ConfirmaciÃ³n inmediata. Pago seguro.</p>
 							</div>
 						</aside>
 

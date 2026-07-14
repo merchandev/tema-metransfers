@@ -251,7 +251,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 							</h3>
 
 							<p class="fp-blog-card__excerpt">
-								<?php echo wp_trim_words( get_the_excerpt(), 18, '…' ); ?>
+								<?php echo wp_trim_words( get_the_excerpt(), 18, 'â€¦' ); ?>
 							</p>
 
 							<div class="fp-blog-card__meta">

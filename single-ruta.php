@@ -48,7 +48,7 @@ if ( ! $hero_bg ) {
                         <?php if($origen && $destino): ?>
                             Traslado privado desde <strong><?php echo esc_html($origen); ?></strong> hasta <strong><?php echo esc_html($destino); ?></strong>. 
                         <?php endif; ?>
-                        Vehículos Mercedes-Benz, precio cerrado y conductor profesional esperándote.
+                        VehÃ­culos Mercedes-Benz, precio cerrado y conductor profesional esperÃ¡ndote.
                     </p>
 
                     <div class="hero-actions">
@@ -97,7 +97,7 @@ if ( ! $hero_bg ) {
                 <div class="ruta-stat">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004E9A" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
                     <h4 style="margin: 10px 0 5px; color:#0D1B2A;">Precio Fijo</h4>
-                    <p style="margin:0; color:#475569; font-weight: 500;">Desde <?php echo esc_html($precio); ?> €</p>
+                    <p style="margin:0; color:#475569; font-weight: 500;">Desde <?php echo esc_html($precio); ?> â‚¬</p>
                 </div>
                 <?php endif; ?>
             </div>
@@ -108,24 +108,24 @@ if ( ! $hero_bg ) {
     <!-- QUE INCLUYE -->
     <section class="ruta-incluye section">
         <div class="container gs-reveal">
-            <h2 class="section-title text-center">¿Qué incluye tu reserva?</h2>
+            <h2 class="section-title text-center">Â¿QuÃ© incluye tu reserva?</h2>
             <div class="tours-grid" style="margin-top: 2rem;">
                 <article class="tour-card">
                     <div class="tour-content">
                         <h3 style="color:#004E9A;">Meet & Greet</h3>
-                        <p>Tu conductor te estará esperando en la terminal de llegadas o lobby de tu hotel con un cartel con tu nombre.</p>
+                        <p>Tu conductor te estarÃ¡ esperando en la terminal de llegadas o lobby de tu hotel con un cartel con tu nombre.</p>
                     </div>
                 </article>
                 <article class="tour-card">
                     <div class="tour-content">
                         <h3 style="color:#004E9A;">Seguimiento de Vuelo</h3>
-                        <p>Monitorizamos tu vuelo. Si hay retrasos, ajustamos la hora de recogida sin ningún cargo extra.</p>
+                        <p>Monitorizamos tu vuelo. Si hay retrasos, ajustamos la hora de recogida sin ningÃºn cargo extra.</p>
                     </div>
                 </article>
                 <article class="tour-card">
                     <div class="tour-content">
                         <h3 style="color:#004E9A;">Precio Cerrado</h3>
-                        <p>Sin taxímetros, sin tarifas dinámicas, sin sorpresas. El precio que reservas es el que pagas.</p>
+                        <p>Sin taxÃ­metros, sin tarifas dinÃ¡micas, sin sorpresas. El precio que reservas es el que pagas.</p>
                     </div>
                 </article>
             </div>
@@ -148,7 +148,7 @@ if ( ! $hero_bg ) {
     <section class="gyg-section section">
         <div class="container gs-reveal text-center">
             <h2 class="section-title">Confianza de <span class="text-gradient">Viajeros Globales</span></h2>
-            <span class="gyg-badge" style="margin-bottom: 2rem; display: inline-block;">★ 4.9 / 5 en GetYourGuide</span>
+            <span class="gyg-badge" style="margin-bottom: 2rem; display: inline-block;">â˜… 4.9 / 5 en GetYourGuide</span>
             <?php if ( shortcode_exists( 'gyg_reviews' ) ) : ?>
                 <?php echo do_shortcode( '[gyg_reviews count="4"]' ); ?>
             <?php endif; ?>

@@ -24,7 +24,7 @@ while ( have_posts() ) :
 	$modified_iso    = get_the_modified_date( 'c' );
 	$content_source  = preg_replace( '/\[\/?mt_hero_card[^\]]*\]/i', '', (string) get_the_content() );
 	$content_plain   = wp_strip_all_tags( strip_shortcodes( $content_source ) );
-	$summary_source  = has_excerpt() ? get_the_excerpt() : wp_trim_words( $content_plain, 32, '…' );
+	$summary_source  = has_excerpt() ? get_the_excerpt() : wp_trim_words( $content_plain, 32, 'â€¦' );
 	$summary         = trim( wp_strip_all_tags( $summary_source ) );
 	$article_images  = array();
 	$logo_url        = get_template_directory_uri() . '/assets/img/MT - MeTransfers.png';
@@ -166,7 +166,7 @@ while ( have_posts() ) :
 						<div class="single-cta-box">
 							<div class="single-cta-copy">
 								<span class="single-cta-eyebrow"><?php esc_html_e( 'Reserva privada', 'me-transfers' ); ?></span>
-								<h2 class="single-cta-title"><?php esc_html_e( '¿Listo para tu próximo traslado?', 'me-transfers' ); ?></h2>
+								<h2 class="single-cta-title"><?php esc_html_e( 'Â¿Listo para tu prÃ³ximo traslado?', 'me-transfers' ); ?></h2>
 								<p><?php esc_html_e( 'Reserva tu traslado privado o tour personalizado en Barcelona con una experiencia premium, puntual y adaptada a tu agenda.', 'me-transfers' ); ?></p>
 							</div>
 							<a href="<?php echo esc_url( me_transfers_get_section_url( 'search' ) ); ?>" class="btn btn-primary"><?php esc_html_e( 'Reservar ahora', 'me-transfers' ); ?></a>
@@ -182,7 +182,7 @@ while ( have_posts() ) :
 					<div class="single-related-header">
 						<div>
 							<span class="single-related-eyebrow"><?php esc_html_e( 'Sigue leyendo', 'me-transfers' ); ?></span>
-							<h2 id="related-posts-title" class="single-related-title"><?php esc_html_e( 'También te puede interesar', 'me-transfers' ); ?></h2>
+							<h2 id="related-posts-title" class="single-related-title"><?php esc_html_e( 'TambiÃ©n te puede interesar', 'me-transfers' ); ?></h2>
 						</div>
 						<a href="<?php echo esc_url( $blog_url ); ?>" class="single-related-link"><?php esc_html_e( 'Ver todo el blog', 'me-transfers' ); ?></a>
 					</div>
@@ -208,7 +208,7 @@ while ( have_posts() ) :
 										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 									</h3>
 
-									<p class="related-card-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 18, '…' ) ); ?></p>
+									<p class="related-card-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 18, 'â€¦' ) ); ?></p>
 
 									<div class="related-card-meta">
 										<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date( 'd M Y' ) ); ?></time>

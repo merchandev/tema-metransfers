@@ -19,8 +19,8 @@ function mt_register_ruta_cpt() {
         'attributes'            => __( 'Atributos de Ruta', 'me-transfers' ),
         'parent_item_colon'     => __( 'Ruta Padre:', 'me-transfers' ),
         'all_items'             => __( 'Todas las Rutas', 'me-transfers' ),
-        'add_new_item'          => __( 'Añadir Nueva Ruta', 'me-transfers' ),
-        'add_new'               => __( 'Añadir Nueva', 'me-transfers' ),
+        'add_new_item'          => __( 'AÃ±adir Nueva Ruta', 'me-transfers' ),
+        'add_new'               => __( 'AÃ±adir Nueva', 'me-transfers' ),
         'new_item'              => __( 'Nueva Ruta', 'me-transfers' ),
         'edit_item'             => __( 'Editar Ruta', 'me-transfers' ),
         'update_item'           => __( 'Actualizar Ruta', 'me-transfers' ),
@@ -85,7 +85,7 @@ function mt_ruta_details_callback( $post ) {
     echo '<tr><th><label for="mt_ruta_destino">Destino</label></th>';
     echo '<td><input type="text" id="mt_ruta_destino" name="mt_ruta_destino" value="' . esc_attr( $destino ) . '" size="25" placeholder="Ej. Centro Ciudad" /></td></tr>';
     
-    echo '<tr><th><label for="mt_ruta_duracion">Duración Estimada</label></th>';
+    echo '<tr><th><label for="mt_ruta_duracion">DuraciÃ³n Estimada</label></th>';
     echo '<td><input type="text" id="mt_ruta_duracion" name="mt_ruta_duracion" value="' . esc_attr( $duracion ) . '" size="25" placeholder="Ej. 25 min" /></td></tr>';
     
     echo '<tr><th><label for="mt_ruta_pax">Max Pasajeros</label></th>';
@@ -95,7 +95,7 @@ function mt_ruta_details_callback( $post ) {
     echo '<td><input type="text" id="mt_ruta_maletas" name="mt_ruta_maletas" value="' . esc_attr( $maletas ) . '" size="25" placeholder="Ej. 7" /></td></tr>';
 
     echo '<tr><th><label for="mt_ruta_precio">Precio Fijo (Desde)</label></th>';
-    echo '<td><input type="text" id="mt_ruta_precio" name="mt_ruta_precio" value="' . esc_attr( $precio ) . '" size="25" placeholder="Ej. 65" /> €</td></tr>';
+    echo '<td><input type="text" id="mt_ruta_precio" name="mt_ruta_precio" value="' . esc_attr( $precio ) . '" size="25" placeholder="Ej. 65" /> â‚¬</td></tr>';
     echo '</table>';
 }
 

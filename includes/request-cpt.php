@@ -18,8 +18,8 @@ function me_transfers_register_request_cpt() {
 		'singular_name'         => 'Solicitud',
 		'menu_name'             => 'Solicitudes',
 		'all_items'             => 'Todas las Solicitudes',
-		'add_new'               => 'Añadir nueva',
-		'add_new_item'          => 'Añadir nueva Solicitud',
+		'add_new'               => 'AÃ±adir nueva',
+		'add_new_item'          => 'AÃ±adir nueva Solicitud',
 		'edit_item'             => 'Editar Solicitud',
 		'new_item'              => 'Nueva Solicitud',
 		'view_item'             => 'Ver Solicitud',
@@ -79,7 +79,7 @@ function me_transfers_ajax_destination_request() {
 	) );
 
 	if ( is_wp_error( $post_id ) ) {
-		wp_send_json_error( array( 'message' => 'Error al guardar la solicitud. Inténtalo de nuevo.' ) );
+		wp_send_json_error( array( 'message' => 'Error al guardar la solicitud. IntÃ©ntalo de nuevo.' ) );
 	}
 
 	update_post_meta( $post_id, '_customer_name', $name );
@@ -98,7 +98,7 @@ function me_transfers_ajax_destination_request() {
 
 	wp_mail( $admin_email, $subject, $message, $headers );
 
-	wp_send_json_success( array( 'message' => '¡Solicitud enviada correctamente! Nos pondremos en contacto contigo pronto.' ) );
+	wp_send_json_success( array( 'message' => 'Â¡Solicitud enviada correctamente! Nos pondremos en contacto contigo pronto.' ) );
 }
 add_action( 'wp_ajax_me_transfers_ajax_destination_request', 'me_transfers_ajax_destination_request' );
 add_action( 'wp_ajax_nopriv_me_transfers_ajax_destination_request', 'me_transfers_ajax_destination_request' );
@@ -161,15 +161,23 @@ if ( empty( $name ) || empty( $email ) || empty( $message ) ) {
 wp_send_json_error( array( 'message' => 'Por favor, completa todos los campos requeridos.' ) );
 }
 
+if ( ! is_email( $email ) ) {
+wp_send_json_error( array( 'message' => 'El correo electrónico no es válido.' ) );
+}
+
+if ( strlen( $name ) > 100 || strlen( $phone ) > 50 || strlen( $message ) > 2000 ) {
+wp_send_json_error( array( 'message' => 'Alguno de los campos excede la longitud permitida.' ) );
+}
+
 // Create CPT entry
 $post_id = wp_insert_post( array(
 'post_type'   => 'mt_request',
 'post_title'  => sprintf( 'Contacto de %s', $name ),
-'post_status' => 'publish',
+'post_status' => 'private',
 ) );
 
 if ( is_wp_error( $post_id ) ) {
-wp_send_json_error( array( 'message' => 'Error al enviar el mensaje. Int�ntalo de nuevo.' ) );
+wp_send_json_error( array( 'message' => 'Error al enviar el mensaje. Inténtalo de nuevo.' ) );
 }
 
 update_post_meta( $post_id, '_customer_name', $name );
@@ -185,14 +193,19 @@ $email_body   = "Has recibido un nuevo mensaje de contacto desde la web.\n\n";
 $email_body  .= "Nombre: $name\n";
 $email_body  .= "Email: $email\n";
 if ( $phone ) {
-$email_body .= "Tel�fono: $phone\n";
+$email_body .= "Teléfono: $phone\n";
 }
 $email_body  .= "\nMensaje:\n$message\n";
 
 $headers = array( 'Reply-To: ' . $name . ' <' . $email . '>' );
-wp_mail( $admin_email, $subject, $email_body, $headers );
+$mail_sent = wp_mail( $admin_email, $subject, $email_body, $headers );
 
-wp_send_json_success( array( 'message' => '�Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.' ) );
+if ( ! $mail_sent ) {
+error_log( 'MeTransfers: Error al enviar el correo de contacto para ' . $email );
+wp_send_json_error( array( 'message' => 'Error al procesar la solicitud. Por favor, intenta de nuevo más tarde.' ) );
+}
+
+wp_send_json_success( array( 'message' => '¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.' ) );
 }
 add_action( 'wp_ajax_me_transfers_contact_request', 'me_transfers_ajax_contact_request' );
 add_action( 'wp_ajax_nopriv_me_transfers_contact_request', 'me_transfers_ajax_contact_request' );

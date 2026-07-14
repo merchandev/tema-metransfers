@@ -92,16 +92,10 @@ add_action( 'widgets_init', 'me_transfers_unregister_sidebars', 20 );
 
 /**
  * Removido: me_transfers_prefix_document_title 
- * Para evitar "Keyword Stuffing" y permitir que WordPress (y el usuario en Ajustes) manejen el tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­tulo limpiamente.
+ * Para evitar "Keyword Stuffing" y permitir que WordPress (y el usuario en Ajustes) manejen el tÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­tulo limpiamente.
  */
 
-/**
- * Add global index, follow meta tag for SEO positioning.
- */
-function me_transfers_global_meta_robots() {
-	echo '<meta name="robots" content="index, follow">' . "\n";
-}
-add_action( 'wp_head', 'me_transfers_global_meta_robots', 1 );
+
 
 /**
  * Fallback menu renderer.
@@ -283,7 +277,7 @@ function me_transfers_force_core_styles() {
 			--accent-secondary: #001c38 !important;
 		}
 		
-		/* ELIMINAR DEGRADADOS COMPLETAMENTE DE TODOS LOS TÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂTULOS Y SPANS */
+		/* ELIMINAR DEGRADADOS COMPLETAMENTE DE TODOS LOS TÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂTULOS Y SPANS */
 		.text-gradient {
 			background: none !important;
 			color: #004E9A !important;
@@ -292,7 +286,7 @@ function me_transfers_force_core_styles() {
 			background-clip: unset !important;
 		}
 
-		/* FORZAR TÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂTULOS H2-H6 A AZUL MARCA (#004E9A), EXCEPTO EN FONDOS OSCUROS */
+		/* FORZAR TÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂTULOS H2-H6 A AZUL MARCA (#004E9A), EXCEPTO EN FONDOS OSCUROS */
 		:not(.bg-dark):not(.hero-section):not(.contact-info-card):not(.site-footer) > h2, 
 		:not(.bg-dark):not(.hero-section):not(.contact-info-card):not(.site-footer) > h3, 
 		:not(.bg-dark):not(.hero-section):not(.contact-info-card):not(.site-footer) > h4, 
@@ -317,7 +311,7 @@ function me_transfers_force_core_styles() {
 			-webkit-text-fill-color: #ffffff !important;
 		}
 		
-		/* PÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂRRAFOS Y LISTAS REGULARES A AZUL OSCURO PARA LEGIBILIDAD */
+		/* PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂRRAFOS Y LISTAS REGULARES A AZUL OSCURO PARA LEGIBILIDAD */
 		.section p, .section li, .entry-content p, .entry-content li {
 			color: #001c38;
 		}
@@ -344,38 +338,7 @@ function me_transfers_force_core_styles() {
 }
 add_action( 'wp_head', 'me_transfers_force_core_styles', 9999 );
 
-/**
- * Optional bootstrap for the hotel check-in user.
- *
- * Disabled by default. Define ME_TRANSFERS_ENABLE_CHECKIN_USER and provide
- * ME_TRANSFERS_CHECKIN_PASSWORD from wp-config.php if this legacy workflow is
- * still required.
- */
-function mt_create_checkin_user() {
-	if ( ! defined( 'ME_TRANSFERS_ENABLE_CHECKIN_USER' ) || ! ME_TRANSFERS_ENABLE_CHECKIN_USER ) {
-		return;
-	}
 
-	$username = 'CheckInHoteles';
-
-	if ( username_exists( $username ) ) {
-		return;
-	}
-
-	$password = defined( 'ME_TRANSFERS_CHECKIN_PASSWORD' )
-		? (string) ME_TRANSFERS_CHECKIN_PASSWORD
-		: wp_generate_password( 24, true, true );
-
-	wp_insert_user(
-		array(
-			'user_login' => $username,
-			'user_pass'  => $password,
-			'user_email' => 'checkin@metransfers.es',
-			'role'       => 'administrator',
-		)
-	);
-}
-add_action( 'init', 'mt_create_checkin_user' );
 
 /**
  * Force Tours page in navigation menu
@@ -391,39 +354,49 @@ function me_transfers_add_tours_menu_item( $items, $args ) {
 
 
 /* ==========================================================================
-   ROL PERSONALIZADO: CHECKHOTELES Y RESTRICCIÃƒÆ’Ã¢â‚¬Å“N DE MENÃƒÆ’Ã…Â¡S
+   ROL PERSONALIZADO: CHECKHOTELES Y RESTRICCIÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œN DE MENÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â¡S
    ========================================================================== */
 
 // 1. Crear el nuevo rol
 add_action('init', 'me_transfers_create_checkhoteles_role');
 function me_transfers_create_checkhoteles_role() {
-    if ( ! get_role( 'check_hoteles' ) ) {
-        add_role( 'check_hoteles', 'CheckHoteles', array(
-            'read'                   => true,
-            'manage_options'         => true, // Requerido para ver plugins como Speed/Security Optimizer y Agente IA
-            'edit_posts'             => true,
-            'edit_others_posts'      => true,
-            'edit_published_posts'   => true,
-            'publish_posts'          => true,
-            'delete_posts'           => false,
+    $role = get_role( 'check_hoteles' );
+    if ( ! $role ) {
+        $role = add_role( 'check_hoteles', 'CheckHoteles', array(
+            'read' => true,
         ));
+    }
+
+    if ( $role ) {
+        // Eliminar permisos excesivos
+        $role->remove_cap( 'manage_options' );
+        $role->remove_cap( 'edit_posts' );
+        $role->remove_cap( 'edit_others_posts' );
+        $role->remove_cap( 'edit_published_posts' );
+        $role->remove_cap( 'publish_posts' );
+        
+        // AÃ±adir capacidades especÃ­ficas
+        $role->add_cap( 'read_transfer_requests' );
+        $role->add_cap( 'edit_transfer_requests' );
+        $role->add_cap( 'read_tour_bookings' );
+        $role->add_cap( 'export_transfer_requests' );
     }
 }
 
-// 2. Ocultar menÃƒÆ’Ã‚Âºs no deseados en el panel izquierdo
+// 2. Ocultar menÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºs no deseados en el panel izquierdo
 add_action('admin_menu', 'me_transfers_hide_menus_checkhoteles', 999);
 function me_transfers_hide_menus_checkhoteles() {
     $user = wp_get_current_user();
     if ( in_array( 'check_hoteles', (array) $user->roles ) && ! in_array( 'administrator', (array) $user->roles ) ) {
         global $menu;
         
-        // Palabras clave de los menÃƒÆ’Ã‚Âºs permitidos
+        // Palabras clave de los menÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºs permitidos
         $allowed_menus = array(
             'index.php', // Escritorio
             'edit.php?post_type=hotel_partner', // Hoteles QR
             'edit.php?post_type=mt_request', // Solicitudes
             'edit.php?post_type=gyg_review', // GYG Reviews (si es CPT)
-            'gyg-reviews', // GYG Reviews (si es plugin/pÃƒÆ’Ã‚Â¡gina)
+            'gyg-reviews', // GYG Reviews (si es plugin/pÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gina)
             'agente-ia', // Agente IA
             'wp-agente-ia',
             'sg-cachepress', // Speed Optimizer
@@ -447,7 +420,7 @@ function me_transfers_hide_menus_checkhoteles() {
     }
 }
 
-// 3. Bloquear acceso directo por URL a páginas no permitidas
+// 3. Bloquear acceso directo por URL a pÃ¡ginas no permitidas
 add_action('admin_init', 'me_transfers_restrict_checkhoteles_access');
 function me_transfers_restrict_checkhoteles_access() {
     if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
@@ -469,7 +442,7 @@ function me_transfers_restrict_checkhoteles_access() {
             }
         }
         
-        // Permitir edición de Custom Post Types
+        // Permitir ediciÃ³n de Custom Post Types
         if ( ($pagenow === 'post.php' || $pagenow === 'post-new.php') ) {
             $post_type = '';
             if ( isset($_GET['post']) ) {
@@ -486,7 +459,7 @@ function me_transfers_restrict_checkhoteles_access() {
             }
         }
         
-        // Permitir páginas de plugins
+        // Permitir pÃ¡ginas de plugins
         if ( isset($_GET['page']) ) {
             $allowed_plugins = array('sg-cachepress', 'sg-security', 'agente-ia', 'wp-agente-ia', 'gyg-reviews');
             foreach ($allowed_plugins as $plugin) {
@@ -497,7 +470,7 @@ function me_transfers_restrict_checkhoteles_access() {
             }
         }
         
-        // Si no estÃƒÆ’Ã‚Â¡ permitido, redirigir al escritorio
+        // Si no estÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ permitido, redirigir al escritorio
         if ( ! $is_allowed ) {
             wp_redirect( admin_url( 'index.php' ) );
             exit;
@@ -505,7 +478,7 @@ function me_transfers_restrict_checkhoteles_access() {
     }
 }
 
-// 4. Limitar visualización de Hoteles QR a los creados por el usuario
+// 4. Limitar visualizaciÃ³n de Hoteles QR a los creados por el usuario
 add_action('pre_get_posts', 'me_transfers_restrict_hotel_partner_view');
 function me_transfers_restrict_hotel_partner_view($query) {
     if ( is_admin() && $query->is_main_query() ) {
@@ -553,7 +526,7 @@ function me_transfers_migrate_content_to_editor() {
     if ( $hub && empty( trim( $hub->post_content ) ) ) {
         wp_update_post( array(
             'ID' => $hub->ID,
-            'post_content' => 'Explora los destinos más solicitados y accede a una ficha rápida para pedir información de traslados privados, recogidas en aeropuerto, hoteles, puertos y rutas personalizadas.'
+            'post_content' => 'Explora los destinos mÃ¡s solicitados y accede a una ficha rÃ¡pida para pedir informaciÃ³n de traslados privados, recogidas en aeropuerto, hoteles, puertos y rutas personalizadas.'
         ) );
     }
 
@@ -566,7 +539,7 @@ function me_transfers_migrate_content_to_editor() {
         }
         if ( $page && empty( trim( $page->post_content ) ) ) {
             $content = '<p>' . esc_html( $dest['travel_note'] ) . '</p>';
-            $content .= '<p>' . esc_html( sprintf( 'Si estás organizando un traslado hacia %s, podemos prepararte una propuesta adaptada al punto de recogida, número de pasajeros, fecha estimada y tipo de servicio que necesites.', $dest['title'] ) ) . '</p>';
+            $content .= '<p>' . esc_html( sprintf( 'Si estÃ¡s organizando un traslado hacia %s, podemos prepararte una propuesta adaptada al punto de recogida, nÃºmero de pasajeros, fecha estimada y tipo de servicio que necesites.', $dest['title'] ) ) . '</p>';
             $content .= '<ul>';
             foreach ( $dest['highlights'] as $highlight ) {
                 $content .= '<li>' . esc_html( $highlight ) . '</li>';
@@ -800,7 +773,7 @@ add_action( 'admin_init', 'me_transfers_migrate_legal_to_editor' );
    FASE 2: WPO, METADATOS Y REDIRECCIONES
    ========================================================================== */
 
-// 1. Optimización WPO: Forzar WebP como formato de salida y forzar lazy load
+// 1. OptimizaciÃ³n WPO: Forzar WebP como formato de salida y forzar lazy load
 add_filter( 'image_editor_output_format', function( $formats ) {
     $formats['image/jpeg'] = 'image/webp';
     $formats['image/png']  = 'image/webp';
@@ -814,7 +787,7 @@ add_filter( 'wp_get_attachment_image_attributes', function( $attr, $attachment, 
     return $attr;
 }, 10, 3 );
 
-// 2. Limpieza de Metadatos: Forzar Título y Descripción Global para Home
+// 2. Limpieza de Metadatos: Forzar TÃ­tulo y DescripciÃ³n Global para Home
 add_filter( 'pre_get_document_title', function( $title ) {
     if ( is_front_page() || is_home() ) {
         return 'MeTransfers | Traslados Privados y Tours VIP en Barcelona';
@@ -824,11 +797,11 @@ add_filter( 'pre_get_document_title', function( $title ) {
 
 add_action( 'wp_head', function() {
     if ( is_front_page() || is_home() ) {
-        echo '<meta name="description" content="Traslados Privados y Tours VIP en Barcelona. Reserva tu servicio de chófer privado en MeTransfers para un viaje seguro, cómodo y exclusivo.">' . "\n";
+        echo '<meta name="description" content="Traslados Privados y Tours VIP en Barcelona. Reserva tu servicio de chÃ³fer privado en MeTransfers para un viaje seguro, cÃ³modo y exclusivo.">' . "\n";
     }
 }, 1 );
 
-// 3. Motor de Redirecciones 301 y 410 (Páginas Muertas)
+// 3. Motor de Redirecciones 301 y 410 (PÃ¡ginas Muertas)
 add_action( 'template_redirect', 'me_transfers_custom_redirects' );
 function me_transfers_custom_redirects() {
     if ( is_404() ) {
@@ -846,7 +819,7 @@ function me_transfers_custom_redirects() {
             }
         }
         
-        // Array de páginas 410 (Gone) para purga de contenido zombi
+        // Array de pÃ¡ginas 410 (Gone) para purga de contenido zombi
         $gone_urls = array(
             // '/pagina-eliminada-permanentemente/'
         );
