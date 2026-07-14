@@ -6691,7 +6691,7 @@ p {
     box-shadow: var(--shadow-hover) !important;
 }
 
-.tour-content h3 {
+.tour-img + .tour-content h3 {
     color: #ffffff !important;
     text-shadow: 0 2px 5px rgba(0,0,0,0.6) !important;
 }
@@ -8228,9 +8228,7 @@ body,
 .service-card p, .service-card .service-desc {
     color: var(--text-secondary) !important;
 }
-.tour-card h3 {
-    color: var(--text-primary) !important;
-}
+/* Eliminado .tour-card h3 global override para no pisar inline styles o overlay */
 .tour-card p, .tour-card span {
     color: var(--text-secondary) !important;
 }
@@ -8538,8 +8536,7 @@ body {
 }
 
 .destination-page-hero,
-.destinations-hub-hero,
-.page-banner {
+.destinations-hub-hero {
     padding-top: clamp(8rem, 12vw, 11rem) !important;
     padding-bottom: clamp(4.5rem, 8vw, 7rem) !important;
     background:
@@ -8594,6 +8591,10 @@ body {
     background:
         radial-gradient(circle at top right, rgba(0, 163, 255, 0.22), transparent 18rem),
         linear-gradient(145deg, #05152f 0%, #082d61 100%) !important;
+}
+
+.contact-info-card h4, .contact-info-card p, .contact-info-card a, .contact-info-card span {
+    color: #ffffff !important;
 }
 
 .contact-form-card {
@@ -8812,3 +8813,71 @@ body {
         height: 56px !important;
     }
 }
+
+/* ==========================================================================
+   LEGAL PAGES STYLES (Audit Refactor)
+   ========================================================================== */
+
+:root {
+    --color-legal-text: #0f172a;
+    --color-legal-muted: #475569;
+    --color-legal-dark: #071a35;
+    --color-legal-dark-end: #0d2d58;
+    --color-legal-on-dark: #f8fafc;
+    --color-legal-on-dark-muted: #cbd5e1;
+    --color-legal-border: #dbe5ef;
+    --color-legal-surface: #ffffff;
+}
+
+/* Override previous .page-banner styles with high specificity */
+body .page-banner {
+    min-height: 0 !important;
+    padding: clamp(7rem, 10vw, 8.5rem) 0 clamp(3rem, 5vw, 4rem) !important;
+    background: linear-gradient(135deg, var(--color-legal-dark), var(--color-legal-dark-end)) !important;
+    border-bottom: none;
+}
+
+body .page-banner__title {
+    margin: 0;
+    color: var(--color-legal-on-dark);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    font-size: clamp(2.4rem, 5vw, 4.25rem);
+    line-height: 1.05;
+    text-align: center;
+}
+
+body .page-banner__meta {
+    max-width: 52rem;
+    margin: 1rem auto 0;
+    color: var(--color-legal-on-dark-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.legal-page__content {
+    padding: clamp(2.5rem, 5vw, 4.5rem) 1rem !important;
+}
+
+.legal-prose {
+    width: min(100%, 72ch);
+    margin-inline: auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: var(--color-legal-surface);
+    border: 1px solid var(--color-legal-border);
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgb(15 23 42 / 8%);
+}
+
+.legal-prose h2 {
+    margin-top: 2.5rem;
+    color: var(--color-legal-text);
+    font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+    line-height: 1.2;
+}
+
+.legal-prose p,
+.legal-prose li {
+    color: #334155;
+    line-height: 1.75;
+}

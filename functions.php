@@ -336,7 +336,7 @@ function me_transfers_force_core_styles() {
 		}
 	</style>';
 }
-add_action( 'wp_head', 'me_transfers_force_core_styles', 9999 );
+// add_action( 'wp_head', 'me_transfers_force_core_styles', 9999 );
 
 
 

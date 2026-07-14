@@ -20,10 +20,10 @@ if ( ! defined( 'ME_TRANSFERS_LEGAL_PAGES_SYNC_VERSION' ) ) {
  */
 function me_transfers_get_legal_pages_catalog() {
 	return array(
-		'privacidad'             => 'PolÃ­ticas de privacidad',
-		'terminos-y-condiciones' => 'TÃ©rminos y Condiciones regulan la contrataciÃ³n',
+		'privacidad'             => 'Políticas de privacidad',
+		'terminos-y-condiciones' => 'Términos y Condiciones regulan la contratación',
 		'aviso-legal'            => 'Aviso Legal',
-		'cookie'                 => 'PolÃ­tica de Cookies',
+		'cookie'                 => 'Política de Cookies',
 	);
 }
 
@@ -68,7 +68,7 @@ function me_transfers_sync_legal_pages() {
 
 	update_option( 'me_transfers_legal_pages_sync_version', ME_TRANSFERS_LEGAL_PAGES_SYNC_VERSION, false );
 }
-add_action( 'init', 'me_transfers_sync_legal_pages', 20 );
+// add_action( 'init', 'me_transfers_sync_legal_pages', 20 );
 
 /**
  * Syncs legal pages in admin when required.
@@ -82,7 +82,7 @@ function me_transfers_maybe_sync_legal_pages() {
 
 	me_transfers_sync_legal_pages();
 }
-add_action( 'admin_init', 'me_transfers_maybe_sync_legal_pages' );
+// add_action( 'admin_init', 'me_transfers_maybe_sync_legal_pages' );
 
 /**
  * Forces legal pages sync on theme activation.
@@ -109,3 +109,41 @@ function me_transfers_redirect_legacy_cookies_page() {
 	exit;
 }
 add_action( 'template_redirect', 'me_transfers_redirect_legacy_cookies_page' );
+
+/**
+ * Repairs mojibake UTF-8 errors in legal page titles.
+ * To be removed once run.
+ */
+function me_transfers_repair_legal_titles_utf8() {
+	if ( get_option( 'me_transfers_legal_titles_utf8_v2' ) ) {
+		return;
+	}
+
+	$catalog = me_transfers_get_legal_pages_catalog();
+
+	foreach ( $catalog as $slug => $correct_title ) {
+		$page = get_page_by_path( $slug, OBJECT, 'page' );
+
+		if ( ! $page instanceof WP_Post ) {
+			continue;
+		}
+
+		$role = get_post_meta( $page->ID, '_me_transfers_page_role', true );
+
+		if ( 'legal' !== $role ) {
+			continue;
+		}
+
+		if ( $page->post_title !== $correct_title ) {
+			wp_update_post(
+				array(
+					'ID'         => $page->ID,
+					'post_title' => $correct_title,
+				)
+			);
+		}
+	}
+
+	update_option( 'me_transfers_legal_titles_utf8_v2', 1, false );
+}
+add_action( 'init', 'me_transfers_repair_legal_titles_utf8' );
