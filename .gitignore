@@ -1,0 +1,37 @@
+# WordPress Theme — Development files
+# These should never be committed to production repository
+
+# Temporary and debug scripts
+test.php
+scratch.php
+debug.php
+verify_*.php
+fix_*.php
+remove_*.php
+update_*.php
+split_page.php
+*.local.php
+
+# Log files
+*.log
+debug.log
+error.log
+
+# Zip / compressed archives (upload via wp-admin or deploy pipeline)
+*.zip
+*.tar.gz
+
+# macOS
+.DS_Store
+
+# Editor/IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node (if any build tools are introduced)
+node_modules/
+npm-debug.log
+yarn-error.log

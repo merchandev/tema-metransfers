@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Tours Management Logic
  *
@@ -226,8 +226,9 @@ function me_transfers_sync_tour_pages() {
 	$catalog = me_transfers_get_tour_catalog();
 
 	foreach ( $catalog as $slug => $tour ) {
-		$page = get_page_by_path( $slug );
-		if ( ! $page ) {
+		$page    = get_page_by_path( $slug );
+		$trashed = get_page_by_path( $slug . '__trashed' );
+		if ( ! $page && ! $trashed ) {
 			wp_insert_post( array(
 				'post_title'     => $tour['title'],
 				'post_name'      => $slug,
@@ -241,4 +242,4 @@ function me_transfers_sync_tour_pages() {
 	}
 }
 add_action( 'after_switch_theme', 'me_transfers_sync_tour_pages' );
-add_action( 'admin_init', 'me_transfers_sync_tour_pages' );
+// admin_init sync removed — use after_switch_theme only.

@@ -321,13 +321,16 @@ function initDestinationRequestForm() {
             
             const response = await fetch(ajaxConfig.ajaxUrl, {
                 method: 'POST',
-                body: Object.fromEntries(formData) ? new URLSearchParams(formData) : formData, // URLSearchParams logic for standard form
+                body: new URLSearchParams(formData), // Standard text-only form serialization
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
             });
             
-            const result = await response.json();
+            if ( ! response.ok ) {
+                    throw new Error( 'Server error: ' + response.status );
+                }
+                const result = await response.json();
             
             if (result.success) {
                 msgContainer.style.color = '#10b981'; // success green

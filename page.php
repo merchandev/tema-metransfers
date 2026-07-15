@@ -15,8 +15,6 @@ get_header();
 
 		$current_post        = get_post();
 		$current_destination = me_transfers_get_current_destination( $current_post );
-		$hub_content_plain   = trim( wp_strip_all_tags( strip_shortcodes( get_the_content() ) ) );
-
 		if ( me_transfers_is_destinations_hub( $current_post ) ) :
 			get_template_part( 'template-parts/page/content', 'destinations-hub' );
 		elseif ( me_transfers_is_faq_page( $current_post ) ) :

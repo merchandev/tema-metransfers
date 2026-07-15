@@ -20,6 +20,11 @@ require_once get_template_directory() . '/includes/request-cpt.php';
 require_once get_template_directory() . '/includes/tour-bookings.php';
 require_once get_template_directory() . '/includes/rutas-cpt.php';
 
+// Migration safety switch — set to false once initial migration is done.
+if ( ! defined( 'ME_TRANSFERS_ENABLE_MIGRATIONS' ) ) {
+	define( 'ME_TRANSFERS_ENABLE_MIGRATIONS', false );
+}
+
 // Centralized Versioning
 if ( ! defined( 'ME_TRANSFERS_VERSION' ) ) {
 	define( 'ME_TRANSFERS_VERSION', wp_get_theme()->get( 'Version' ) );
@@ -276,9 +281,12 @@ function me_transfers_get_section_url( $section = 'search' ) {
  */
 add_filter( 'wp_nav_menu_items', 'me_transfers_add_tours_menu_item', 10, 2 );
 function me_transfers_add_tours_menu_item( $items, $args ) {
-    if ( $args->theme_location == 'menu-1' || $args->menu_id == 'primary-menu' ) {
-        $tours_link = '<li class="menu-item"><a href="' . home_url( '/tours' ) . '">Tours</a></li>';
-        $items .= $tours_link;
+    if ( $args->theme_location === 'menu-1' || $args->menu_id === 'primary-menu' ) {
+        $tours_url = home_url( '/tours/' );
+        // Only inject if this URL is not already in the menu HTML.
+        if ( strpos( $items, $tours_url ) === false && strpos( $items, '/tours"' ) === false ) {
+            $items .= '<li class="menu-item"><a href="' . esc_url( $tours_url ) . '">Tours</a></li>';
+        }
     }
     return $items;
 }
@@ -368,7 +376,7 @@ function me_transfers_restrict_checkhoteles_access() {
         // Permitir listas de Custom Post Types
         if ( $pagenow === 'edit.php' && isset($_GET['post_type']) ) {
             $allowed_cpts = array('hotel_partner', 'mt_request', 'gyg_review');
-            if ( in_array($_GET['post_type'], $allowed_cpts) ) {
+            if ( in_array( sanitize_key( wp_unslash( $_GET['post_type'] ) ), $allowed_cpts, true ) ) {
                 $is_allowed = true;
             }
         }
@@ -392,9 +400,10 @@ function me_transfers_restrict_checkhoteles_access() {
         
         // Permitir páginas de plugins
         if ( isset($_GET['page']) ) {
+            $requested_page  = sanitize_key( wp_unslash( $_GET['page'] ) );
             $allowed_plugins = array('sg-cachepress', 'sg-security', 'agente-ia', 'wp-agente-ia', 'gyg-reviews');
             foreach ($allowed_plugins as $plugin) {
-                if ( strpos($_GET['page'], $plugin) !== false ) {
+                if ( $requested_page === $plugin || str_starts_with( $requested_page, $plugin ) ) {
                     $is_allowed = true;
                     break;
                 }
@@ -448,6 +457,9 @@ function me_transfers_remove_default_dashboard_widgets() {
  * One-off migration: Copy hardcoded content to post_content for SEO & Editing
  */
 function me_transfers_migrate_content_to_editor() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
     if ( get_option( 'me_transfers_content_migrated_v1' ) ) {
         return;
     }
@@ -507,12 +519,17 @@ function me_transfers_migrate_content_to_editor() {
 
     update_option( 'me_transfers_content_migrated_v1', true );
 }
-add_action( 'admin_init', 'me_transfers_migrate_content_to_editor' );
+if ( defined( 'ME_TRANSFERS_ENABLE_MIGRATIONS' ) && ME_TRANSFERS_ENABLE_MIGRATIONS ) {
+	add_action( 'admin_init', 'me_transfers_migrate_content_to_editor' );
+}
 
 /**
  * Migration v2: Copy hardcoded content to post_content for Services
  */
 function me_transfers_migrate_services_to_editor() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
     if ( get_option( 'me_transfers_content_migrated_services' ) ) {
         return;
     }
@@ -530,12 +547,17 @@ function me_transfers_migrate_services_to_editor() {
 
     update_option( 'me_transfers_content_migrated_services', true );
 }
-add_action( 'admin_init', 'me_transfers_migrate_services_to_editor' );
+if ( defined( 'ME_TRANSFERS_ENABLE_MIGRATIONS' ) && ME_TRANSFERS_ENABLE_MIGRATIONS ) {
+	add_action( 'admin_init', 'me_transfers_migrate_services_to_editor' );
+}
 
 /**
  * Migration v3: Move Legal Pages from hardcoded to database
  */
 function me_transfers_migrate_legal_to_editor() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
     if ( get_option( 'me_transfers_content_migrated_legal' ) ) {
         return;
     }
@@ -697,7 +719,9 @@ function me_transfers_migrate_legal_to_editor() {
 
     update_option( 'me_transfers_content_migrated_legal', true );
 }
-add_action( 'admin_init', 'me_transfers_migrate_legal_to_editor' );
+if ( defined( 'ME_TRANSFERS_ENABLE_MIGRATIONS' ) && ME_TRANSFERS_ENABLE_MIGRATIONS ) {
+	add_action( 'admin_init', 'me_transfers_migrate_legal_to_editor' );
+}
 
 
 /* ==========================================================================
@@ -727,7 +751,8 @@ add_filter( 'pre_get_document_title', function( $title ) {
 }, 999 );
 
 add_action( 'wp_head', function() {
-    if ( is_front_page() || is_home() ) {
+    // Only output meta description if Yoast SEO is NOT active (avoids duplication).
+    if ( ( is_front_page() || is_home() ) && ! defined( 'WPSEO_VERSION' ) && ! function_exists( 'the_seo_framework' ) ) {
         echo '<meta name="description" content="Traslados Privados y Tours VIP en Barcelona. Reserva tu servicio de chófer privado en MeTransfers para un viaje seguro, cómodo y exclusivo.">' . "\n";
     }
 }, 1 );

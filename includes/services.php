@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Services Management Logic
  *
@@ -93,8 +93,9 @@ function me_transfers_sync_service_pages() {
 	$catalog = me_transfers_get_service_catalog();
 
 	foreach ( $catalog as $slug => $service ) {
-		$page = get_page_by_path( $slug );
-		if ( ! $page ) {
+		$page    = get_page_by_path( $slug );
+		$trashed = get_page_by_path( $slug . '__trashed' );
+		if ( ! $page && ! $trashed ) {
 			wp_insert_post( array(
 				'post_title'     => $service['title'],
 				'post_name'      => $slug,
@@ -107,6 +108,6 @@ function me_transfers_sync_service_pages() {
 		}
 	}
 }
+// Sync service pages ONLY on theme activation — not on every init/admin_init.
+// Re-enable the lines below temporarily if pages need to be re-synced.
 add_action( 'after_switch_theme', 'me_transfers_sync_service_pages' );
-add_action( 'admin_init', 'me_transfers_sync_service_pages' );
-add_action( 'init', 'me_transfers_sync_service_pages', 20 ); // Also on init to ensure they exist for guests proxying through admin-initialized state

@@ -9,7 +9,7 @@ get_header();
 
 $search_url = esc_url( me_transfers_get_section_url( 'search' ) );
 $tours_url  = esc_url( me_transfers_get_section_url( 'tours' ) );
-$video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/06/traslados_privados_en_barcelona__reserva_online_facil_y_rapido_v1-1080p.mp4' );
+// $video_url removed (was pointing to staging URL — update if needed).
 ?>
 
 <main id="primary" class="site-main front-page-main">
