@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Services Management Logic
  *
