@@ -14,10 +14,10 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 
 <main id="primary" class="site-main front-page-main">
 
-	<!-- HERO: Cinematogr&aacute;fico Full-Screen con Video Local -->
+	<!-- HERO: Cinematográfico Full-Screen con Video Local -->
 	<section class="hero-section">
 
-		<!-- V&iacute;deo de fondo - incrustado desde Vimeo -->
+		<!-- Vídeo de fondo - incrustado desde Vimeo -->
 		<iframe 
 			class="hero-video-bg" 
 			src="https://player.vimeo.com/video/1200289297?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&quality=1080p,720p,540p" 
@@ -26,7 +26,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 			allowfullscreen
 		></iframe>
 
-		<!-- Overlays atmosf&eacute;ricos -->
+		<!-- Overlays atmosféricos -->
 		<div class="hero-overlay-dark"></div>
 		<div class="hero-overlay-vignette"></div>
 
@@ -38,7 +38,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 					<!-- Pill badge superior -->
 					<div class="hero-badge">
 						<span class="hero-badge-dot"></span>
-						Traslados Privados &amp; Tours Premium &mdash; Espa&ntilde;a
+						Traslados Privados &amp; Tours Premium &mdash; España
 					</div>
 
 					<!-- Titular -->
@@ -47,9 +47,9 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 						<span class="hero-title-highlight">Barcelona</span>
 					</h1>
 
-					<!-- Subt&iacute;tulo -->
+					<!-- Subtítulo -->
 					<p class="hero-subtitle">
-						Tu ch&oacute;fer privado en Barcelona te espera. Veh&iacute;culos de alta gama para traslados al aeropuerto, tours y eventos corporativos. Asegura tu viaje con confirmaci&oacute;n instant&aacute;nea en menos de 2 minutos.
+						Tu chófer privado en Barcelona te espera. Vehículos de alta gama para traslados al aeropuerto, tours y eventos corporativos. Asegura tu viaje con confirmación instantánea en menos de 2 minutos.
 					</p>
 
 					<!-- Botones CTA -->
@@ -108,7 +108,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 		<div class="container">
 			<header class="section-header section-header--compact gs-reveal">
 				<h2 class="section-title">Busca tu <span class="text-gradient">Destino</span></h2>
-				<p>Selecciona tu ruta y reserva con confirmaci&oacute;n inmediata y conductor profesional.</p>
+				<p>Selecciona tu ruta y reserva con confirmación inmediata y conductor profesional.</p>
 			</header>
 			<div class="search-plugin-wrapper gs-reveal">
 				<?php if ( shortcode_exists( 'premium_transfers_search' ) ) : ?>
@@ -127,8 +127,8 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 	<section id="services" class="services-section section">
 		<div class="container">
 			<header class="section-header gs-reveal">
-				<h2 class="section-title">Servicios de <span class="text-gradient">&Eacute;lite</span></h2>
-				<p>Privacidad, comodidad absoluta y veh&iacute;culos de alta gama listos para llevarte por las mejores rutas y carreteras de Espa&ntilde;a.</p>
+				<h2 class="section-title">Servicios de <span class="text-gradient">Élite</span></h2>
+				<p>Privacidad, comodidad absoluta y vehículos de alta gama listos para llevarte por las mejores rutas y carreteras de España.</p>
 			</header>
 
 			<div class="services-grid">
@@ -155,11 +155,11 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 			<h2 class="section-title">Nuestra <span class="text-gradient">Flota Elegante</span></h2>
 			<p>Gama alta de Mercedes: Clase E, Clase V y la majestuosa Clase S. Perfectamente mantenida para ofrecer la mejor experiencia en carretera.</p>
 			<br>
-			<a href="<?php echo $search_url; ?>" class="btn btn-primary gs-stagger">Solicitar Veh&iacute;culo</a>
+			<a href="<?php echo $search_url; ?>" class="btn btn-primary gs-stagger">Solicitar Vehículo</a>
 		</div>
 	</section>
 
-	<!-- RESE&Ntilde;AS GetYourGuide -->
+	<!-- RESEÑAS GetYourGuide -->
 	<section class="gyg-section section">
 		<div class="container">
 			<header class="section-header section-header--compact gs-reveal">
@@ -180,7 +180,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 		<div class="container">
 			<header class="section-header gs-reveal">
 				<h2 class="section-title">Tours y <span class="text-gradient">Excursiones</span></h2>
-				<p>Descubre Barcelona y Catalu&ntilde;a con experiencias privadas dise&ntilde;adas para combinar cultura, paisaje y confort premium.</p>
+				<p>Descubre Barcelona y Cataluña con experiencias privadas diseñadas para combinar cultura, paisaje y confort premium.</p>
 			</header>
 
 			<?php $tours_catalog = me_transfers_get_tour_catalog(); ?>
@@ -200,7 +200,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 	</section>
 
 	<!-- ==========================================
-	     BLOG: &Uacute;ltimas Entradas
+	     BLOG: Últimas Entradas
 	     ========================================== -->
 	<?php
 	$blog_query_args = array(
@@ -230,8 +230,8 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 	<section id="blog" class="fp-blog-section section">
 		<div class="container">
 			<header class="section-header gs-reveal">
-				<h2 class="section-title">Blog &amp; <span class="text-gradient">Gu&iacute;as de Viaje</span></h2>
-				<p>Consejos, rutas y todo lo que necesitas saber para viajar en Barcelona y Catalu&ntilde;a con estilo.</p>
+				<h2 class="section-title">Blog &amp; <span class="text-gradient">Guías de Viaje</span></h2>
+				<p>Consejos, rutas y todo lo que necesitas saber para viajar en Barcelona y Cataluña con estilo.</p>
 			</header>
 
 			<?php if ( $blog_posts->have_posts() ) : ?>
@@ -251,7 +251,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 							</h3>
 
 							<p class="fp-blog-card__excerpt">
-								<?php echo wp_trim_words( get_the_excerpt(), 18, 'â€¦' ); ?>
+								<?php echo wp_trim_words( get_the_excerpt(), 18, '"¦' ); ?>
 							</p>
 
 							<div class="fp-blog-card__meta">
@@ -259,7 +259,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 									<?php echo get_the_date( 'd M Y' ); ?>
 								</time>
 								<a href="<?php the_permalink(); ?>" class="fp-blog-card__read-more">
-									Leer m&aacute;s
+									Leer más
 									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 								</a>
 							</div>
@@ -269,14 +269,14 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 					<?php endwhile; ?>
 				</div>
 			<?php else : ?>
-				<p class="fp-blog-empty">No hay entradas publicadas del blog para mostrar todav&iacute;a.</p>
+				<p class="fp-blog-empty">No hay entradas publicadas del blog para mostrar todavía.</p>
 			<?php endif; ?>
 
 			<?php wp_reset_postdata(); ?>
 
 			<div class="fp-blog-cta gs-reveal">
 				<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/blog/' ) ); ?>" class="btn btn-outline">
-					Ver todos los art&iacute;culos
+					Ver todos los artículos
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 				</a>
 			</div>
@@ -288,8 +288,8 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 <section id="contacto" class="contact-section section">
 <div class="container">
 <header class="section-header gs-reveal">
-<h2 class="section-title">Cont&aacute;ctanos <span class="text-gradient">Directamente</span></h2>
-<p>&iquest;Tienes alguna pregunta sobre nuestros servicios? Env&iacute;anos un mensaje y te responderemos lo antes posible.</p>
+<h2 class="section-title">Contáctanos <span class="text-gradient">Directamente</span></h2>
+<p>¿Tienes alguna pregunta sobre nuestros servicios? Envíanos un mensaje y te responderemos lo antes posible.</p>
 </header>
 
 <div class="contact-grid gs-reveal">
@@ -300,7 +300,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3A2 2 0 0 1 8.6 3.72c.12.92.34 1.82.67 2.69a2 2 0 0 1-.45 2.11L7.73 9.61a16 16 0 0 0 6.66 6.66l1.09-1.09a2 2 0 0 1 2.11-.45c.87.33 1.77.55 2.69.67A2 2 0 0 1 22 16.92z"/></svg>
 </div>
 <div>
-<h4>Tel&eacute;fono</h4>
+<h4>Teléfono</h4>
 <a href="tel:+34662024136">+34 662 024 136</a>
 </div>
 </div>
@@ -320,8 +320,8 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
 </div>
 <div>
-<h4>Ubicaci&oacute;n</h4>
-<p>Barcelona, Espa&ntilde;a</p>
+<h4>Ubicación</h4>
+<p>Barcelona, España</p>
 </div>
 </div>
 
@@ -331,7 +331,7 @@ $video_url  = esc_url( 'https://staging2.metransfers.es/wp-content/uploads/2026/
 </div>
 <div>
 <h4>Horario</h4>
-<p>24 horas / 7 d&iacute;as</p>
+<p>24 horas / 7 días</p>
 </div>
 </div>
 
@@ -361,19 +361,19 @@ Escribir por WhatsApp
 
 <div class="contact-form-field">
 <label for="cf-name">Nombre y Apellidos *</label>
-<input type="text" id="cf-name" name="name" required placeholder="Ej. Mar&iacute;a Garc&iacute;a">
+<input type="text" id="cf-name" name="name" required placeholder="Ej. María García">
 </div>
 <div class="contact-form-field">
-<label for="cf-email">Correo electr&oacute;nico *</label>
+<label for="cf-email">Correo electrónico *</label>
 <input type="email" id="cf-email" name="email" required placeholder="Ej. hola@tuemail.com">
 </div>
 <div class="contact-form-field">
-<label for="cf-phone">Tel&eacute;fono de Contacto (opcional)</label>
+<label for="cf-phone">Teléfono de Contacto (opcional)</label>
 <input type="tel" id="cf-phone" name="phone" placeholder="Ej. +34 600 000 000">
 </div>
 <div class="contact-form-field contact-form-field--full">
-<label for="cf-message">&iquest;C&oacute;mo podemos ayudarte? *</label>
-<textarea id="cf-message" name="message" required rows="4" placeholder="Ind&iacute;canos los detalles de tu traslado, fechas, rutas o dudas..."></textarea>
+<label for="cf-message">¿Cómo podemos ayudarte? *</label>
+<textarea id="cf-message" name="message" required rows="4" placeholder="Indícanos los detalles de tu traslado, fechas, rutas o dudas..."></textarea>
 </div>
 <div class="contact-form-field contact-form-field--full">
 <button type="submit" class="btn btn-primary contact-form-submit">

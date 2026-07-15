@@ -12,7 +12,7 @@
 	<div class="footer-main">
 		<div class="container footer-grid">
 
-			<!-- Columna 1: Branding + DescripciÃƒÂ³n -->
+			<!-- Columna 1: Branding + Descripción -->
 			<div class="footer-col footer-col--brand">
 				<?php if ( has_custom_logo() ) :
 					the_custom_logo();
@@ -98,8 +98,8 @@
 		<div class="container footer-bottom-inner">
 			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <strong>Me Transfers Barcelona</strong>. Todos los derechos reservados.</p>
 			<nav class="footer-legal-links" aria-label="Legal">
-				<a href="<?php echo esc_url( home_url( '/privacidad' ) ); ?>">Pol&iacute;tica de Privacidad</a>
-				<a href="<?php echo esc_url( home_url( '/terminos-y-condiciones' ) ); ?>">T&eacute;rminos y Condiciones</a>
+				<a href="<?php echo esc_url( home_url( '/privacidad' ) ); ?>">Política de Privacidad</a>
+				<a href="<?php echo esc_url( home_url( '/terminos-y-condiciones' ) ); ?>">Términos y Condiciones</a>
 				<a href="<?php echo esc_url( home_url( '/aviso-legal' ) ); ?>">Aviso Legal</a>
 				<a href="<?php echo esc_url( home_url( '/cookie' ) ); ?>">Cookies</a>
 			</nav>

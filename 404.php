@@ -1,11 +1,11 @@
 <?php
 /**
- * 404 - PÃ¡gina no encontrada
- * Sigue las pautas de Google para pÃ¡ginas de error 404:
- *  â€“ Devuelve HTTP 404 (WordPress lo hace automÃ¡ticamente para este template)
- *  â€“ Ofrece navegaciÃ³n Ãºtil para que el usuario encuentre lo que busca
- *  â€“ No indexada por los motores de bÃºsqueda (noindex via wp_head)
- *  â€“ DiseÃ±o consistente con el resto del sitio
+ * 404 - Página no encontrada
+ * Sigue las pautas de Google para páginas de error 404:
+ *  - Devuelve HTTP 404 (WordPress lo hace automáticamente para este template)
+ *  - Ofrece navegación útil para que el usuario encuentre lo que busca
+ *  - No indexada por los motores de búsqueda (noindex via wp_head)
+ *  - Diseño consistente con el resto del sitio
  *
  * @package Me_Transfers
  */
@@ -18,7 +18,7 @@ if ( ! headers_sent() ) {
 get_header();
 ?>
 
-<main id="primary" class="site-main" role="main" aria-label="<?php esc_attr_e( 'PÃ¡gina no encontrada', 'me-transfers' ); ?>">
+<main id="primary" class="site-main" role="main" aria-label="<?php esc_attr_e( 'Página no encontrada', 'me-transfers' ); ?>">
 
     <section class="error-404 not-found section-404">
 
@@ -32,7 +32,7 @@ get_header();
 
         <div class="container error-404-inner">
 
-            <!-- NÃºmero 404 gigante -->
+            <!-- Número 404 gigante -->
             <div class="error-404-number" aria-hidden="true">
                 <span class="error-404-digit">4</span>
                 <span class="error-404-zero">
@@ -54,11 +54,11 @@ get_header();
                 <p class="error-404-badge">ERROR 404</p>
 
                 <h1 class="error-404-title">
-                    <?php esc_html_e( 'PÃ¡gina no encontrada', 'me-transfers' ); ?>
+                    <?php esc_html_e( 'Página no encontrada', 'me-transfers' ); ?>
                 </h1>
 
                 <p class="error-404-desc">
-                    <?php esc_html_e( 'La pÃ¡gina que buscas no existe o ha sido movida. No te preocupes â€” puedes reservar tu traslado desde aquÃ­ o explorar nuestros servicios.', 'me-transfers' ); ?>
+                    <?php esc_html_e( 'La página que buscas no existe o ha sido movida. No te preocupes "” puedes reservar tu traslado desde aquí o explorar nuestros servicios.', 'me-transfers' ); ?>
                 </p>
 
                 <!-- Acciones principales -->
@@ -73,7 +73,7 @@ get_header();
                     </a>
                 </div>
 
-                <!-- BÃºsqueda rÃ¡pida del sitio -->
+                <!-- Búsqueda rápida del sitio -->
                 <div class="error-404-search">
                     <p class="error-404-search-label"><?php esc_html_e( 'O busca en nuestro sitio:', 'me-transfers' ); ?></p>
                     <?php
@@ -81,9 +81,9 @@ get_header();
                     ?>
                 </div>
 
-                <!-- Links de navegaciÃ³n Ãºtiles -->
-                <nav class="error-404-nav" aria-label="<?php esc_attr_e( 'PÃ¡ginas sugeridas', 'me-transfers' ); ?>">
-                    <p class="error-404-nav-label"><?php esc_html_e( 'PÃ¡ginas populares:', 'me-transfers' ); ?></p>
+                <!-- Links de navegación útiles -->
+                <nav class="error-404-nav" aria-label="<?php esc_attr_e( 'Páginas sugeridas', 'me-transfers' ); ?>">
+                    <p class="error-404-nav-label"><?php esc_html_e( 'Páginas populares:', 'me-transfers' ); ?></p>
                     <ul class="error-404-nav-list">
                         <li>
                             <a href="<?php echo esc_url( me_transfers_get_section_url( 'search' ) ); ?>">

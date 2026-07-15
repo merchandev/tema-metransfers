@@ -48,7 +48,7 @@ if ( ! $hero_bg ) {
                         <?php if($origen && $destino): ?>
                             Traslado privado desde <strong><?php echo esc_html($origen); ?></strong> hasta <strong><?php echo esc_html($destino); ?></strong>. 
                         <?php endif; ?>
-                        VehÃ­culos Mercedes-Benz, precio cerrado y conductor profesional esperÃ¡ndote.
+                        Vehículos Mercedes-Benz, precio cerrado y conductor profesional esperándote.
                     </p>
 
                     <div class="hero-actions">
@@ -108,24 +108,24 @@ if ( ! $hero_bg ) {
     <!-- QUE INCLUYE -->
     <section class="ruta-incluye section">
         <div class="container gs-reveal">
-            <h2 class="section-title text-center">Â¿QuÃ© incluye tu reserva?</h2>
+            <h2 class="section-title text-center">¿Qué incluye tu reserva?</h2>
             <div class="tours-grid" style="margin-top: 2rem;">
                 <article class="tour-card">
                     <div class="tour-content">
                         <h3 style="color:#004E9A;">Meet & Greet</h3>
-                        <p>Tu conductor te estarÃ¡ esperando en la terminal de llegadas o lobby de tu hotel con un cartel con tu nombre.</p>
+                        <p>Tu conductor te estará esperando en la terminal de llegadas o lobby de tu hotel con un cartel con tu nombre.</p>
                     </div>
                 </article>
                 <article class="tour-card">
                     <div class="tour-content">
                         <h3 style="color:#004E9A;">Seguimiento de Vuelo</h3>
-                        <p>Monitorizamos tu vuelo. Si hay retrasos, ajustamos la hora de recogida sin ningÃºn cargo extra.</p>
+                        <p>Monitorizamos tu vuelo. Si hay retrasos, ajustamos la hora de recogida sin ningún cargo extra.</p>
                     </div>
                 </article>
                 <article class="tour-card">
                     <div class="tour-content">
                         <h3 style="color:#004E9A;">Precio Cerrado</h3>
-                        <p>Sin taxÃ­metros, sin tarifas dinÃ¡micas, sin sorpresas. El precio que reservas es el que pagas.</p>
+                        <p>Sin taxímetros, sin tarifas dinámicas, sin sorpresas. El precio que reservas es el que pagas.</p>
                     </div>
                 </article>
             </div>

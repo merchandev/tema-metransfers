@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file â€” Blog index.
+ * The main template file "” Blog index.
  *
  * @package Me_Transfers
  */
@@ -13,9 +13,9 @@ get_header();
 	<!-- Blog Hero Banner -->
 	<section class="blog-index-hero">
 		<div class="container blog-index-hero__inner">
-			<span class="blog-index-eyebrow"><?php esc_html_e( 'GuÃ­as, consejos y noticias', 'me-transfers' ); ?></span>
+			<span class="blog-index-eyebrow"><?php esc_html_e( 'Guías, consejos y noticias', 'me-transfers' ); ?></span>
 			<h1 class="blog-index-title"><?php esc_html_e( 'Blog Me Transfers', 'me-transfers' ); ?></h1>
-			<p class="blog-index-intro"><?php esc_html_e( 'Descubre los mejores destinos, rutas y consejos de viaje para disfrutar de Barcelona y toda EspaÃ±a en traslado privado de lujo.', 'me-transfers' ); ?></p>
+			<p class="blog-index-intro"><?php esc_html_e( 'Descubre los mejores destinos, rutas y consejos de viaje para disfrutar de Barcelona y toda España en traslado privado de lujo.', 'me-transfers' ); ?></p>
 		</div>
 	</section>
 
@@ -37,7 +37,7 @@ get_header();
 								</h2>
 
 								<p class="blog-index-card__excerpt">
-									<?php echo esc_html( wp_trim_words( get_the_excerpt(), 20, 'â€¦' ) ); ?>
+									<?php echo esc_html( wp_trim_words( get_the_excerpt(), 20, '"¦' ) ); ?>
 								</p>
 
 								<div class="blog-index-card__footer">
@@ -45,7 +45,7 @@ get_header();
 										<?php echo esc_html( get_the_date( 'd M Y' ) ); ?>
 									</time>
 									<a href="<?php the_permalink(); ?>" class="blog-index-card__link">
-										<?php esc_html_e( 'Leer artÃ­culo', 'me-transfers' ); ?>
+										<?php esc_html_e( 'Leer artículo', 'me-transfers' ); ?>
 										<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 									</a>
 								</div>
@@ -65,7 +65,7 @@ get_header();
 
 			<?php else : ?>
 				<div class="blog-index-empty">
-					<p><?php esc_html_e( 'No hay entradas publicadas todavÃ­a.', 'me-transfers' ); ?></p>
+					<p><?php esc_html_e( 'No hay entradas publicadas todavía.', 'me-transfers' ); ?></p>
 				</div>
 			<?php endif; ?>
 		</div>

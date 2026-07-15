@@ -2,7 +2,7 @@
 /**
  * Template Name: Tours y Excursiones
  *
- * P&aacute;gina especial para mostrar los tours y excursiones.
+ * Página especial para mostrar los tours y excursiones.
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 	<section class="hero-section hero-tours" style="background-image: linear-gradient(to bottom, rgba(0,28,56,0.7), rgba(0,28,56,0.9)), url('https://images.unsplash.com/photo-1583422409516-1500d05a0fc1?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 120px 20px; text-align: center; color: white;">
 		<div class="hero-content" style="max-width: 800px; margin: 0 auto;">
 			<h1 style="color: white; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Tours y Excursiones</h1>
-			<p style="font-size: clamp(1.1rem, 2vw, 1.3rem); opacity: 0.9; line-height: 1.6; font-weight: 300;">Descubre Barcelona y Catalu&ntilde;a con experiencias privadas dise&ntilde;adas para combinar cultura, paisaje y confort premium.</p>
+			<p style="font-size: clamp(1.1rem, 2vw, 1.3rem); opacity: 0.9; line-height: 1.6; font-weight: 300;">Descubre Barcelona y Cataluña con experiencias privadas diseñadas para combinar cultura, paisaje y confort premium.</p>
 		</div>
 	</section>
 
@@ -30,7 +30,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="tour-content" style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Descubre Barcelona con un recorrido por sus monumentos ic&oacute;nicos, como la Sagrada Familia, el Barrio G&oacute;tico y el Paseo de Gracia. Disfruta de la arquitectura de Gaud&iacute; y la vibrante cultura catalana en un tour inolvidable.</p>
+						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Descubre Barcelona con un recorrido por sus monumentos icónicos, como la Sagrada Familia, el Barrio Gótico y el Paseo de Gracia. Disfruta de la arquitectura de Gaudí y la vibrante cultura catalana en un tour inolvidable.</p>
 						<a href="#contacto" class="tour-btn" style="color: #004E9A; font-weight: 700; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; align-self: flex-start; padding-bottom: 2px;">DETALLES</a>
 					</div>
 				</div>
@@ -43,7 +43,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="tour-content" style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Explora la majestuosa monta&ntilde;a de Montserrat y su monasterio benedictino, hogar de la Virgen de Montserrat. Disfruta de vistas panor&aacute;micas, senderos naturales y la espiritualidad de este emblem&aacute;tico lugar de Catalu&ntilde;a.</p>
+						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Explora la majestuosa montaña de Montserrat y su monasterio benedictino, hogar de la Virgen de Montserrat. Disfruta de vistas panorámicas, senderos naturales y la espiritualidad de este emblemático lugar de Cataluña.</p>
 						<a href="#contacto" class="tour-btn" style="color: #004E9A; font-weight: 700; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; align-self: flex-start; padding-bottom: 2px;">DETALLES</a>
 					</div>
 				</div>
@@ -56,7 +56,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="tour-content" style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Sum&eacute;rgete en las aguas cristalinas y paisajes &uacute;nicos de la Costa Brava. Recorre encantadores pueblos pesqueros, calas escondidas y disfruta de la mejor gastronom&iacute;a mediterr&aacute;nea en un entorno paradis&iacute;aco.</p>
+						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Sumérgete en las aguas cristalinas y paisajes únicos de la Costa Brava. Recorre encantadores pueblos pesqueros, calas escondidas y disfruta de la mejor gastronomía mediterránea en un entorno paradisíaco.</p>
 						<a href="#contacto" class="tour-btn" style="color: #004E9A; font-weight: 700; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; align-self: flex-start; padding-bottom: 2px;">DETALLES</a>
 					</div>
 				</div>
@@ -69,7 +69,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="tour-content" style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Pasea por la hist&oacute;rica ciudad de Girona, con su impresionante casco antiguo, el barrio jud&iacute;o y los coloridos puentes sobre el r&iacute;o Onyar. Un destino lleno de historia, cultura y escenarios de pel&iacute;cula.</p>
+						<p style="color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1;">Pasea por la histórica ciudad de Girona, con su impresionante casco antiguo, el barrio judío y los coloridos puentes sobre el río Onyar. Un destino lleno de historia, cultura y escenarios de película.</p>
 						<a href="#contacto" class="tour-btn" style="color: #004E9A; font-weight: 700; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; align-self: flex-start; padding-bottom: 2px;">DETALLES</a>
 					</div>
 				</div>
@@ -81,8 +81,8 @@ get_header(); ?>
 	<!-- CTA Section -->
 	<section id="contacto" style="padding: 80px 20px; background-color: #0D1B2A; text-align: center; color: white;">
 		<div style="max-width: 700px; margin: 0 auto;">
-			<h2 style="color: white; font-size: 2.2rem; margin-bottom: 20px;">&iquest;Buscas un viaje a medida?</h2>
-			<p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px; line-height: 1.6;">Nuestros expertos locales pueden dise&ntilde;ar una experiencia exclusiva adaptada a tus preferencias. Cont&aacute;ctanos por WhatsApp o formulario para solicitar presupuesto sin compromiso.</p>
+			<h2 style="color: white; font-size: 2.2rem; margin-bottom: 20px;">¿Buscas un viaje a medida?</h2>
+			<p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px; line-height: 1.6;">Nuestros expertos locales pueden diseñar una experiencia exclusiva adaptada a tus preferencias. Contáctanos por WhatsApp o formulario para solicitar presupuesto sin compromiso.</p>
 			
 			<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
 				<a href="https://wa.me/34662024136?text=Hola,%20quiero%20reservar%20un%20tour%20privado" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background-color: #25D366; color: white; padding: 15px 30px; border-radius: 100px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.3s ease;">
