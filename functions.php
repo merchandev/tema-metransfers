@@ -9,15 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-require_once get_template_directory() . '/includes/destinations.php';
-require_once get_template_directory() . '/includes/faq.php';
-require_once get_template_directory() . '/includes/legal-pages.php';
-require_once get_template_directory() . '/includes/seo-page-titles.php';
-require_once get_template_directory() . '/includes/tours.php';
-require_once get_template_directory() . '/includes/services.php';
-require_once get_template_directory() . '/includes/request-cpt.php';
-require_once get_template_directory() . '/includes/tour-bookings.php';
-
 // Centralized Versioning
 if ( ! defined( 'ME_TRANSFERS_VERSION' ) ) {
 	define( 'ME_TRANSFERS_VERSION', wp_get_theme()->get( 'Version' ) );
