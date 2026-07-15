@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Me Transfers functions and definitions
  *
@@ -99,7 +99,7 @@ add_action( 'widgets_init', 'me_transfers_unregister_sidebars', 20 );
 
 /**
  * Removido: me_transfers_prefix_document_title 
- * Para evitar "Keyword Stuffing" y permitir que WordPress (y el usuario en Ajustes) manejen el t�-tulo limpiamente.
+ * Para evitar "Keyword Stuffing" y permitir que WordPress (y el usuario en Ajustes) manejen el t�-tulo limpiamente.
  */
 
 
@@ -293,11 +293,20 @@ function me_transfers_add_tours_menu_item( $items, $args ) {
 
 
 /* ==========================================================================
-   ROL PERSONALIZADO: CHECKHOTELES Y RESTRICCIÓN DE MENÚS
+   ROL PERSONALIZADO: CHECKHOTELES Y RESTRICCION DE MENUS
    ========================================================================== */
 
 // 1. Crear el nuevo rol
-add_action('init', 'me_transfers_create_checkhoteles_role');
+add_action( 'after_switch_theme', 'me_transfers_create_checkhoteles_role' );
+
+// Fallback: crear rol si no existe aun (primera instalacion sin cambio de tema),
+// protegido por transient de larga duracion para no repetirse en cada request.
+add_action( 'init', function() {
+    if ( ! get_role( 'check_hoteles' ) && ! get_transient( 'me_transfers_role_created' ) ) {
+        me_transfers_create_checkhoteles_role();
+        set_transient( 'me_transfers_role_created', true, DAY_IN_SECONDS * 365 );
+    }
+} );
 function me_transfers_create_checkhoteles_role() {
     $role = get_role( 'check_hoteles' );
     if ( ! $role ) {
@@ -385,7 +394,7 @@ function me_transfers_restrict_checkhoteles_access() {
         if ( ($pagenow === 'post.php' || $pagenow === 'post-new.php') ) {
             $post_type = '';
             if ( isset($_GET['post']) ) {
-                $post_type = get_post_type($_GET['post']);
+                $post_type = get_post_type( (int) $_GET['post'] );
             } elseif ( isset($_POST['post_ID']) ) {
                 $post_type = get_post_type($_POST['post_ID']);
             } elseif ( isset($_GET['post_type']) ) {
@@ -463,6 +472,11 @@ function me_transfers_migrate_content_to_editor() {
     if ( get_option( 'me_transfers_content_migrated_v1' ) ) {
         return;
     }
+    // Transient lock: prevents simultaneous execution in race conditions.
+    if ( get_transient( 'me_transfers_migrating_content_v1' ) ) {
+        return;
+    }
+    set_transient( 'me_transfers_migrating_content_v1', true, MINUTE_IN_SECONDS * 5 );
 
     // Hub Page
     $hub = get_page_by_path( 'destinos', OBJECT, 'page' );
@@ -533,6 +547,11 @@ function me_transfers_migrate_services_to_editor() {
     if ( get_option( 'me_transfers_content_migrated_services' ) ) {
         return;
     }
+    // Transient lock: prevents simultaneous execution in race conditions.
+    if ( get_transient( 'me_transfers_migrating_services' ) ) {
+        return;
+    }
+    set_transient( 'me_transfers_migrating_services', true, MINUTE_IN_SECONDS * 5 );
 
     $services = me_transfers_get_service_catalog();
     foreach ( $services as $slug => $service ) {
@@ -561,6 +580,11 @@ function me_transfers_migrate_legal_to_editor() {
     if ( get_option( 'me_transfers_content_migrated_legal' ) ) {
         return;
     }
+    // Transient lock: prevents simultaneous execution in race conditions.
+    if ( get_transient( 'me_transfers_migrating_legal' ) ) {
+        return;
+    }
+    set_transient( 'me_transfers_migrating_legal', true, MINUTE_IN_SECONDS * 5 );
 
     $pages = array(
         'privacidad' => '<h2>1. Identificación del Responsable del Tratamiento</h2>
@@ -756,6 +780,24 @@ add_action( 'wp_head', function() {
         echo '<meta name="description" content="Traslados Privados y Tours VIP en Barcelona. Reserva tu servicio de chófer privado en MeTransfers para un viaje seguro, cómodo y exclusivo.">' . "\n";
     }
 }, 1 );
+
+// 3.1b: Filtros de integracion con Yoast SEO para titulo y meta description del home.
+// Si Yoast esta activo, usar sus filtros nativos evita duplicar etiquetas SEO.
+if ( defined( 'WPSEO_VERSION' ) ) {
+    add_filter( 'wpseo_title', function( $title ) {
+        if ( is_front_page() || is_home() ) {
+            return 'MeTransfers | Traslados Privados y Tours VIP en Barcelona';
+        }
+        return $title;
+    } );
+
+    add_filter( 'wpseo_metadesc', function( $desc ) {
+        if ( is_front_page() || is_home() ) {
+            return 'Traslados Privados y Tours VIP en Barcelona. Reserva tu servicio de chofer privado en MeTransfers.';
+        }
+        return $desc;
+    } );
+}
 
 // 3. Motor de Redirecciones 301 y 410 (Páginas Muertas)
 add_action( 'template_redirect', 'me_transfers_custom_redirects' );

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Ruta Comercial
  * Template Post Type: post, page, ruta
@@ -19,7 +19,7 @@ $precio = get_post_meta( $ruta_id, '_mt_ruta_precio', true );
 
 $hero_bg = get_the_post_thumbnail_url( $ruta_id, 'full' );
 if ( ! $hero_bg ) {
-    $hero_bg = 'https://staging2.metransfers.es/wp-content/uploads/2026/06/traslados_privados_en_barcelona__reserva_online_facil_y_rapido_v1-1080p.mp4'; // fallback
+// $hero_bg fallback video removed: was pointing to staging2.metransfers.es. Set via CMS/options if needed.
 }
 
 ?>

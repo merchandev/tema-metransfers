@@ -232,18 +232,22 @@ function me_transfers_sync_destination_pages() {
 	$hub_id   = $hub_page ? (int) $hub_page->ID : 0;
 
 	if ( ! $hub_id ) {
-		$hub_result = wp_insert_post(
-			array(
-				'post_type'    => 'page',
-				'post_status'  => 'publish',
-				'post_title'   => 'Destinos',
-				'post_name'    => 'destinos',
-				'post_content' => '',
-			),
-			true
-		);
+		// Do not recreate the hub if it was intentionally trashed.
+		$hub_trashed = get_page_by_path( 'destinos__trashed', OBJECT, 'page' );
+		if ( ! $hub_trashed ) {
+			$hub_result = wp_insert_post(
+				array(
+					'post_type'    => 'page',
+					'post_status'  => 'publish',
+					'post_title'   => 'Destinos',
+					'post_name'    => 'destinos',
+					'post_content' => '',
+				),
+				true
+			);
 
-		$hub_id = is_wp_error( $hub_result ) ? 0 : (int) $hub_result;
+			$hub_id = is_wp_error( $hub_result ) ? 0 : (int) $hub_result;
+		}
 	}
 
 	if ( $hub_id > 0 ) {
@@ -260,6 +264,11 @@ function me_transfers_sync_destination_pages() {
 		} elseif ( $child_page instanceof WP_Post ) {
 			$page_id = (int) $child_page->ID;
 		} elseif ( $hub_id > 0 ) {
+			// Do not recreate the destination page if it was intentionally trashed.
+			$dest_trashed = get_page_by_path( $destination['slug'] . '__trashed', OBJECT, 'page' );
+			if ( $dest_trashed ) {
+				continue;
+			}
 			$page_result = wp_insert_post(
 				array(
 					'post_type'    => 'page',
