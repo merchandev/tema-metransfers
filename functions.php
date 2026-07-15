@@ -755,3 +755,32 @@ function me_transfers_custom_redirects() {
         }
     }
 }
+
+
+/**
+ * FALLBACKS: Graceful degradation if metransfers-core plugin is not active.
+ */
+if ( ! function_exists( 'me_transfers_get_service_catalog' ) ) {
+    function me_transfers_get_service_catalog() { return array(); }
+}
+if ( ! function_exists( 'me_transfers_get_tour_catalog' ) ) {
+    function me_transfers_get_tour_catalog() { return array(); }
+}
+if ( ! function_exists( 'me_transfers_get_destination_catalog' ) ) {
+    function me_transfers_get_destination_catalog() { return array(); }
+}
+if ( ! function_exists( 'me_transfers_get_service_url' ) ) {
+    function me_transfers_get_service_url( $slug ) { return home_url(); }
+}
+if ( ! function_exists( 'me_transfers_get_tour_url' ) ) {
+    function me_transfers_get_tour_url( $slug ) { return home_url(); }
+}
+if ( ! function_exists( 'me_transfers_get_current_destination' ) ) {
+    function me_transfers_get_current_destination( $post ) { return false; }
+}
+if ( ! function_exists( 'me_transfers_get_current_tour' ) ) {
+    function me_transfers_get_current_tour( $post ) { return false; }
+}
+if ( ! function_exists( 'me_transfers_get_current_service' ) ) {
+    function me_transfers_get_current_service( $post ) { return false; }
+}
