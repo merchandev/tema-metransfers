@@ -8341,21 +8341,62 @@ body,
 }
 
 /* ============================================================
-   52. HEADER LANGUAGE SELECTOR COLOR
+   52. HEADER LANGUAGE SELECTOR (GCT SEO Edition)
    ============================================================ */
+
+/* Contenedor: replica el pill del idioma original */
+.header-right .gct-lang-switcher {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Select nativo estilizado como pill */
+.header-right .gct-lang-switcher select,
+.header-right #gct-lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,119,182,0.08) 100%);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.38rem 2rem 0.38rem 0.85rem;
+    height: 38px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    /* Flecha custom */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.55)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.65rem center;
+    background-size: 10px 6px;
+    box-shadow: 0 2px 8px rgba(0,18,44,0.15);
+}
+
+.header-right .gct-lang-switcher select:hover,
+.header-right #gct-lang-select:hover {
+    background-color: rgba(255,255,255,0.08);
+    border-color: rgba(125,211,252,0.28);
+    box-shadow: 0 4px 16px rgba(0,18,44,0.22);
+}
+
+.header-right .gct-lang-switcher select option {
+    background: var(--deep, #001428);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Ocultar artefactos del antiguo widget de Google */
 .header-right #google_translate_element,
-.header-right #google_translate_element select,
-.header-right #google_translate_element span,
-.header-right #google_translate_element a,
 .header-right .gtranslate_wrapper,
-.header-right .gtranslate_wrapper select,
-.header-right .gtranslate_wrapper a,
-.header-right .gtranslate_wrapper span,
-.header-right .gt_selector,
-.header-right .lang-switcher,
-.header-right .lang-switcher span,
-.header-right .lang-switcher a {
-    color: #ffffff !important;
+.goog-te-banner-frame,
+.skiptranslate iframe {
+    display: none !important;
 }
 
 /* ============================================================
