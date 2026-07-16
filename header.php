@@ -10,7 +10,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<meta name="robots" content="noindex, nofollow"> <!-- STAGING PROTECTION -->
+	<?php /* Robots: controlado por wp_robots filter en functions.php según WP_ENVIRONMENT_TYPE */ ?>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -48,7 +48,7 @@ body .hero-booking-card {
         align-self: center !important;
     }
 }
-.gtranslate_wrapper { background: none !important; opacity: 0 !important; position: absolute !important; pointer-events: none !important; width: 0 !important; height: 0 !important; overflow: hidden !important; }
+/* GTranslate antiguo eliminado — usar plugin GCT Translator */
 </style>
 <script>
 // FIX CERO PARPADEO BTT
@@ -107,9 +107,9 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 		<!-- â‘¢ Acciones: Traductor + Botón + Hamburger -->
 		<div class="header-right">
 
-			<!-- Selector de idioma -->
-			<?php if ( shortcode_exists( 'google_translate' ) ) : ?>
-				<?php echo do_shortcode( '[google_translate]' ); ?>
+			<!-- Selector de idioma (GCT Translator) -->
+			<?php if ( function_exists( 'gct_render_language_switcher' ) ) : ?>
+				<?php gct_render_language_switcher(); ?>
 			<?php endif; ?>
 
 			<!-- CTA botón -->

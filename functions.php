@@ -1084,3 +1084,19 @@ add_action( 'wp_head', function() {
 		}
 	}
 } );
+
+// ==========================================
+// ROBOTS: Controlar indexación por entorno
+// En wp-config.php staging: define('WP_ENVIRONMENT_TYPE','staging');
+// En wp-config.php producción: define('WP_ENVIRONMENT_TYPE','production');
+// ==========================================
+add_filter( 'wp_robots', static function ( array $robots ): array {
+	if ( function_exists( 'wp_get_environment_type' ) && wp_get_environment_type() !== 'production' ) {
+		return [
+			'noindex'   => true,
+			'nofollow'  => true,
+			'noarchive' => true,
+		];
+	}
+	return $robots;
+} );
