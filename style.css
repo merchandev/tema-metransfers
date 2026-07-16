@@ -1,6 +1,6 @@
 /*
 Theme Name:  Me Transfers Premium
-Description: Tema a medida de alto rendimiento para agencias de transporte VIP y tours de lujo. Desarrollado con arquitectura PHP nativa sin constructores visuales pesados para garantizar máxima velocidad. Destaca por su diseño premium «Mobile First», motor de reservas dinámico e integración fluida de conversiones vía WhatsApp.
+Description: Tema a medida de alto rendimiento para agencias de transporte VIP y tours de lujo. Desarrollado con arquitectura PHP nativa sin constructores visuales pesados para garantizar mÃƒÂ¡xima velocidad. Destaca por su diseÃƒÂ±o premium Ã‚Â«Mobile FirstÃ‚Â», motor de reservas dinÃƒÂ¡mico e integraciÃƒÂ³n fluida de conversiones vÃƒÂ­a WhatsApp.
 Version:     2.1.0
 Author:      Merchan.Dev
 Text Domain: me-transfers
@@ -58,11 +58,11 @@ Text Domain: me-transfers
     /* Surface borders */
     --surface-border: 1px solid rgba(0, 86, 179, 0.09);
     --surface-border-hover: 1px solid rgba(0, 86, 179, 0.22);
-    --surface-shadow-soft: var(--shadow-md);
+    --surface-shadow-soft: none;
     --surface-shadow-lg: var(--shadow-lg);
 
     /* Espaciado */
-    --section-pad: 7rem;
+    --section-pad: clamp(4rem, 8vw, 8rem);
     --container: 1280px;
 
     /* Border radius */
@@ -120,6 +120,21 @@ a {
 }
 
 /* ============================================================
+   2.1. ACCESSIBILITY (Focus States)
+   ============================================================ */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+.btn:focus-visible, 
+.btn-outline:focus-visible, 
+.btn-ghost:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+    box-shadow: 0 0 0 4px rgba(7, 94, 168, 0.25) !important;
+    outline: none !important;
+}
+
+/* ============================================================
    3. TYPOGRAPHY
    ============================================================ */
 h1 {
@@ -149,7 +164,7 @@ h6 {
     color: #ffffff !important;
 }
 
-/* Hero: subtítulo y textos del hero también blancos */
+/* Hero: subtÃƒÂ­tulo y textos del hero tambiÃƒÂ©n blancos */
 .hero-subtitle,
 .hero-section p,
 .hero-badge,
@@ -281,7 +296,7 @@ h6 {
 }
 
 /* ============================================================
-   6. HEADER �- pill flotante glassmorphism
+   6. HEADER Ãƒ- pill flotante glassmorphism
    ============================================================ */
 .site-header {
     position: fixed;
@@ -352,7 +367,7 @@ h6 {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Desktop Nav �- centro */
+/* Desktop Nav Ãƒ- centro */
 .main-navigation {
     flex: 1;
     display: flex;
@@ -396,7 +411,7 @@ h6 {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* �- Lado derecho del header �- */
+/* Ãƒ- Lado derecho del header Ãƒ- */
 @media (min-width: 1025px) {
     .site-header.menu-limit-rest .main-navigation .nav-menu>li:nth-child(n+5) {
         display: none;
@@ -418,14 +433,14 @@ h6 {
     flex-shrink: 0;
 }
 
-/* CTA botón compact */
+/* CTA botÃƒÂ³n compact */
 .hdr-cta {
     padding: 0.55rem 1.3rem;
     font-size: 0.82rem;
     border-radius: 100px;
 }
 
-/* �- Selector de Idioma �- */
+/* Ãƒ- Selector de Idioma Ãƒ- */
 .lang-wrapper {
     position: relative;
     display: flex;
@@ -3218,7 +3233,7 @@ body.admin-bar .single-article-hero {
 }
 
 /* ============================================================
-   18. RESPONSIVE �- 1280px: Large screens
+   18. RESPONSIVE Ãƒ- 1280px: Large screens
    ============================================================ */
 @media (max-width: 1280px) {
     .footer-grid {
@@ -3228,7 +3243,7 @@ body.admin-bar .single-article-hero {
 }
 
 /* ============================================================
-   19. RESPONSIVE �- 1024px: Tablet landscape
+   19. RESPONSIVE Ãƒ- 1024px: Tablet landscape
    ============================================================ */
 @media (max-width: 1024px) {
     :root {
@@ -3264,7 +3279,7 @@ body.admin-bar .single-article-hero {
 }
 
 /* ============================================================
-   20. RESPONSIVE �- 768px: Tablet portrait
+   20. RESPONSIVE Ãƒ- 768px: Tablet portrait
    ============================================================ */
 @media (max-width: 768px) {
     :root {
@@ -3373,7 +3388,7 @@ body.admin-bar .single-article-hero {
 }
 
 /* ============================================================
-   21. RESPONSIVE �- 480px: Mobile phones
+   21. RESPONSIVE Ãƒ- 480px: Mobile phones
    ============================================================ */
 @media (max-width: 480px) {
     :root {
@@ -3510,7 +3525,7 @@ body.admin-bar .single-article-hero {
 }
 
 /* ============================================================
-   BLOG SECTION �- Front Page Cards
+   BLOG SECTION Ãƒ- Front Page Cards
    ============================================================ */
 .fp-blog-section {
     position: relative;
@@ -3598,7 +3613,7 @@ body.admin-bar .single-article-hero {
     flex: 1;
 }
 
-/* Badge de categoría */
+/* Badge de categorÃƒÂ­a */
 .fp-blog-card__cat {
     display: inline-flex;
     align-items: center;
@@ -3615,7 +3630,7 @@ body.admin-bar .single-article-hero {
     color: #5bcdff;
 }
 
-/* Título */
+/* TÃƒÂ­tulo */
 .fp-blog-card__title {
     font-size: 1.05rem;
     font-weight: 800;
@@ -3643,7 +3658,7 @@ body.admin-bar .single-article-hero {
     flex: 1;
 }
 
-/* Meta (fecha + leer m�-s) */
+/* Meta (fecha + leer mÃƒ-s) */
 .fp-blog-card__meta {
     display: flex;
     align-items: center;
@@ -3767,7 +3782,7 @@ body.admin-bar .single-article-hero {
 
 
 /* ============================================================
-   GOOGLE TRANSLATE WIDGET �- Custom pill design
+   GOOGLE TRANSLATE WIDGET Ãƒ- Custom pill design
    ============================================================ */
 
 #google_translate_element {
@@ -3810,7 +3825,7 @@ body.admin-bar .single-article-hero {
     z-index: 2;
 }
 
-/* Select pill con ícono de globo a la izq y chevron a la der */
+/* Select pill con ÃƒÂ­cono de globo a la izq y chevron a la der */
 .goog-te-combo {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -3882,13 +3897,13 @@ body.translated-rtl {
 /* ============================================================
    ERROR 404
    Sigue las pautas de Google:
-   �- HTTP 404 real (status_header en PHP)
-   �- noindex (wp_head lo gestiona autom�-ticamente)
-   �- Navegación �útil y b�-squeda
-   �- Dise�-o coherente con el resto del sitio
+   Ãƒ- HTTP 404 real (status_header en PHP)
+   Ãƒ- noindex (wp_head lo gestiona automÃƒ-ticamente)
+   Ãƒ- NavegaciÃƒÂ³n ÃƒÃƒÂºtil y bÃƒ-squeda
+   Ãƒ- DiseÃƒ-o coherente con el resto del sitio
    ============================================================ */
 
-/* --- Wrapper de sección --- */
+/* --- Wrapper de secciÃƒÂ³n --- */
 .section-404 {
     position: relative;
     min-height: 100svh;
@@ -3908,7 +3923,7 @@ body.translated-rtl {
     z-index: 0;
 }
 
-/* Capas de estrellas generadas con m�-ltiples box-shadows */
+/* Capas de estrellas generadas con mÃƒ-ltiples box-shadows */
 .stars-layer {
     position: absolute;
     inset: 0;
@@ -4001,7 +4016,7 @@ body.translated-rtl {
     gap: 0;
 }
 
-/* --- N�-mero 404 --- */
+/* --- NÃƒ-mero 404 --- */
 .error-404-number {
     display: flex;
     align-items: center;
@@ -4073,7 +4088,7 @@ body.translated-rtl {
     margin-bottom: 1rem;
 }
 
-/* --- Título --- */
+/* --- TÃƒÂ­tulo --- */
 .error-404-title {
     font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 800;
@@ -4082,7 +4097,7 @@ body.translated-rtl {
     letter-spacing: -0.03em;
 }
 
-/* --- Descripción --- */
+/* --- DescripciÃƒÂ³n --- */
 .error-404-desc {
     color: var(--text-secondary);
     font-size: 1.05rem;
@@ -4105,7 +4120,7 @@ body.translated-rtl {
     padding: 0.9rem 2rem;
 }
 
-/* --- B�-squeda --- */
+/* --- BÃƒ-squeda --- */
 .error-404-search {
     margin-bottom: 2rem;
     width: 100%;
@@ -4118,7 +4133,7 @@ body.translated-rtl {
     margin-bottom: 0.6rem;
 }
 
-/* Formulario de b�-squeda nativo de WordPress estilizado */
+/* Formulario de bÃƒ-squeda nativo de WordPress estilizado */
 .error-404-search .search-form {
     display: flex;
     gap: 0.5rem;
@@ -4165,7 +4180,7 @@ body.translated-rtl {
     box-shadow: 0 6px 24px rgba(0, 119, 182, 0.35);
 }
 
-/* --- Navegación sugerida --- */
+/* --- NavegaciÃƒÂ³n sugerida --- */
 .error-404-nav {
     width: 100%;
     max-width: 480px;
@@ -5819,7 +5834,7 @@ body {
 /* ============================================================
    44. BOOKING POPUP OVERFLOW FIX
    ============================================================ */
-/* Evita doble scroll (body + modal) cuando el popup est�- abierto */
+/* Evita doble scroll (body + modal) cuando el popup estÃƒ- abierto */
 body.home:has( :is(.wptb-modal,
         .wptb-popup,
         .wptb-dialog,
@@ -6154,7 +6169,7 @@ body.page:has(#wptb-plugin-container.wptb-iso) .page-booking-cta {
 }
 
 /* ============================================================
-   BLOG INDEX �- Premium card grid
+   BLOG INDEX Ãƒ- Premium card grid
    ============================================================ */
 
 /* Hero banner */
@@ -6443,7 +6458,7 @@ body.page:has(#wptb-plugin-container.wptb-iso) .page-booking-cta {
 
 
 /* ============================================================
-   REDISENO VISUAL v4.0 �- PALETA BALANCEADA BLANCO + AZUL
+   REDISENO VISUAL v4.0 Ãƒ- PALETA BALANCEADA BLANCO + AZUL
    Todos los estilos aqui tienen mayor especificidad para
    sobrescribir el esquema oscuro anterior.
    ============================================================ */
@@ -6579,13 +6594,18 @@ p {
 .btn-outline {
     background: transparent !important;
     color: var(--text-primary) !important;
-    border: 1.5px solid rgba(0, 86, 179, 0.22) !important;
+    border: 1.5px solid rgba(7, 94, 168, 0.35) !important; /* Aumentado el contraste del borde */
+    transition: all 0.3s var(--ease) !important;
 }
 
 .btn-outline:hover {
-    background: var(--accent-light) !important;
-    border-color: var(--accent-primary) !important;
-    color: var(--accent-primary) !important;
+    background: rgba(7, 94, 168, 0.05) !important; /* MÃ¡s elegante que accent-light */
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    transform: translateY(-1px);
+}
+.btn-outline:active {
+    transform: translateY(0);
 }
 
 /* -- MOBILE DRAWER (fondo marca, texto claro) -- */
@@ -7198,7 +7218,7 @@ body.admin-bar .single-article-hero--solid {
 }
 
 @media (max-width: 782px) {
-    /* Cabecera fija: el contenido del hero debe empezar debajo del men�- */
+    /* Cabecera fija: el contenido del hero debe empezar debajo del menÃƒ- */
     .single-article-hero--solid {
         padding-top: calc(env(safe-area-inset-top, 0px) + 6.5rem) !important;
     }
@@ -7661,7 +7681,7 @@ body.admin-bar .single-article-hero--solid {
     color: #991b1b !important;
 }
 
-/* -- FOOTER �- Azul marino rico -- */
+/* -- FOOTER Ãƒ- Azul marino rico -- */
 .site-footer {
     background: #0D1B2A !important;
     border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
@@ -7846,7 +7866,7 @@ body.admin-bar .single-article-hero--solid {
     background: var(--bg-secondary);
 }
 
-/* -- LANG + burger: cabecera oscura (tablet/m�-vil �-1024px) -- */
+/* -- LANG + burger: cabecera oscura (tablet/mÃƒ-vil Ãƒ-1024px) -- */
 @media (max-width: 1024px) {
     .lang-switcher__trigger {
         background: rgba(255, 255, 255, 0.1) !important;
@@ -7938,7 +7958,7 @@ body {
 
 /* 
 /* =========================================
-   CONTACT SECTION �- HOME
+   CONTACT SECTION Ãƒ- HOME
    ========================================= */
 
 .contact-section {
@@ -8098,7 +8118,7 @@ body {
 }
 
 /* =========================================
-   TOUR DETAIL PAGE �- Form enhancements
+   TOUR DETAIL PAGE Ãƒ- Form enhancements
    ========================================= */
 
 #mt-tour-booking-form .destination-request-field input[type="date"] {
@@ -8107,7 +8127,7 @@ body {
 }
 
 /* =========================================
-   RESPONSIVE �- Contact & Tour
+   RESPONSIVE Ãƒ- Contact & Tour
    ========================================= */
 
 @media (max-width: 768px) {
@@ -8732,7 +8752,7 @@ body {
     -webkit-text-fill-color: inherit !important;
 }
 
-/* Corrección Glitch Icono Idioma Doble */
+/* CorrecciÃƒÂ³n Glitch Icono Idioma Doble */
 .custom-lang-trigger .goog-te-gadget::before,
 #google_translate_element .goog-te-gadget::before,
 .header-right #google_translate_element .goog-te-gadget::before {
@@ -8880,4 +8900,4 @@ body .page-banner__meta {
 .legal-prose li {
     color: #334155;
     line-height: 1.75;
-}
+}

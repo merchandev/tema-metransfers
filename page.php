@@ -24,7 +24,7 @@ get_header();
 		elseif ( $current_destination ) :
 			get_template_part( 'template-parts/page/content', 'destination' );
 		elseif ( $tour = me_transfers_get_current_tour( $current_post ) ) :
-			get_template_part( 'template-parts/page/content', 'tour' );
+			get_template_part( 'template-parts/page/content', 'tour', array( 'tour' => $tour ) );
 		elseif ( $service = me_transfers_get_current_service( $current_post ) ) :
 			get_template_part( 'template-parts/page/content', 'service' );
 		else :

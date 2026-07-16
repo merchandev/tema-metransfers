@@ -10,24 +10,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-	<!-- Favicon -->
-	<link rel="icon"       type="image/png" sizes="32x32" href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/favicon.png' ); ?>">
-	<link rel="icon"       type="image/png" sizes="16x16" href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/favicon.png' ); ?>">
-<?php
-/**
- * Header - Me Transfers Premium
- * @package Me_Transfers
- */
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name="robots" content="noindex, nofollow"> <!-- STAGING PROTECTION -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -38,7 +21,7 @@
 	<link rel="apple-touch-icon"                           href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/favicon.png' ); ?>">
 
 	<?php wp_head(); ?>
-<style>.site-header .btn{min-width:0!important;width:auto!important;padding-inline:clamp(1rem,2vw,1.5rem)!important;flex-shrink:1!important} @media (max-width: 991px) { .site-header .hdr-cta { display: none !important; } .hero-container { padding-top: 0 !important; padding-inline: 0 !important; } .container { margin-left: 34px !important; margin-right: 34px !important; width: auto !important; max-width: none !important; } .hero-section { padding-top: 8.5rem !important; } .hero-badge { justify-self: center !important; margin-inline: auto !important; } .hero-content { background: linear-gradient(145deg, rgba(3, 13, 30, 0.7) 0%, rgba(3, 13, 30, 0.4) 100%) !important; padding: 2rem 1rem 1.5rem !important; border-radius: 24px !important; backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; border: 1px solid rgba(255,255,255,0.08) !important; box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important; margin-bottom: 1.5rem !important; } .hero-stats { display: flex !important; justify-content: center !important; text-align: center !important; gap: 1.5rem !important; } } .hero-video-bg { position: absolute !important; top: 50% !important; left: 50% !important; width: 100vw !important; height: 56.25vw !important; max-width: none !important; max-height: none !important; transform: translate(-50%, -50%) scale(1.05) !important; pointer-events: none; z-index: 0; } @media (max-aspect-ratio: 16/9) { .hero-video-bg { height: 500vw !important; width: 888.88vw !important; } } @media (min-width: 992px) { .header-right { align-items: center !important; } .header-right .gtranslate_wrapper, .header-right .gtranslate_wrapper select, .header-right .gtranslate_wrapper a.glink, .header-right .hdr-cta { height: 44px !important; min-height: 44px !important; max-height: 44px !important; display: inline-flex !important; align-items: center !important; box-sizing: border-box !important; margin: 0 !important; } .header-right .hdr-cta { justify-content: center !important; } }</style>
+<style>.site-header .btn{min-width:0!important;width:auto!important;padding-inline:clamp(1rem,2vw,1.5rem)!important;flex-shrink:1!important} @media (max-width: 991px) { .site-header .hdr-cta { display: none !important; } .hero-container { padding-top: 0 !important; padding-inline: 0 !important; } .container { margin-left: 34px !important; margin-right: 34px !important; width: auto !important; max-width: none !important; } .hero-section { padding-top: 8.5rem !important; } .hero-badge { justify-self: center !important; margin-inline: auto !important; } .hero-content { background: linear-gradient(145deg, rgba(3, 13, 30, 0.7) 0%, rgba(3, 13, 30, 0.4) 100%) !important; padding: 2rem 1rem 1.5rem !important; border-radius: 24px !important; backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; border: 1px solid rgba(255,255,255,0.08) !important; box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important; margin-bottom: 1.5rem !important; } .hero-stats { display: flex !important; justify-content: center !important; text-align: center !important; gap: 1.5rem !important; } #mob-menu:not(.open) { visibility: hidden !important; transition: visibility 0s 0.3s; } #mob-menu.open { visibility: visible !important; transition: visibility 0s 0s; } } .hero-video-bg { position: absolute !important; top: 50% !important; left: 50% !important; width: 100vw !important; height: 56.25vw !important; max-width: none !important; max-height: none !important; transform: translate(-50%, -50%) scale(1.05) !important; pointer-events: none; z-index: 0; } @media (max-aspect-ratio: 16/9) { .hero-video-bg { height: 500vw !important; width: 888.88vw !important; } } @media (min-width: 992px) { .header-right { align-items: center !important; } .header-right .gtranslate_wrapper, .header-right .gtranslate_wrapper select, .header-right .gtranslate_wrapper a.glink, .header-right .hdr-cta { height: 44px !important; min-height: 44px !important; max-height: 44px !important; display: inline-flex !important; align-items: center !important; box-sizing: border-box !important; margin: 0 !important; } .header-right .hdr-cta { justify-content: center !important; } }</style>
 <style>
   /* NUEVO DISEÍ‘O PREMIUM PARA EL FORMULARIO (FONDO VERDE) */
   .hero-booking-card {
@@ -71,24 +54,20 @@ body .hero-booking-card {
 // FIX CERO PARPADEO BTT
 if (window.location.search.indexOf('source=BTT') !== -1) {
     document.write('<style>#page { display: none !important; } .btt-global-loader { display: flex !important; }<\/' + 'style>');
+    document.write('<div class="btt-global-loader" style="position: fixed; inset: 0; background: linear-gradient(180deg, rgba(0, 58, 82, 0.96) 0%, rgba(5, 23, 61, 1) 100%); z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">' +
+        '<style>.btt-spinner { width: 50px; height: 50px; border: 4px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: btt-spin 1s linear infinite; margin-bottom: 20px; } @keyframes btt-spin { 100% { transform: rotate(360deg); } }</style>' +
+        '<div class="btt-spinner"></div>' +
+        '<h2 style="color: white; font-weight: 300; letter-spacing: 1px;">Calculando su mejor ruta...</h2>' +
+    '</div>');
 }
 </script>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<!-- OVERLAY BTT GLOBAL -->
-<div class="btt-global-loader" style="display: none; position: fixed; inset: 0; background: linear-gradient(180deg, rgba(0, 58, 82, 0.96) 0%, rgba(5, 23, 61, 1) 100%); z-index: 999999; flex-direction: column; align-items: center; justify-content: center; color: white;">
-    <style>
-        .btt-spinner { width: 50px; height: 50px; border: 4px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: btt-spin 1s linear infinite; margin-bottom: 20px; }
-        @keyframes btt-spin { 100% { transform: rotate(360deg); } }
-    </style>
-    <div class="btt-spinner"></div>
-    <h2 style="color: white; font-weight: 300; letter-spacing: 1px;">Calculando su mejor ruta...</h2>
-</div>
 
 <div id="page" class="site">
-<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'me-transfers' ); ?></a>
+<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Saltar al contenido', 'me-transfers' ); ?></a>
 
 <header id="masthead" class="site-header" role="banner">
 	<div class="container header-inner">

@@ -17,8 +17,8 @@ $page_content = trim( wp_strip_all_tags( strip_shortcodes( get_the_content() ) )
 					'text'  => 'Asignamos sedan, minivan o vehiculo premium segun pasajeros, equipaje, horario y nivel de servicio que necesites.',
 				),
 				array(
-					'title' => 'Precio y tiempos claros',
-					'text'  => sprintf( 'Recibes una propuesta cerrada, con respuesta agil y todos los detalles del recorrido hacia %s antes de confirmar.', $current_destination['title'] ),
+					'title' => 'Presupuesto y tiempos claros',
+					'text'  => sprintf( 'Recibes una propuesta a medida, con respuesta agil y todos los detalles del recorrido hacia %s antes de confirmar.', $current_destination['title'] ),
 				),
 			);
 			$destination_use_cases = array(
@@ -38,7 +38,7 @@ $page_content = trim( wp_strip_all_tags( strip_shortcodes( get_the_content() ) )
 				array(
 					'step'  => '02',
 					'title' => 'Preparamos la propuesta',
-					'text'  => 'Te enviamos disponibilidad, tipo de vehiculo recomendado y condiciones del traslado con precio claro.',
+					'text'  => 'Te enviamos disponibilidad, tipo de vehiculo recomendado y condiciones del traslado con un presupuesto claro.',
 				),
 				array(
 					'step'  => '03',
@@ -194,7 +194,7 @@ $page_content = trim( wp_strip_all_tags( strip_shortcodes( get_the_content() ) )
 									<path d="M12 7v10"/>
 								</svg>
 							</div>
-							<h2>Precios Cerrados</h2>
+							<h2>Presupuesto a Medida</h2>
 							<p>Contrata uno de nuestros servicios y paga lo que realmente contratas, sin pagos posteriores ni recargos sorpresivos.</p>
 						</article>
 

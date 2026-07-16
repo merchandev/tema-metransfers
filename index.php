@@ -14,7 +14,7 @@ get_header();
 	<section class="blog-index-hero">
 		<div class="container blog-index-hero__inner">
 			<span class="blog-index-eyebrow"><?php esc_html_e( 'Guías, consejos y noticias', 'me-transfers' ); ?></span>
-			<h1 class="blog-index-title"><?php esc_html_e( 'Blog Me Transfers', 'me-transfers' ); ?></h1>
+			<h1 class="blog-index-title"><?php esc_html_e( 'Blog de MeTransfers', 'me-transfers' ); ?></h1>
 			<p class="blog-index-intro"><?php esc_html_e( 'Descubre los mejores destinos, rutas y consejos de viaje para disfrutar de Barcelona y toda España en traslado privado de lujo.', 'me-transfers' ); ?></p>
 		</div>
 	</section>

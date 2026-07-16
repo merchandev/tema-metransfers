@@ -48,7 +48,7 @@ if ( ! $hero_bg ) {
                         <?php if($origen && $destino): ?>
                             Traslado privado desde <strong><?php echo esc_html($origen); ?></strong> hasta <strong><?php echo esc_html($destino); ?></strong>. 
                         <?php endif; ?>
-                        Vehículos Mercedes-Benz, precio cerrado y conductor profesional esperándote.
+                        Vehículos Mercedes-Benz, presupuesto a medida y conductor profesional esperándote.
                     </p>
 
                     <div class="hero-actions">
@@ -93,13 +93,11 @@ if ( ! $hero_bg ) {
                 </div>
                 <?php endif; ?>
 
-                <?php if($precio): ?>
                 <div class="ruta-stat">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004E9A" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
-                    <h4 style="margin: 10px 0 5px; color:#0D1B2A;">Precio Fijo</h4>
-                    <p style="margin:0; color:#475569; font-weight: 500;">Desde <?php echo esc_html($precio); ?> â‚¬</p>
+                    <h4 style="margin: 10px 0 5px; color:#0D1B2A;">Presupuesto a Medida</h4>
+                    <p style="margin:0; color:#475569; font-weight: 500;">A consultar</p>
                 </div>
-                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -124,8 +122,8 @@ if ( ! $hero_bg ) {
                 </article>
                 <article class="tour-card">
                     <div class="tour-content">
-                        <h3 style="color:#004E9A;">Precio Cerrado</h3>
-                        <p>Sin taxímetros, sin tarifas dinámicas, sin sorpresas. El precio que reservas es el que pagas.</p>
+                        <h3 style="color:#004E9A;">Presupuesto a Medida</h3>
+                        <p>Sin taxímetros, sin tarifas dinámicas, sin sorpresas. El presupuesto que apruebas es el que pagas.</p>
                     </div>
                 </article>
             </div>

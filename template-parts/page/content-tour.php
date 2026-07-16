@@ -1,4 +1,11 @@
 <?php
+// $args is passed from page.php via get_template_part( ..., array( 'tour' => $tour ) )
+$tour = isset( $args['tour'] ) ? $args['tour'] : null;
+
+if ( ! $tour ) {
+	return; // Nothing to render if tour data is missing
+}
+
 $other_tours = array_filter(
 				me_transfers_get_tour_catalog(),
 				static function( $item ) use ( $tour ) {
@@ -6,6 +13,35 @@ $other_tours = array_filter(
 				}
 			);
 			?>
+			<style>
+				/* Fix layout globally for tour pages */
+				.destination-page-layout {
+					display: grid !important;
+					grid-template-columns: 1.5fr 1fr !important;
+					gap: 4rem !important;
+					align-items: start !important;
+				}
+				.destination-page-sidebar {
+					position: sticky !important;
+					top: 100px !important;
+				}
+				.destination-process-step {
+					background: #fff8eb !important;
+					color: #FFB547 !important;
+					font-weight: 800 !important;
+					border: 1px solid rgba(255,181,71,0.3) !important;
+				}
+				@media (max-width: 1024px) {
+					.destination-page-layout {
+						grid-template-columns: 1fr !important;
+						gap: 3rem !important;
+					}
+					.destination-page-sidebar {
+						order: -1 !important; /* Move form to the top on mobile/tablet */
+						position: static !important;
+					}
+				}
+			</style>
 			<!-- TOUR HERO -->
 			<section class="destination-page-hero">
 				<div class="container destination-page-hero__inner">
@@ -22,7 +58,7 @@ $other_tours = array_filter(
 					<div class="destination-page-pills">
 						<span><?php echo esc_html( $tour['duration'] ); ?></span>
 						<span><?php echo esc_html( $tour['group_size'] ); ?></span>
-						<span><?php echo esc_html( $tour['price'] ); ?></span>
+						<span>Presupuestar</span>
 						<span>Chofer privado</span>
 					</div>
 				</div>
@@ -79,7 +115,7 @@ $other_tours = array_filter(
 							<ul style="list-style:none;padding:0;margin:0;display:grid;gap:0.75rem;">
 							<?php foreach ( $tour['includes'] as $inc ) : ?>
 								<li style="display:flex;align-items:center;gap:0.65rem;">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
 									<span><?php echo esc_html( $inc ); ?></span>
 								</li>
 							<?php endforeach; ?>
@@ -135,7 +171,7 @@ $other_tours = array_filter(
 			<section class="destination-benefits-section">
 				<div class="container">
 					<div class="destination-benefits-grid">
-						<article class="destination-benefit-card"><div class="destination-benefit-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 11 3.83a2 2 0 0 0-1.41-.58H4a2 2 0 0 0-2 2v5.59a2 2 0 0 0 .58 1.41L12.17 22a2 2 0 0 0 2.83 0l5.59-5.59a2 2 0 0 0 0-2.83Z"/><path d="M7 7h.01"/></svg></div><h2>Precios Cerrados</h2><p>Paga lo que contratas, sin recargos sorpresivos.</p></article>
+						<article class="destination-benefit-card"><div class="destination-benefit-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 11 3.83a2 2 0 0 0-1.41-.58H4a2 2 0 0 0-2 2v5.59a2 2 0 0 0 .58 1.41L12.17 22a2 2 0 0 0 2.83 0l5.59-5.59a2 2 0 0 0 0-2.83Z"/><path d="M7 7h.01"/></svg></div><h2>Presupuesto a medida</h2><p>Solicita tu presupuesto personalizado sin compromiso.</p></article>
 						<article class="destination-benefit-card"><div class="destination-benefit-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M7 2v4M13 2v4M3 10h14"/><circle cx="19" cy="17" r="4"/><path d="M19 15v2l1.5 1.5"/></svg></div><h2>Cancelacion Flexible</h2><p>Cancelacion gratuita hasta 24 horas antes del tour.</p></article>
 						<article class="destination-benefit-card"><div class="destination-benefit-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h2>Tour 100% Privado</h2><p>Sin otros grupos. Solo tu con chofer privado y vehiculo Mercedes.</p></article>
 						<article class="destination-benefit-card"><div class="destination-benefit-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3A2 2 0 0 1 8.6 3.72c.12.92.34 1.82.67 2.69a2 2 0 0 1-.45 2.11L7.73 9.61a16 16 0 0 0 6.66 6.66l1.09-1.09a2 2 0 0 1 2.11-.45c.87.33 1.77.55 2.69.67A2 2 0 0 1 22 16.92z"/></svg></div><h2>Soporte 24/7</h2><p>Atencion por telefono, email o WhatsApp las 24 horas.</p></article>
@@ -143,25 +179,7 @@ $other_tours = array_filter(
 				</div>
 			</section>
 
-			<!-- Other Tours -->
-			<?php if ( $other_tours ) : ?>
-			<section class="destination-other-section">
-				<div class="container">
-					<div class="destination-other-header">
-						<h2>Otros tours disponibles</h2>
-						<a href="<?php echo esc_url( home_url( '/#tours' ) ); ?>" class="destination-other-link">Ver todos los tours</a>
-					</div>
-					<div class="destination-other-grid">
-						<?php foreach ( $other_tours as $ot ) : ?>
-							<a href="<?php echo esc_url( me_transfers_get_tour_url( $ot['slug'] ) ); ?>" class="destination-other-card">
-								<span class="destination-other-card__title"><?php echo esc_html( $ot['title'] ); ?></span>
-								<span class="destination-other-card__link"><?php echo esc_html( $ot['price'] ); ?></span>
-							</a>
-						<?php endforeach; ?>
-					</div>
-				</div>
-			</section>
-			<?php endif; ?>
+			<!-- Removed Other Tours section -->
 
 			<script>
 			(function(){
