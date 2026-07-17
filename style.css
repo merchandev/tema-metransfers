@@ -8812,6 +8812,14 @@ body {
         transform: translateX(0) !important;
         visibility: visible !important;
     }
+    
+    /* Ocultar el menu hamburguesa cuando el selector de idiomas este abierto */
+    .mt-lang-switcher.open ~ .header-right {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+    
     .mt-lang-close {
         display: flex !important;
         position: absolute;
