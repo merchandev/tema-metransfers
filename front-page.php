@@ -144,7 +144,7 @@ a{text-decoration:none;}
 }
 .hero__grid{
   position:relative;z-index:2;
-  display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;
+  display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;
 }
 @media(max-width:1024px){.hero__grid{grid-template-columns:1fr;gap:40px;}}
 
