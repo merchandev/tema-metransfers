@@ -856,7 +856,7 @@ a.contact__val:hover{color:var(--blue);}
 
       <!-- Tour principal — ocupa las 3 filas de la columna izquierda -->
       <div class="tour__card tour__main">
-        <div class="tour__img" style="background-image:url('<?php echo $bdi; ?>/city-tour.webp');"></div>
+        <div class="tour__img" style="background-image:url('<?php echo $arts; ?>/descubre-barcelona-en-4-6-u-8-horas-elige-el-tour-en-coche-a-tu-medida-4144.jpg');"></div>
         <div class="tour__content">
           <h3>Tour privado por Barcelona</h3>
           <p>Sagrada Familia, Passeig de Gràcia, Barrio Gótico y Montjuïc. Itinerario flexible de 4, 6 u 8 horas con vehículo Mercedes.</p>
@@ -866,7 +866,7 @@ a.contact__val:hover{color:var(--blue);}
 
       <!-- Columna derecha: 3 tours apilados -->
       <div class="tour__card">
-        <div class="tour__img" style="background-image:url('<?php echo $arts; ?>/descubre-excursion-privada-a-montserrat-desde-bcn-el-viaje-mas-comodo-hasta-la-montana-3857.jpg');"></div>
+        <div class="tour__img" style="background-image:url('<?php echo $arts; ?>/la-mejor-opcion-de-que-ver-en-montserrat-3789.jpg');"></div>
         <div class="tour__content">
           <h3>Montserrat</h3>
           <p>Monasterio y montaña mágica desde Barcelona con recogida puerta a puerta.</p>
@@ -875,16 +875,16 @@ a.contact__val:hover{color:var(--blue);}
       </div>
 
       <div class="tour__card">
-        <div class="tour__img" style="background-image:url('<?php echo $arts; ?>/guia-completa-private-transfer-barcelona-a-girona-la-forma-mas-exclusiva-de-viajar-9673.jpg');"></div>
+        <div class="tour__img" style="background-image:url('<?php echo $arts; ?>/todo-lo-que-debes-saber-sobre-ruta-por-el-penedes-visita-las-bodegas-con-un-chofer-privado-y-disfruta-sin-preocuparte-por-conducir-2990.jpg');"></div>
         <div class="tour__content">
-          <h3>Girona Medieval</h3>
-          <p>Casco histórico, barrio judío y murallas con traslado privado desde Barcelona.</p>
-          <a href="/tour-a-girona/#tour-booking" class="tour__cta-btn">Más información</a>
+          <h3>Ruta por el Penedès</h3>
+          <p>Visita las bodegas con un chófer privado y disfruta sin preocuparte por conducir.</p>
+          <a href="/tours-privados/#tour-booking" class="tour__cta-btn">Más información</a>
         </div>
       </div>
 
       <div class="tour__card">
-        <div class="tour__img" style="background-image:url('<?php echo $bdi; ?>/costa-brava-tour.webp');"></div>
+        <div class="tour__img" style="background-image:url('<?php echo $arts; ?>/la-mejor-opcion-de-ruta-en-coche-de-1-dia-por-la-costa-brava-tu-eliges-los-pueblos-nosotros-conducimos-1787.jpg');"></div>
         <div class="tour__content">
           <h3>Costa Brava</h3>
           <p>Pueblos costeros, calas y paisajes mediterráneos exclusivos con itinerario personalizado.</p>
