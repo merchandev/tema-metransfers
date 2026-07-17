@@ -1,7 +1,7 @@
 /*
 Theme Name:  Me Transfers Premium
 Description: Tema a medida de alto rendimiento para agencias de transporte VIP y tours de lujo. Desarrollado con arquitectura PHP nativa sin constructores visuales pesados para garantizar máxima velocidad. Destaca por su diseño premium «Mobile First», motor de reservas dinámico e integración fluida de conversiones vía WhatsApp.
-Version:     3.0.3
+Version:     3.0.4
 Author:      Merchan.Dev
 Text Domain: me-transfers
 */
@@ -8770,10 +8770,10 @@ body {
 }
 /* OCULTAR TEXTO 'IDIOMA' Y ARREGLAR DESPLEGABLE EN MOVILES */
 @media (max-width: 991px) {
-    .custom-lang-trigger .lang-text {
+    .mt-lang-trigger span {
         display: none !important;
     }
-    .custom-lang-trigger {
+    .mt-lang-trigger {
         padding: 0 0.6rem !important;
     }
     
@@ -8785,7 +8785,7 @@ body {
     }
 
     /* POPUP DE IDIOMAS */
-    .custom-lang-dropdown {
+    .mt-lang-menu {
         position: fixed !important;
         top: 50% !important;
         left: 50% !important;
@@ -8799,17 +8799,20 @@ body {
         border-radius: 16px !important;
         box-shadow: 0 20px 80px rgba(0,0,0,0.8) !important;
         padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
-    .custom-lang-dropdown li {
+    .mt-lang-menu li a {
         padding: 1rem !important;
         font-size: 1.1rem !important;
         text-align: center !important;
+        justify-content: center !important;
         border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    .custom-lang-dropdown li:last-child {
+    .mt-lang-menu li:last-child a {
         border-bottom: none;
     }
-    .custom-lang-wrapper.open::before {
+    .mt-lang-switcher.open::before {
         content: '' !important;
         position: fixed !important;
         top: 0 !important;
