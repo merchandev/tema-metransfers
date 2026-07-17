@@ -909,6 +909,24 @@ function mt_ensure_service_pages_and_templates() {
         return;
     }
 
+    function mt_critical_mobile_header_css() {
+	?>
+	<style>
+	@media (max-width: 768px) {
+		.header-inner { display: grid !important; grid-template-columns: auto 1fr auto !important; justify-content: space-between !important; padding: 0 10px !important; }
+		.site-branding { grid-column: 2; position: static !important; display: flex !important; justify-content: center !important; margin: 0 !important; max-width: 100% !important; flex: 1; }
+		.custom-logo { max-width: 140px !important; width: 100% !important; }
+		.header-right { position: static !important; display: contents !important; transform: none !important; }
+		.mt-lang-switcher { grid-column: 1; margin: 0 !important; }
+		.burger { grid-column: 3; margin: 0 !important; }
+		.mt-lang-trigger span, .mt-lang-trigger svg:last-child { display: none !important; }
+		.mt-lang-trigger { width: 40px !important; min-width: 40px !important; height: 40px !important; padding: 0 !important; justify-content: center !important; }
+	}
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'mt_critical_mobile_header_css', 999 );
+
     if ( ! function_exists( 'me_transfers_get_service_catalog' ) ) {
         return;
     }
