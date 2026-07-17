@@ -17,7 +17,7 @@ require_once get_template_directory() . '/includes/legal-pages.php';
 require_once get_template_directory() . '/includes/seo-page-titles.php';
 require_once get_template_directory() . '/includes/tours.php';
 require_once get_template_directory() . '/includes/services.php';
-require_once get_template_directory() . '/includes/request-cpt.php'; // Updated to trigger sync
+require_once get_template_directory() . '/includes/request-cpt.php'; // Updated to trigger sync v2
 require_once get_template_directory() . '/includes/tour-bookings.php';
 require_once get_template_directory() . '/includes/rutas-cpt.php';
 require_once get_template_directory() . '/includes/leads-cpt.php';
