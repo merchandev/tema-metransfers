@@ -12,13 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! defined('MT_LANGS') ) {
     define( 'MT_LANGS', [
-        'es' => [ 'label' => 'ES', 'name' => 'Espanol',   'google_code' => 'es' ],
+        'es' => [ 'label' => 'ES', 'name' => 'Español',   'google_code' => 'es' ],
         'en' => [ 'label' => 'EN', 'name' => 'English',   'google_code' => 'en' ],
-        'fr' => [ 'label' => 'FR', 'name' => 'Francais',  'google_code' => 'fr' ],
+        'fr' => [ 'label' => 'FR', 'name' => 'Français',  'google_code' => 'fr' ],
         'de' => [ 'label' => 'DE', 'name' => 'Deutsch',   'google_code' => 'de' ],
         'it' => [ 'label' => 'IT', 'name' => 'Italiano',  'google_code' => 'it' ],
-        'pt' => [ 'label' => 'PT', 'name' => 'Portugues', 'google_code' => 'pt' ],
-        'ca' => [ 'label' => 'CA', 'name' => 'Catala',    'google_code' => 'ca' ],
+        'pt' => [ 'label' => 'PT', 'name' => 'Português', 'google_code' => 'pt' ],
+        'ca' => [ 'label' => 'CA', 'name' => 'Català',    'google_code' => 'ca' ],
         'ru' => [ 'label' => 'RU', 'name' => 'Русский',   'google_code' => 'ru' ],
         'zh' => [ 'label' => 'ZH', 'name' => '中文',       'google_code' => 'zh-CN' ],
         'ja' => [ 'label' => 'JA', 'name' => '日本語',     'google_code' => 'ja' ],
