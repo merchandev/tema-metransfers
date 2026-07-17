@@ -121,12 +121,12 @@ Ponemos a tu disposición una flota de vehículos Mercedes de última generació
 
 Tanto si necesitas coordinar 3 traslados ejecutivos como 50 delegados en rotación durante una feria de 4 días, gestionamos la logística completa: horarios, puntos de recogida, rutas, esperas y cambios de última hora. Facturación unificada al final del evento.',
 			'features'    => array(
-				array( 'icon' => '🏢', 'title' => 'Gestión logística completa', 'desc' => 'Coordinador dedicado para eventos multi-vehículo. Un punto de contacto para todo.' ),
-				array( 'icon' => '🚘', 'title' => 'Flota uniforme', 'desc' => 'Todos los vehículos del mismo modelo y acabado. Imagen de marca coherente y premium.' ),
+				array( 'icon' => 'business', 'title' => 'Gestión logística completa', 'desc' => 'Coordinador dedicado para eventos multi-vehículo. Un punto de contacto para todo.' ),
+				array( 'icon' => 'directions_car', 'title' => 'Flota uniforme', 'desc' => 'Todos los vehículos del mismo modelo y acabado. Imagen de marca coherente y premium.' ),
 				array( 'icon' => 'language', 'title' => 'Conductores bilingües', 'desc' => 'Español, inglés y más idiomas. Perfectos para delegaciones internacionales.' ),
-				array( 'icon' => '📋', 'title' => 'Facturación centralizada', 'desc' => 'Una sola factura al final del evento. Compatible con contabilidad de empresa.' ),
-				array( 'icon' => 'smartphone', 'title' => 'Coordinación en tiempo real', 'desc' => 'Cambios de última hora gestionados al instante vía WhatsApp o coordinador dedicado.' ),
-				array( 'icon' => '🔐', 'title' => 'Máxima confidencialidad', 'desc' => 'Discreción absoluta con directivos, VIPs y delegaciones de alto nivel.' ),
+				array( 'icon' => 'receipt_long', 'title' => 'Facturación centralizada', 'desc' => 'Una sola factura al final del evento. Compatible con contabilidad de empresa.' ),
+				array( 'icon' => 'phone_iphone', 'title' => 'Coordinación en tiempo real', 'desc' => 'Cambios de última hora gestionados al instante vía WhatsApp o coordinador dedicado.' ),
+				array( 'icon' => 'lock', 'title' => 'Máxima confidencialidad', 'desc' => 'Discreción absoluta con directivos, VIPs y delegaciones de alto nivel.' ),
 			),
 			'steps'       => array(
 				array( 'n' => '01', 'title' => 'Cuéntanos el evento', 'desc' => 'Envíanos el tipo de evento, número de personas, fechas y necesidades específicas.' ),
@@ -152,11 +152,11 @@ Nuestros conductores son embajadores locales que conocen los rincones que los to
 Desde Barcelona, operamos excursiones de medio día (4 horas), día completo (8 horas) y rutas de varios días. Los destinos más populares incluyen Montserrat, Costa Brava, Girona, Figueres (Dalí), Tarragona, Sitges y Andorra. También diseñamos rutas temáticas: gastronomía, vinos, arquitectura modernista o paisajes naturales.',
 			'features'    => array(
 				array( 'icon' => 'map', 'title' => 'Rutas 100% personalizadas', 'desc' => 'Tú decides los destinos, paradas, tiempos y ritmo. Nosotros lo coordinamos todo.' ),
-				array( 'icon' => '🧭', 'title' => 'Chófer-guía local', 'desc' => 'Conocimiento local profundo: historia, gastronomía, secretos que no están en las guías.' ),
+				array( 'icon' => 'explore', 'title' => 'Chófer-guía local', 'desc' => 'Conocimiento local profundo: historia, gastronomía, secretos que no están en las guías.' ),
 				array( 'icon' => 'directions_car', 'title' => 'Sin grupos', 'desc' => 'Solo tú, tu familia o tus invitados. Privacidad y exclusividad absoluta en cada parada.' ),
 				array( 'icon' => 'schedule', 'title' => 'Desde 4 hasta 12 horas', 'desc' => 'Medio día, día completo o rutas extendidas. El tiempo que necesites, sin restricciones.' ),
 				array( 'icon' => 'wine_bar', 'title' => 'Tours temáticos', 'desc' => 'Gastronomía, vinos, arquitectura, naturaleza, historia. Diseñamos la ruta perfecta.' ),
-				array( 'icon' => '🌍', 'title' => 'Multilingüe', 'desc' => 'Servicio disponible en español, inglés y otros idiomas. Ideal para visitantes internacionales.' ),
+				array( 'icon' => 'public', 'title' => 'Multilingüe', 'desc' => 'Servicio disponible en español, inglés y otros idiomas. Ideal para visitantes internacionales.' ),
 			),
 			'steps'       => array(
 				array( 'n' => '01', 'title' => 'Elige tu destino y fecha', 'desc' => 'Cuéntanos qué quieres ver, cuántas personas sois y en qué fecha.' ),
@@ -182,11 +182,11 @@ Disponemos de vehículos para grupos de todos los tamaños: desde la Mercedes Cl
 Para bodas, ofrecemos decoración del vehículo, bebidas de bienvenida y coordinación con el wedding planner. Para incentivos de empresa, gestionamos logística de varios días con facturación unificada.',
 			'features'    => array(
 				array( 'icon' => 'groups', 'title' => 'De 8 a 50+ personas', 'desc' => 'Escalamos el número de vehículos según el tamaño de tu grupo. Sin límite.' ),
-				array( 'icon' => '💍', 'title' => 'Especialistas en bodas', 'desc' => 'Decoración del coche nupcial, coordinación con fotógrafo y wedding planner.' ),
-				array( 'icon' => 'party_mode', 'title' => 'Celebraciones y despedidas', 'desc' => 'Despedidas de soltero, cumpleaños, aniversarios. Tu noche perfecta empieza en el coche.' ),
-				array( 'icon' => '🔄', 'title' => 'Flota sincronizada', 'desc' => 'Todos los vehículos coordinados. Llegada simultánea, salida coordinada, sin caos.' ),
-				array( 'icon' => '📞', 'title' => 'Un solo coordinador', 'desc' => 'Un punto de contacto directo para gestionar cambios, adiciones y ajustes de último minuto.' ),
-				array( 'icon' => '✨', 'title' => 'Servicios extras', 'desc' => 'Champán, agua, flores, letreros personalizados. Hacemos del trayecto parte del evento.' ),
+				array( 'icon' => 'favorite', 'title' => 'Especialistas en bodas', 'desc' => 'Decoración del coche nupcial, coordinación con fotógrafo y wedding planner.' ),
+				array( 'icon' => 'celebration', 'title' => 'Celebraciones y despedidas', 'desc' => 'Despedidas de soltero, cumpleaños, aniversarios. Tu noche perfecta empieza en el coche.' ),
+				array( 'icon' => 'sync', 'title' => 'Flota sincronizada', 'desc' => 'Todos los vehículos coordinados. Llegada simultánea, salida coordinada, sin caos.' ),
+				array( 'icon' => 'support_agent', 'title' => 'Un solo coordinador', 'desc' => 'Un punto de contacto directo para gestionar cambios, adiciones y ajustes de último minuto.' ),
+				array( 'icon' => 'auto_awesome', 'title' => 'Servicios extras', 'desc' => 'Champán, agua, flores, letreros personalizados. Hacemos del trayecto parte del evento.' ),
 			),
 			'steps'       => array(
 				array( 'n' => '01', 'title' => 'Cuéntanos el evento', 'desc' => 'Número de personas, tipo de evento, fecha y rutas necesarias.' ),
