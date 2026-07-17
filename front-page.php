@@ -260,7 +260,7 @@ a{text-decoration:none;}
    5. FLOTA
    ========================================================= */
 .fleet__grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;
 }
 @media(max-width:900px){.fleet__grid{grid-template-columns:1fr;}}
 .fleet__card{
