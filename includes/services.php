@@ -35,7 +35,7 @@ Si vas al aeropuerto, calculamos el tiempo de salida con margen suficiente para 
 				array( 'icon' => 'receipt_long', 'title' => 'Meet & Greet', 'desc' => 'Cartel personalizado en zona de llegadas. Bienvenida profesional y puntual.' ),
 				array( 'icon' => 'schedule', 'title' => '60 min de espera', 'desc' => 'Incluimos hasta 60 minutos de espera gratuita en llegadas internacionales.' ),
 				array( 'icon' => 'luggage', 'title' => 'Ayuda con el equipaje', 'desc' => 'Tu chófer te asiste con las maletas desde la terminal hasta el vehículo.' ),
-				array( 'icon' => 'directions_car', 'title' => 'Flota Mercedes Premium', 'desc' => 'Viaja en Mercedes Clase E, Clase V o Clase S según tus necesidades.' ),
+				array( 'icon' => 'directions_car', 'title' => 'Flota Mercedes Premium', 'desc' => 'Viaja en ECONOMIC CLASS, MINI VAN «V» Class, BUSINESS CLASS o MINI VAN ECONOMIC según tus necesidades.' ),
 				array( 'icon' => 'lock', 'title' => 'Precio cerrado', 'desc' => 'Sin tarifas sorpresa. El precio que ves es el precio que pagas.' ),
 			),
 			'steps'       => array(
@@ -62,7 +62,7 @@ Operamos en todas las terminales activas de cruceros y ferris del Port de Barcel
 Si llegas de un crucero, tu chófer te espera en el punto de salida de la terminal con tu nombre en el cartel. Si llegas en ferri desde las islas, coordinamos la recogida con la hora de atraque. El traslado al hotel, aeropuerto u otro destino es tranquilo, cómodo y con espacio para todo tu equipaje.',
 			'features'    => array(
 				array( 'icon' => 'directions_boat', 'title' => 'Todas las terminales', 'desc' => 'Operamos en todas las terminales activas del Port de Barcelona.' ),
-				array( 'icon' => 'luggage', 'title' => 'Espacio para equipaje extra', 'desc' => 'Maletas de crucero, trolleys grandes y bolsas extra. La Clase V lo lleva todo.' ),
+				array( 'icon' => 'luggage', 'title' => 'Espacio para equipaje extra', 'desc' => 'Maletas de crucero, trolleys grandes y bolsas extra. La MINI VAN «V» Class lo lleva todo.' ),
 				array( 'icon' => 'alarm', 'title' => 'Sincronización con atraque', 'desc' => 'Controlamos el horario de llegada del barco para ajustar la recogida.' ),
 				array( 'icon' => 'hotel', 'title' => 'Hotel · Puerto · Aeropuerto', 'desc' => 'Cualquier combinación: hotel al puerto, aeropuerto al puerto y viceversa.' ),
 				array( 'icon' => 'verified', 'title' => 'Sin colas ni taxis', 'desc' => 'Evita filas de taxi y transporte público con maletas. Tu coche privado, siempre listo.' ),
@@ -177,7 +177,7 @@ Desde Barcelona, operamos excursiones de medio día (4 horas), día completo (8 
 			'hero_desc'   => 'Coordinamos el transporte de grupos desde 8 hasta 50+ personas. Bodas, despedidas, incentivos, excursiones de empresa y celebraciones especiales en vehículos premium.',
 			'desc_long'   => 'Organizar el transporte de un grupo es un reto logístico que MeTransfers convierte en un proceso sin estrés. Ya sea una boda de 80 invitados entre la iglesia, el hotel y la masía; una despedida de soltero con 15 personas entre varios locales de Barcelona; o un incentivo de empresa de 40 personas desde el aeropuerto al resort — lo coordinamos todo con precisión.
 
-Disponemos de vehículos para grupos de todos los tamaños: desde la Mercedes Clase V (7 plazas) hasta múltiples unidades coordinadas para grupos grandes. Todos los coches llegan al mismo tiempo, los conductores están sincronizados y tú tienes un solo punto de contacto para gestionar cualquier incidencia o cambio.
+Disponemos de vehículos para grupos de todos los tamaños: desde la MINI VAN «V» Class (7 plazas) hasta múltiples unidades coordinadas para grupos grandes. Todos los coches llegan al mismo tiempo, los conductores están sincronizados y tú tienes un solo punto de contacto para gestionar cualquier incidencia o cambio.
 
 Para bodas, ofrecemos decoración del vehículo, bebidas de bienvenida y coordinación con el wedding planner. Para incentivos de empresa, gestionamos logística de varios días con facturación unificada.',
 			'features'    => array(

@@ -48,7 +48,7 @@ Este tour es completamente personalizable: si prefieres visitar el Camp Nou, el 
 			),
 			'includes'   => array(
 				'Chófer privado profesional bilingüe (español/inglés)',
-				'Vehículo Mercedes de alta gama (Clase V o Clase E)',
+				'Vehículo Mercedes de alta gama (MINI VAN «V» Class o ECONOMIC CLASS)',
 				'Recogida y devolución puerta a puerta',
 				'Agua fría y WiFi a bordo',
 				'Flexibilidad total de horario y paradas',

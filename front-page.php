@@ -633,7 +633,7 @@ a.contact__val:hover{color:var(--blue);}
         <span class="srv__num">04</span>
         <div class="srv__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Empresas y Grupos</h3>
-        <p>Coordinamos la movilidad de directivos, invitados y familias numerosas. Vehículos Mercedes Clase V disponibles para hasta 7 pasajeros con equipaje.</p>
+        <p>Coordinamos la movilidad de directivos, invitados y familias numerosas. Vehículos MINI VAN «V» Class disponibles para hasta 7 pasajeros con equipaje.</p>
         <a href="/grupos/" class="btn-link">Consultar para empresas y grupos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
@@ -724,12 +724,12 @@ a.contact__val:hover{color:var(--blue);}
 
       <div class="fleet__card">
         <div class="fleet__img-wrap">
-          <img src="<?php echo $bdi; ?>/corporate-vip.webp" alt="Mercedes Clase E - Berlina ejecutiva" class="fleet__img" loading="lazy" decoding="async">
+          <img src="<?php echo $bdi; ?>/corporate-vip.webp" alt="ECONOMIC CLASS - Berlina ejecutiva" class="fleet__img" loading="lazy" decoding="async">
           <span class="fleet__badge">Hasta 3 pasajeros</span>
         </div>
         <div class="fleet__body">
           <span class="fleet__cat">Berlina ejecutiva</span>
-          <h3>Mercedes Clase E</h3>
+          <h3>ECONOMIC CLASS</h3>
           <p>Cómoda y elegante para traslados de aeropuerto, hoteles, reuniones y recorridos urbanos.</p>
           <div class="fleet__specs">
             <span class="fleet__spec"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> Hasta 3 pasajeros</span>
@@ -741,12 +741,12 @@ a.contact__val:hover{color:var(--blue);}
 
       <div class="fleet__card">
         <div class="fleet__img-wrap">
-          <img src="<?php echo $img; ?>/V1.webp" alt="Mercedes Clase S - Servicio premium" class="fleet__img" loading="lazy" decoding="async">
+          <img src="<?php echo $img; ?>/V1.webp" alt="BUSINESS CLASS - Servicio premium" class="fleet__img" loading="lazy" decoding="async">
           <span class="fleet__badge" style="background:var(--blue);">VIP / Premium</span>
         </div>
         <div class="fleet__body">
           <span class="fleet__cat">Servicio premium</span>
-          <h3>Mercedes Clase S</h3>
+          <h3>BUSINESS CLASS</h3>
           <p>Máxima privacidad y confort para clientes VIP, directivos, ocasiones especiales y servicios de representación.</p>
           <div class="fleet__specs">
             <span class="fleet__spec"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Hasta 2 pasajeros</span>
@@ -758,16 +758,33 @@ a.contact__val:hover{color:var(--blue);}
 
       <div class="fleet__card">
         <div class="fleet__img-wrap">
-          <img src="<?php echo $bdi; ?>/family-v-class.webp" alt="Mercedes Clase V - Minivan premium" class="fleet__img" loading="lazy" decoding="async">
+          <img src="<?php echo $bdi; ?>/family-v-class.webp" alt="MINI VAN «V» Class - Minivan premium" class="fleet__img" loading="lazy" decoding="async">
           <span class="fleet__badge">Hasta 7 pasajeros</span>
         </div>
         <div class="fleet__body">
           <span class="fleet__cat">Minivan premium</span>
-          <h3>Mercedes Clase V</h3>
+          <h3>MINI VAN «V» Class</h3>
           <p>Espacio amplio para familias, grupos, equipos de trabajo, tours privados y pasajeros con mayor volumen de equipaje.</p>
           <div class="fleet__specs">
             <span class="fleet__spec"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> Hasta 7 pasajeros</span>
             <span class="fleet__spec"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Capacidad máxima de equipaje</span>
+          </div>
+          <a href="#reservar" class="btn btn-ghost" style="text-align:center;justify-content:center;">Reservar vehículo para grupos</a>
+        </div>
+      </div>
+
+      <div class="fleet__card">
+        <div class="fleet__img-wrap">
+          <img src="<?php echo $bdi; ?>/family-v-class.webp" alt="MINI VAN ECONOMIC - Minibús" class="fleet__img" loading="lazy" decoding="async">
+          <span class="fleet__badge">Hasta 7 pasajeros</span>
+        </div>
+        <div class="fleet__body">
+          <span class="fleet__cat">Minibús</span>
+          <h3>MINI VAN ECONOMIC</h3>
+          <p>Opción económica y espaciosa para familias o grupos de hasta 7 pasajeros que buscan comodidad al mejor precio.</p>
+          <div class="fleet__specs">
+            <span class="fleet__spec"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> Hasta 7 pasajeros</span>
+            <span class="fleet__spec"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Capacidad estándar de equipaje</span>
           </div>
           <a href="#reservar" class="btn btn-ghost" style="text-align:center;justify-content:center;">Reservar vehículo para grupos</a>
         </div>
@@ -907,7 +924,7 @@ a.contact__val:hover{color:var(--blue);}
       </div>
       <div class="rev__card">
         <div class="rev__stars">★★★★★</div>
-        <p class="rev__quote">"Reservamos un traslado al puerto de cruceros para nuestra familia. Espacio de sobra en la Mercedes Clase V y una atención al cliente perfecta por WhatsApp para confirmar los detalles."</p>
+        <p class="rev__quote">"Reservamos un traslado al puerto de cruceros para nuestra familia. Espacio de sobra en la MINI VAN «V» Class y una atención al cliente perfecta por WhatsApp para confirmar los detalles."</p>
         <span class="rev__author">María R.</span>
         <span class="rev__meta">España · Septiembre 2024 · Traslado puerto cruceros</span>
       </div>
@@ -956,7 +973,7 @@ a.contact__val:hover{color:var(--blue);}
       </div>
       <div class="faq__item">
         <button class="faq__q">¿Tenéis vehículos para grupos y equipaje voluminoso? <span class="faq__icon"></span></button>
-        <div class="faq__a">Sí. La Mercedes Clase V permite viajar hasta siete pasajeros, dependiendo del equipaje. Para maletas especiales o material deportivo, indícalo antes de confirmar para asignar el vehículo correcto.</div>
+        <div class="faq__a">Sí. La MINI VAN «V» Class permite viajar hasta siete pasajeros, dependiendo del equipaje. Para maletas especiales o material deportivo, indícalo antes de confirmar para asignar el vehículo correcto.</div>
       </div>
       <div class="faq__item">
         <button class="faq__q">¿Puedo contratar un coche con chófer por horas? <span class="faq__icon"></span></button>
