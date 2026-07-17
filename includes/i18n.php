@@ -277,6 +277,10 @@ function gct_render_language_switcher(): void {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <ul class="mt-lang-menu" id="mt-lang-menu" role="listbox">
+            <!-- Close button for mobile -->
+            <li class="mt-lang-close" aria-label="Cerrar" role="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </li>
         <?php foreach ( MT_LANGS as $code => $lang_info ) :
             $url = ( $code === 'es' )
                 ? home_url( '/' . ( $slug ? $slug . '/' : '' ) )
@@ -313,6 +317,7 @@ add_action( 'wp_head', function() { ?>
 .mt-lang-menu li.active a{background:rgba(0,119,255,.18);color:#5ea8ff;font-weight:600}
 .mt-lang-code{font-weight:700;font-size:.75rem;background:rgba(255,255,255,.1);padding:2px 5px;border-radius:4px;min-width:1.8rem;text-align:center;flex-shrink:0}
 .mt-lang-check{margin-left:auto;font-size:.75rem;color:#5ea8ff}
+.mt-lang-close { display: none; }
 </style>
 <?php }, 5 );
 
@@ -323,15 +328,23 @@ add_action( 'wp_footer', function() { ?>
     if(!sw)return;
     var btn=sw.querySelector('.mt-lang-trigger');
     var menu=sw.querySelector('.mt-lang-menu');
+    var closeBtn=sw.querySelector('.mt-lang-close');
     if(!btn||!menu)return;
-    function close(){sw.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+    function close(){
+        sw.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
+    }
     btn.addEventListener('click',function(e){
         e.stopPropagation();
         var open=sw.classList.toggle('open');
         btn.setAttribute('aria-expanded',open?'true':'false');
+        if(window.innerWidth <= 991 && open) { document.body.style.overflow = 'hidden'; } else { document.body.style.overflow = ''; }
     });
+    if(closeBtn) closeBtn.addEventListener('click', close);
     document.addEventListener('click',close);
     document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.addEventListener('click', function(e){ e.stopPropagation(); });
 })();
 </script>
 <?php } );

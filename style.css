@@ -8802,6 +8802,23 @@ body {
         display: flex !important;
         flex-direction: column !important;
     }
+    .mt-lang-close {
+        display: flex !important;
+        align-self: flex-end;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: #fff;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        transition: background 0.2s;
+    }
+    .mt-lang-close:hover {
+        background: rgba(255,255,255,0.2);
+    }
     .mt-lang-menu li a {
         padding: 1rem !important;
         font-size: 1.1rem !important;
