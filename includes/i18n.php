@@ -381,6 +381,35 @@ function mt_i18n_settings_page(): void {
         echo '<div class="notice notice-success"><p>Configuracion guardada.</p></div>';
     }
 
+    // Handle API test
+    $test_result = null;
+    if ( isset( $_POST['mt_test_api'] ) && check_admin_referer( 'mt_i18n_save' ) ) {
+        $api_key = get_option( 'mt_google_api_key', '' );
+        if ( $api_key ) {
+            $response = wp_remote_post(
+                'https://translation.googleapis.com/language/translate/v2?key=' . $api_key,
+                [
+                    'headers' => [ 'Content-Type' => 'application/json' ],
+                    'body'    => wp_json_encode( [ 'q' => ['Hola mundo'], 'source' => 'es', 'target' => 'en', 'format' => 'text' ] ),
+                    'timeout' => 10,
+                ]
+            );
+            if ( is_wp_error( $response ) ) {
+                $test_result = [ 'ok' => false, 'msg' => 'Error de conexion: ' . $response->get_error_message() ];
+            } else {
+                $body = json_decode( wp_remote_retrieve_body( $response ), true );
+                if ( isset( $body['data']['translations'][0]['translatedText'] ) ) {
+                    $test_result = [ 'ok' => true, 'msg' => '"Hola mundo" → "' . $body['data']['translations'][0]['translatedText'] . '"' ];
+                } else {
+                    $error_msg = $body['error']['message'] ?? wp_remote_retrieve_body( $response );
+                    $test_result = [ 'ok' => false, 'msg' => 'Error de API: ' . $error_msg ];
+                }
+            }
+        } else {
+            $test_result = [ 'ok' => false, 'msg' => 'No hay API Key configurada.' ];
+        }
+    }
+
     $api_key = get_option( 'mt_google_api_key', '' );
     ?>
     <div class="wrap">
@@ -396,8 +425,17 @@ function mt_i18n_settings_page(): void {
                     </td>
                 </tr>
             </table>
-            <?php submit_button( 'Guardar API Key', 'primary', 'mt_save_settings' ); ?>
+            <?php submit_button( 'Guardar API Key', 'primary', 'mt_save_settings', false ); ?>
+            &nbsp;&nbsp;
+            <?php submit_button( 'Probar API ahora', 'secondary', 'mt_test_api', false ); ?>
         </form>
+
+        <?php if ( $test_result !== null ) : ?>
+        <div class="notice notice-<?php echo $test_result['ok'] ? 'success' : 'error'; ?>" style="margin-top:12px">
+            <p><?php echo $test_result['ok'] ? '✅ API funciona: ' : '❌ Fallo: '; echo esc_html( $test_result['msg'] ); ?></p>
+        </div>
+        <?php endif; ?>
+
         <hr>
         <h2>Estado de idiomas</h2>
         <table class="widefat" style="max-width:500px">
