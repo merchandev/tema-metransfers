@@ -149,7 +149,7 @@ a{text-decoration:none;}
 @media(max-width:1024px){.hero__grid{grid-template-columns:1fr;gap:40px;}}
 
 /* left */
-.hero__h1{color:#fff;font-size:clamp(1.85rem, 2.8vw, 2.55rem);line-height:1.15;}
+.hero__h1{color:#fff;font-size:clamp(1.4rem, 1.9vw, 1.875rem);line-height:1.2;}
 .hero__lead{color:rgba(255,255,255,.82);font-size:19px;margin-top:20px;}
 .hero__checks{
   display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;
