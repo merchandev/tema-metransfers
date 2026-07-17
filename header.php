@@ -104,11 +104,11 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 			?>
 		</nav>
 
-		<!-- â‘¢ Acciones: Traductor + Botón + Hamburger -->
-		<div class="header-right">
+		<!-- Selector de idioma (Sistema nativo MT) -->
+		<?php gct_render_language_switcher(); ?>
 
-			<!-- Selector de idioma (Sistema nativo MT) -->
-			<?php gct_render_language_switcher(); ?>
+		<!-- Acciones: Botón + Hamburger -->
+		<div class="header-right">
 
 			<!-- CTA botón -->
 			<a href="<?php echo esc_url( me_transfers_get_section_url( 'search' ) ); ?>" class="btn btn-primary hdr-cta">Reservar Ya</a>

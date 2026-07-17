@@ -1,7 +1,7 @@
 /*
 Theme Name:  Me Transfers Premium
-Description: Tema a medida de alto rendimiento para agencias de transporte VIP y tours de lujo. Desarrollado con arquitectura PHP nativa sin constructores visuales pesados para garantizar mÃƒÂ¡xima velocidad. Destaca por su diseÃƒÂ±o premium Ã‚Â«Mobile FirstÃ‚Â», motor de reservas dinÃƒÂ¡mico e integraciÃƒÂ³n fluida de conversiones vÃƒÂ­a WhatsApp.
-Version:     2.1.0
+Description: Tema a medida de alto rendimiento para agencias de transporte VIP y tours de lujo. Desarrollado con arquitectura PHP nativa sin constructores visuales pesados para garantizar máxima velocidad. Destaca por su diseño premium «Mobile First», motor de reservas dinámico e integración fluida de conversiones vía WhatsApp.
+Version:     3.0.0
 Author:      Merchan.Dev
 Text Domain: me-transfers
 */
@@ -5955,47 +5955,54 @@ body.page:has(#wptb-plugin-container.wptb-iso) .page-booking-cta {
    ============================================================ */
 @media (max-width: 768px) {
     .header-inner {
-        position: relative !important;
-        display: flex !important;
+        display: grid !important;
+        grid-template-columns: auto 1fr auto !important;
         align-items: center !important;
         justify-content: space-between !important;
+        padding: 0 10px !important;
         height: 58px !important;
         min-height: 58px !important;
-        padding: 0 !important;
-    }
-
-    .site-branding {
-        order: 2;
-        flex: 1;
-        display: flex !important;
-        justify-content: center !important;
-        position: relative !important;
-        z-index: 5;
-        margin: 0 !important;
-        max-width: none !important;
-    }
-
-    .header-right {
-        display: contents !important;
     }
 
     .mt-lang-switcher,
     .lang-wrapper,
-    #google_translate_element,
-    .header-right .lang-switcher {
-        order: 1;
-        position: static !important;
-        transform: none !important;
+    #google_translate_element {
+        grid-column: 1;
         margin: 0 !important;
         z-index: 7;
     }
 
+    .site-branding {
+        grid-column: 2;
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        z-index: 5;
+    }
+    
+    .custom-logo {
+        max-width: 140px !important;
+        width: 100% !important;
+    }
+
+    .header-right {
+        grid-column: 3;
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 7;
+    }
+
     .burger {
-        order: 3;
-        position: static !important;
-        transform: none !important;
         margin: 0 !important;
         z-index: 7;
+    }
+
+    .mt-lang-trigger span, 
+    .mt-lang-trigger svg:last-child { 
+        display: none !important; 
     }
 
     .lang-switcher__trigger {
