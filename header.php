@@ -107,10 +107,8 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
 		<!-- â‘¢ Acciones: Traductor + Botón + Hamburger -->
 		<div class="header-right">
 
-			<!-- Selector de idioma (GCT Translator) -->
-			<?php if ( function_exists( 'gct_render_language_switcher' ) ) : ?>
-				<?php gct_render_language_switcher(); ?>
-			<?php endif; ?>
+			<!-- Selector de idioma (Sistema nativo MT) -->
+			<?php gct_render_language_switcher(); ?>
 
 			<!-- CTA botón -->
 			<a href="<?php echo esc_url( me_transfers_get_section_url( 'search' ) ); ?>" class="btn btn-primary hdr-cta">Reservar Ya</a>

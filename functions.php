@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+require_once get_template_directory() . '/includes/i18n.php';
 require_once get_template_directory() . '/includes/destinations.php';
 require_once get_template_directory() . '/includes/faq.php';
 require_once get_template_directory() . '/includes/legal-pages.php';
