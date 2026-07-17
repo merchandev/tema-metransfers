@@ -8808,7 +8808,7 @@ body {
         visibility: hidden !important;
         transition: transform 0.4s var(--ease), visibility 0.4s !important;
     }
-    .mt-lang-switcher.open .mt-lang-menu {
+    .mt-lang-menu.open {
         transform: translateX(0) !important;
         visibility: visible !important;
     }
@@ -8848,8 +8848,8 @@ body {
     .mt-lang-menu li:last-child a {
         border-bottom: none;
     }
-    .mt-lang-switcher.open::before {
-        content: '' !important;
+    
+    .mt-lang-backdrop {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -8860,6 +8860,13 @@ body {
         -webkit-backdrop-filter: blur(4px) !important;
         z-index: 999998 !important;
         cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .mt-lang-backdrop.open {
+        opacity: 1;
+        visibility: visible;
     }
 
     .hero__grid {
