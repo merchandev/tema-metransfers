@@ -159,12 +159,12 @@ a{text-decoration:none;}
 .hero__checks svg{color:var(--gold);}
 .hero__ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;}
 .hero__stats{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  margin-top:48px;padding-top:40px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  margin-top:32px;padding-top:24px;
   border-top:1px solid rgba(255,255,255,.14);
 }
-.hero__stat-n{font:700 36px/1 var(--ff-head);color:#fff;}
-.hero__stat-l{font:600 12px/1.4 var(--ff-body);color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px;margin-top:6px;}
+.hero__stat-n{font:700 28px/1 var(--ff-head);color:#fff;}
+.hero__stat-l{font:600 11px/1.3 var(--ff-body);color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:0;margin-top:4px;}
 
 /* panel reserva */
 .hero__panel{
