@@ -149,7 +149,7 @@ a{text-decoration:none;}
 @media(max-width:1024px){.hero__grid{grid-template-columns:1fr;gap:40px;}}
 
 /* left */
-.hero__h1{color:#fff;}
+.hero__h1{color:#fff;font-size:clamp(2.4rem, 4.5vw, 3.5rem);line-height:1.1;}
 .hero__lead{color:rgba(255,255,255,.82);font-size:19px;margin-top:20px;}
 .hero__checks{
   display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;
@@ -159,7 +159,7 @@ a{text-decoration:none;}
 .hero__checks svg{color:var(--gold);}
 .hero__ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;}
 .hero__stats{
-  display:flex;gap:48px;flex-wrap:wrap;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
   margin-top:48px;padding-top:40px;
   border-top:1px solid rgba(255,255,255,.14);
 }
