@@ -63,7 +63,7 @@ Text Domain: me-transfers
 
     /* Espaciado */
     --section-pad: clamp(4rem, 8vw, 8rem);
-    --container: 1280px;
+    --container: 80%;
 
     /* Border radius */
     --radius-lg: 24px;
@@ -4237,7 +4237,7 @@ body.translated-rtl {
    40. LAYOUT NORMALIZATION OVERRIDES
    ============================================================ */
 :root {
-    --container: 1240px;
+    --container: 80%;
     --section-pad: clamp(4.75rem, 7vw, 6.5rem);
     --content-narrow: 880px;
     --surface-border: 1px solid rgba(255, 255, 255, 0.08);
@@ -8373,7 +8373,7 @@ body,
    ============================================================ */
 :root {
     --section-pad: clamp(4.5rem, 8vw, 7.5rem);
-    --container: 1240px;
+    --container: 80%;
     --page-gutter: clamp(1rem, 3vw, 2rem);
     --card-radius: 28px;
     --card-radius-sm: 18px;

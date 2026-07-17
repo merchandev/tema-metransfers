@@ -49,7 +49,7 @@ a{text-decoration:none;}
   --tr:   .25s var(--ease);
 
   --sp:  80px;   /* section padding */
-  --cw:  1160px; /* container width  */
+  --cw:  80%; /* container width  */
 }
 
 /* =========================================================
