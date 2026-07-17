@@ -12,12 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! defined('MT_LANGS') ) {
     define( 'MT_LANGS', [
-        'es' => [ 'label' => 'ES', 'name' => 'Espanol',   'flag' => 'ES', 'google_code' => 'es' ],
-        'en' => [ 'label' => 'EN', 'name' => 'English',   'flag' => 'EN', 'google_code' => 'en' ],
-        'fr' => [ 'label' => 'FR', 'name' => 'Francais',  'flag' => 'FR', 'google_code' => 'fr' ],
-        'de' => [ 'label' => 'DE', 'name' => 'Deutsch',   'flag' => 'DE', 'google_code' => 'de' ],
-        'it' => [ 'label' => 'IT', 'name' => 'Italiano',  'flag' => 'IT', 'google_code' => 'it' ],
-        'pt' => [ 'label' => 'PT', 'name' => 'Portugues', 'flag' => 'PT', 'google_code' => 'pt' ],
+        'es' => [ 'label' => 'ES', 'name' => 'Espanol',   'google_code' => 'es' ],
+        'en' => [ 'label' => 'EN', 'name' => 'English',   'google_code' => 'en' ],
+        'fr' => [ 'label' => 'FR', 'name' => 'Francais',  'google_code' => 'fr' ],
+        'de' => [ 'label' => 'DE', 'name' => 'Deutsch',   'google_code' => 'de' ],
+        'it' => [ 'label' => 'IT', 'name' => 'Italiano',  'google_code' => 'it' ],
+        'pt' => [ 'label' => 'PT', 'name' => 'Portugues', 'google_code' => 'pt' ],
+        'ca' => [ 'label' => 'CA', 'name' => 'Catala',    'google_code' => 'ca' ],
+        'ru' => [ 'label' => 'RU', 'name' => 'Русский',   'google_code' => 'ru' ],
+        'zh' => [ 'label' => 'ZH', 'name' => '中文',       'google_code' => 'zh-CN' ],
+        'ja' => [ 'label' => 'JA', 'name' => '日本語',     'google_code' => 'ja' ],
     ] );
 }
 
@@ -74,10 +78,11 @@ add_filter( 'query_vars', function( $vars ) {
 add_action( 'after_switch_theme', function() { flush_rewrite_rules(); } );
 
 add_action( 'init', function() {
-    $version = defined('ME_TRANSFERS_VERSION') ? ME_TRANSFERS_VERSION : '1.0';
-    if ( get_option('mt_i18n_rules_flushed') !== $version ) {
+    // Bump this string whenever you add/remove languages to force a rules flush
+    $i18n_version = 'v2-ca-ru-zh-ja';
+    if ( get_option('mt_i18n_rules_flushed') !== $i18n_version ) {
         flush_rewrite_rules();
-        update_option( 'mt_i18n_rules_flushed', $version );
+        update_option( 'mt_i18n_rules_flushed', $i18n_version );
     }
 }, 99 );
 
@@ -301,13 +306,13 @@ add_action( 'wp_head', function() { ?>
 .mt-lang-trigger{display:inline-flex;align-items:center;gap:.4rem;height:40px;padding:0 .9rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s;letter-spacing:.03em;white-space:nowrap}
 .mt-lang-trigger:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3)}
 .mt-lang-trigger[aria-expanded=true]{background:rgba(255,255,255,.15)}
-.mt-lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:175px;background:#04111f;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.5rem;list-style:none;margin:0;box-shadow:0 16px 40px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top right;transition:opacity .2s,transform .2s,visibility .2s;z-index:99999}
+.mt-lang-menu{position:absolute;top:calc(100% + 8px);right:0;width:260px;background:#04111f;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.5rem;list-style:none;margin:0;box-shadow:0 16px 40px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top right;transition:opacity .2s,transform .2s,visibility .2s;z-index:99999;display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .mt-lang-switcher.open .mt-lang-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
-.mt-lang-menu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem .9rem;border-radius:7px;color:#dce9f5;font-size:.875rem;text-decoration:none;transition:background .15s,color .15s}
+.mt-lang-menu li a{display:flex;align-items:center;gap:.45rem;padding:.5rem .75rem;border-radius:7px;color:#dce9f5;font-size:.8rem;text-decoration:none;transition:background .15s,color .15s}
 .mt-lang-menu li a:hover,.mt-lang-menu li a:focus{background:#0066cc;color:#fff;outline:none}
 .mt-lang-menu li.active a{background:rgba(0,119,255,.18);color:#5ea8ff;font-weight:600}
-.mt-lang-code{font-weight:700;font-size:.8rem;background:rgba(255,255,255,.1);padding:2px 6px;border-radius:4px;min-width:2rem;text-align:center}
-.mt-lang-check{margin-left:auto;font-size:.8rem;color:#5ea8ff}
+.mt-lang-code{font-weight:700;font-size:.75rem;background:rgba(255,255,255,.1);padding:2px 5px;border-radius:4px;min-width:1.8rem;text-align:center;flex-shrink:0}
+.mt-lang-check{margin-left:auto;font-size:.75rem;color:#5ea8ff}
 </style>
 <?php }, 5 );
 
