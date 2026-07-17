@@ -177,6 +177,7 @@ a{text-decoration:none;}
   background:var(--blue);
 }
 .hero__panel h3{font:700 21px/1.2 var(--ff-head);color:var(--ink);margin-bottom:24px;}
+.hero__panel h2{font:700 18px/1.2 var(--ff-head);color:var(--ink);margin-bottom:20px;white-space:nowrap;}
 .hero__panel .btn-solid{width:100%;justify-content:center;margin-top:16px;font-size:16px;padding:16px;}
 .hero__panel .micro{text-align:center;font-size:12px;color:var(--muted);margin-top:12px;}
 
