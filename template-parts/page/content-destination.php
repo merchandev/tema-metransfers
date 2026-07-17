@@ -1,4 +1,5 @@
 <?php
+$current_destination = me_transfers_get_current_destination( get_post() );
 $page_content = trim( wp_strip_all_tags( strip_shortcodes( get_the_content() ) ) );
 			$other_destinations = array_filter(
 				me_transfers_get_destination_catalog(),
