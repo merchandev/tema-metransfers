@@ -379,6 +379,7 @@ a{text-decoration:none;}
 @media(max-width:800px){
   .tour__main{grid-column:1;grid-row:auto;min-height:280px;}
   .tour__card{min-height:220px;}
+  .tour__card::after{background:linear-gradient(to top,rgba(11,31,53,.98) 0%,rgba(11,31,53,.7) 100%);}
 }
 
 /* =========================================================
