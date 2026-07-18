@@ -147,7 +147,11 @@ add_action( 'template_redirect', function() {
 // =================================================================
 
 function mt_translate( string $text, string $lang = '' ): string {
-    if ( ! $lang ) $lang = mt_lang();
+    // If a fallback string (e.g. "Contact") was passed instead of a language code, ignore it
+    if ( ! $lang || ! isset( MT_LANGS[ $lang ] ) ) {
+        $lang = mt_lang();
+    }
+    
     if ( $lang === 'es' || trim( $text ) === '' ) return $text;
 
     $cache_key = 'mt_tr_' . $lang . '_' . md5( $text );
