@@ -120,7 +120,7 @@ get_header(); ?>
                         <input type="checkbox" id="gdpr_contact" name="gdpr" required>
                         <label for="gdpr_contact"><?php echo mt_translate( 'He leído y acepto la Política de Privacidad y el tratamiento de mis datos.', 'I have read and accept the Privacy Policy and data processing.' ); ?></label>
                     </div>
-                    <button type="submit" class="btn btn-solid cform__submit"><?php echo mt_translate( 'Enviar solicitud', 'Send request' ); ?></button>
+                    <button type="submit" class="btn btn-primary cform__submit"><?php echo mt_translate( 'Enviar solicitud', 'Send request' ); ?></button>
                     <div class="cform__ok"><?php echo mt_translate( 'Gracias. Hemos recibido tu solicitud y te responderemos lo antes posible.', 'Thank you. We have received your request and will reply as soon as possible.' ); ?></div>
                 </form>
             </div>
