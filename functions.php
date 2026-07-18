@@ -860,6 +860,38 @@ function me_transfers_custom_redirects() {
 add_action( 'wp_ajax_mt_save_lead', 'mt_ajax_save_lead' );
 add_action( 'wp_ajax_nopriv_mt_save_lead', 'mt_ajax_save_lead' );
 
+// =================================================================
+// 21. AUTO-CREAR PÁGINAS ESENCIALES (CONTACTO, RESERVACIONES)
+// =================================================================
+add_action( 'init', function() {
+    $pages_to_create = [
+        'contacto' => [
+            'title' => 'Contacto',
+            'template' => 'page-contacto.php'
+        ],
+        'reservaciones' => [
+            'title' => 'Reservaciones',
+            'template' => 'page-reservaciones.php'
+        ]
+    ];
+
+    foreach ( $pages_to_create as $slug => $data ) {
+        $page_check = get_page_by_path( $slug );
+        if ( ! isset( $page_check->ID ) ) {
+            $new_page_id = wp_insert_post( [
+                'post_type'   => 'page',
+                'post_title'  => $data['title'],
+                'post_name'   => $slug,
+                'post_status' => 'publish',
+                'post_author' => 1,
+            ] );
+            if ( $new_page_id && ! is_wp_error( $new_page_id ) ) {
+                update_post_meta( $new_page_id, '_wp_page_template', $data['template'] );
+            }
+        }
+    }
+} );
+
 function mt_ajax_save_lead() {
     check_ajax_referer( 'mt_lead_nonce', 'security' );
 
