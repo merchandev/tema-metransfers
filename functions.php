@@ -876,15 +876,24 @@ add_action( 'init', function() {
     ];
 
     foreach ( $pages_to_create as $slug => $data ) {
-        $page_check = get_page_by_path( $slug );
-        if ( ! isset( $page_check->ID ) ) {
-            $new_page_id = wp_insert_post( [
+        $page_check = get_page_by_path( $slug, OBJECT, 'page' );
+        
+        // Si no existe, o existe pero no está publicada (ej. papelera o borrador), creamos/publicamos
+        if ( ! $page_check || $page_check->post_status !== 'publish' ) {
+            $page_data = [
                 'post_type'   => 'page',
                 'post_title'  => $data['title'],
                 'post_name'   => $slug,
                 'post_status' => 'publish',
                 'post_author' => 1,
-            ] );
+            ];
+            
+            // Si existe pero está en papelera/borrador, le pasamos el ID para actualizarla y publicarla
+            if ( $page_check && isset( $page_check->ID ) ) {
+                $page_data['ID'] = $page_check->ID;
+            }
+            
+            $new_page_id = wp_insert_post( $page_data );
             if ( $new_page_id && ! is_wp_error( $new_page_id ) ) {
                 update_post_meta( $new_page_id, '_wp_page_template', $data['template'] );
             }
