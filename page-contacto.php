@@ -7,9 +7,9 @@
 
 get_header(); ?>
 
-<main class="site-main" style="padding-top: 100px;">
+<main class="site-main" style="padding-top: 100px; background-color: var(--bg-secondary);">
     <!-- Hero / Título de la página -->
-    <header class="page-header" style="background-color: var(--blue-dark); color: white; padding: 60px 0; text-align: center;">
+    <header class="page-header" style="background-color: var(--bg-dark); color: white; padding: 60px 0; text-align: center;">
         <div class="wrap">
             <h1 class="page-title" style="margin: 0; font-size: clamp(2rem, 5vw, 3rem);"><?php echo mt_translate( 'Contacto', 'Contact' ); ?></h1>
             <p style="margin-top: 15px; font-size: 1.1rem; color: rgba(255,255,255,0.8);"><?php echo mt_translate( 'Estamos a tu disposición para cualquier consulta o reserva.', 'We are at your disposal for any queries or reservations.' ); ?></p>

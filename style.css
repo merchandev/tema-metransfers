@@ -8936,3 +8936,193 @@ body .page-banner__meta {
     color: #334155;
     line-height: 1.75;
 }
+
+/* ============================================================
+   X. PÁGINA DE CONTACTO Y RESERVAS
+   ============================================================ */
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 991px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact__grid {
+        padding: 1.5rem;
+    }
+}
+
+.contact__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact__li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.contact__ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 102, 204, 0.08);
+    color: #0066CC;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.contact__label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.contact__val {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.contact__val:hover {
+    color: #0066CC;
+}
+
+/* Formulario Contacto */
+.cform {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.cform__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .cform__row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.fg {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fg label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.fg input,
+.fg select,
+.fg textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: #fdfdfd;
+    transition: all 0.2s ease;
+}
+
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus {
+    outline: none;
+    border-color: #0066CC;
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+    background: #ffffff;
+}
+
+.fg textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.cform__check {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.cform__check input {
+    margin-top: 0.25rem;
+}
+
+.cform__check label {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.cform__submit {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+}
+
+.cform__ok {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(37, 211, 102, 0.1);
+    color: #1f9d55;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Trust Signals for Reservations */
+.hero__checks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+.hero__checks span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+@media (min-width: 768px) {
+    .hero__checks {
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
+    }
+}

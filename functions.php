@@ -14,6 +14,8 @@ require_once get_template_directory() . '/includes/i18n.php';
 require_once get_template_directory() . '/includes/destinations.php';
 require_once get_template_directory() . '/includes/faq.php';
 require_once get_template_directory() . '/includes/legal-pages.php';
+
+// sync version 7.2 (Fix contact styles)
 require_once get_template_directory() . '/includes/seo-page-titles.php';
 require_once get_template_directory() . '/includes/tours.php';
 require_once get_template_directory() . '/includes/services.php';
