@@ -61,6 +61,15 @@ if (window.location.search.indexOf('source=BTT') !== -1) {
     '</div>');
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZFL53LYFN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7ZFL53LYFN');
+</script>
 </head>
 
 <body <?php body_class(); ?>>
