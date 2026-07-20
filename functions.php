@@ -1070,6 +1070,44 @@ function mt_ensure_seo_pages() {
             'template' => 'page-taxis-barcelona-girona.php'
         )
     );
+    // Generación dinámica de 30 landings (15 taxis, 15 traslados)
+    $destinos_dinamicos = array(
+        'Andorra',
+        'Taüll',
+        'Vielha',
+        'Tossa de Mar',
+        'Cadaqués',
+        'Besalú',
+        'Bagur',
+        'Delta del Ebro',
+        'Peñíscola',
+        'Morella',
+        'Altea',
+        'Valderrobres',
+        'Alquézar',
+        'Colliure',
+        'Carcasona'
+    );
+    
+    foreach( $destinos_dinamicos as $destino ) {
+        $slug_base = sanitize_title( $destino );
+        
+        // 1. Taxis
+        $seo_pages[] = array(
+            'slug'     => 'taxis-barcelona-' . $slug_base,
+            'title'    => 'MeTransfers Barcelona - Taxis Barcelona a ' . $destino,
+            'template' => 'page-seo-dynamic.php',
+            'meta'     => array( '_seo_destino' => $destino, '_seo_tipo' => 'Taxis' )
+        );
+        
+        // 2. Traslados
+        $seo_pages[] = array(
+            'slug'     => 'traslados-barcelona-' . $slug_base,
+            'title'    => 'MeTransfers Barcelona - Traslado privado a ' . $destino . ' desde Barcelona',
+            'template' => 'page-seo-dynamic.php',
+            'meta'     => array( '_seo_destino' => $destino, '_seo_tipo' => 'Traslados' )
+        );
+    }
 
     foreach ( $seo_pages as $seo_page ) {
         $slug = $seo_page['slug'];
@@ -1090,11 +1128,21 @@ function mt_ensure_seo_pages() {
             ) );
             if ( $page_id && ! is_wp_error( $page_id ) ) {
                 update_post_meta( $page_id, '_wp_page_template', $template_slug );
+                if ( isset( $seo_page['meta'] ) ) {
+                    foreach ( $seo_page['meta'] as $meta_key => $meta_value ) {
+                        update_post_meta( $page_id, $meta_key, $meta_value );
+                    }
+                }
             }
         } elseif ( $page ) {
             $current = get_post_meta( $page->ID, '_wp_page_template', true );
             if ( $current !== $template_slug ) {
                 update_post_meta( $page->ID, '_wp_page_template', $template_slug );
+            }
+            if ( isset( $seo_page['meta'] ) ) {
+                foreach ( $seo_page['meta'] as $meta_key => $meta_value ) {
+                    update_post_meta( $page->ID, $meta_key, $meta_value );
+                }
             }
         }
     }
