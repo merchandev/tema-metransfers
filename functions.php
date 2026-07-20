@@ -51,6 +51,14 @@ function mt_update_all_page_titles_once() {
     update_option( 'mt_titles_updated_to_metransfers', true );
 }
 
+add_action( 'admin_notices', 'mt_debug_page_count_notice' );
+function mt_debug_page_count_notice() {
+    global $wpdb;
+    $count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'page'" );
+    $count_publish = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status = 'publish'" );
+    echo "<div class='notice notice-error is-dismissible'><p><strong>Depuración MeTransfers:</strong> Hay un total de <strong>{$count}</strong> páginas en la base de datos (<strong>{$count_publish}</strong> publicadas). Si ves menos en la lista, un plugin de idiomas (como WPML o Polylang) las está ocultando de esta vista.</p></div>";
+}
+
 require_once get_template_directory() . '/includes/rutas-cpt.php';
 require_once get_template_directory() . '/includes/leads-cpt.php';
 
