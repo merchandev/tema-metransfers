@@ -935,6 +935,24 @@ function mt_ajax_save_lead() {
         update_post_meta( $post_id, '_mt_mensaje_servicio', $servicio );
         update_post_meta( $post_id, '_mt_mensaje_texto', $mensaje );
 
+        // Enviar notificación por email
+        $to = 'info@metransfers.es';
+        $subject = 'Nuevo mensaje web de: ' . $nombre;
+        
+        $body  = "Has recibido un nuevo mensaje desde la web.\n\n";
+        $body .= "Detalles del contacto:\n";
+        $body .= "Origen: " . $origen . "\n";
+        $body .= "Nombre: " . $nombre . "\n";
+        $body .= "Email: " . $email . "\n";
+        $body .= "Teléfono: " . $telefono . "\n";
+        $body .= "Servicio: " . $servicio . "\n";
+        $body .= "Mensaje:\n" . $mensaje . "\n\n";
+        $body .= "Puedes ver y gestionar este mensaje en el panel de WordPress (Mensajes Web).\n";
+        
+        $headers = array( 'Reply-To: ' . $nombre . ' <' . $email . '>' );
+        
+        wp_mail( $to, $subject, $body, $headers );
+
         wp_send_json_success( 'Lead guardado correctamente.' );
     } else {
         wp_send_json_error( 'Error al guardar el lead.' );
