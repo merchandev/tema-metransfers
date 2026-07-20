@@ -991,6 +991,35 @@ function mt_ensure_service_pages_and_templates() {
 	set_transient( 'mt_service_pages_synced', true, DAY_IN_SECONDS );
 }
 
+add_action( 'admin_init', 'mt_ensure_seo_pages' );
+function mt_ensure_seo_pages() {
+    $slug = 'taxis-privado-barcelona';
+    $template_slug = 'page-taxis-privado-barcelona.php';
+    
+    $page = get_page_by_path( $slug );
+    $trashed = get_page_by_path( $slug . '__trashed' );
+
+    if ( ! $page && ! $trashed ) {
+        $page_id = wp_insert_post( array(
+            'post_title'     => 'Taxis Privado Barcelona',
+            'post_name'      => $slug,
+            'post_content'   => '',
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+            'ping_status'    => 'closed',
+            'comment_status' => 'closed',
+        ) );
+        if ( $page_id && ! is_wp_error( $page_id ) ) {
+            update_post_meta( $page_id, '_wp_page_template', $template_slug );
+        }
+    } elseif ( $page ) {
+        $current = get_post_meta( $page->ID, '_wp_page_template', true );
+        if ( $current !== $template_slug ) {
+            update_post_meta( $page->ID, '_wp_page_template', $template_slug );
+        }
+    }
+}
+
 /**
  * Ensure MeTransfers brand consistency in title
  */
