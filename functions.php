@@ -1011,29 +1011,44 @@ function mt_ensure_service_pages_and_templates() {
 
 add_action( 'admin_init', 'mt_ensure_seo_pages' );
 function mt_ensure_seo_pages() {
-    $slug = 'taxis-privado-barcelona';
-    $template_slug = 'page-taxis-privado-barcelona.php';
-    
-    $page = get_page_by_path( $slug );
-    $trashed = get_page_by_path( $slug . '__trashed' );
+    $seo_pages = array(
+        array(
+            'slug'  => 'taxis-privado-barcelona',
+            'title' => 'Taxis Privado Barcelona',
+            'template' => 'page-taxis-privado-barcelona.php'
+        ),
+        array(
+            'slug'  => 'taxis-barcelona-port-aventura',
+            'title' => 'Taxis Barcelona a Port Aventura',
+            'template' => 'page-taxis-barcelona-port-aventura.php'
+        )
+    );
 
-    if ( ! $page && ! $trashed ) {
-        $page_id = wp_insert_post( array(
-            'post_title'     => 'Taxis Privado Barcelona',
-            'post_name'      => $slug,
-            'post_content'   => '',
-            'post_status'    => 'publish',
-            'post_type'      => 'page',
-            'ping_status'    => 'closed',
-            'comment_status' => 'closed',
-        ) );
-        if ( $page_id && ! is_wp_error( $page_id ) ) {
-            update_post_meta( $page_id, '_wp_page_template', $template_slug );
-        }
-    } elseif ( $page ) {
-        $current = get_post_meta( $page->ID, '_wp_page_template', true );
-        if ( $current !== $template_slug ) {
-            update_post_meta( $page->ID, '_wp_page_template', $template_slug );
+    foreach ( $seo_pages as $seo_page ) {
+        $slug = $seo_page['slug'];
+        $template_slug = $seo_page['template'];
+        
+        $page = get_page_by_path( $slug );
+        $trashed = get_page_by_path( $slug . '__trashed' );
+
+        if ( ! $page && ! $trashed ) {
+            $page_id = wp_insert_post( array(
+                'post_title'     => $seo_page['title'],
+                'post_name'      => $slug,
+                'post_content'   => '',
+                'post_status'    => 'publish',
+                'post_type'      => 'page',
+                'ping_status'    => 'closed',
+                'comment_status' => 'closed',
+            ) );
+            if ( $page_id && ! is_wp_error( $page_id ) ) {
+                update_post_meta( $page_id, '_wp_page_template', $template_slug );
+            }
+        } elseif ( $page ) {
+            $current = get_post_meta( $page->ID, '_wp_page_template', true );
+            if ( $current !== $template_slug ) {
+                update_post_meta( $page->ID, '_wp_page_template', $template_slug );
+            }
         }
     }
 }
