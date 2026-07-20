@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'ME_TRANSFERS_LEGAL_PAGES_SYNC_VERSION' ) ) {
-	define( 'ME_TRANSFERS_LEGAL_PAGES_SYNC_VERSION', '2026-04-08-1' );
+	define( 'ME_TRANSFERS_LEGAL_PAGES_SYNC_VERSION', '2026-07-20-2' );
 }
 
 /**
@@ -82,7 +82,7 @@ function me_transfers_maybe_sync_legal_pages() {
 
 	me_transfers_sync_legal_pages();
 }
-// add_action( 'admin_init', 'me_transfers_maybe_sync_legal_pages' );
+add_action( 'admin_init', 'me_transfers_maybe_sync_legal_pages' );
 
 /**
  * Forces legal pages sync on theme activation.

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'ME_TRANSFERS_DESTINATIONS_SYNC_VERSION' ) ) {
-	define( 'ME_TRANSFERS_DESTINATIONS_SYNC_VERSION', '2026-03-13-1' );
+	define( 'ME_TRANSFERS_DESTINATIONS_SYNC_VERSION', '2026-07-20-2' );
 }
 
 /**
@@ -305,7 +305,7 @@ function me_transfers_maybe_sync_destination_pages() {
 
 	me_transfers_sync_destination_pages();
 }
-// add_action( 'admin_init', 'me_transfers_maybe_sync_destination_pages' );
+add_action( 'admin_init', 'me_transfers_maybe_sync_destination_pages' );
 
 /**
  * Forces a destination sync when the theme is activated.

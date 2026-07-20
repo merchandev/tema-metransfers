@@ -54,9 +54,12 @@ function mt_update_all_page_titles_once() {
 add_action( 'admin_notices', 'mt_debug_page_count_notice' );
 function mt_debug_page_count_notice() {
     global $wpdb;
-    $count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'page'" );
-    $count_publish = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status = 'publish'" );
-    echo "<div class='notice notice-error is-dismissible'><p><strong>Depuración MeTransfers:</strong> Hay un total de <strong>{$count}</strong> páginas en la base de datos (<strong>{$count_publish}</strong> publicadas). Si ves menos en la lista, un plugin de idiomas (como WPML o Polylang) las está ocultando de esta vista.</p></div>";
+    $results = $wpdb->get_results( "SELECT post_type, COUNT(*) as count FROM {$wpdb->posts} WHERE post_status NOT IN ('auto-draft', 'inherit') GROUP BY post_type ORDER BY count DESC" );
+    $msg = "<strong>Depuración MeTransfers (Tipos de Post en DB):</strong><br>";
+    foreach($results as $row) {
+        $msg .= " - " . esc_html($row->post_type) . ": " . intval($row->count) . "<br>";
+    }
+    echo "<div class='notice notice-error is-dismissible'><p>{$msg}</p></div>";
 }
 
 require_once get_template_directory() . '/includes/rutas-cpt.php';
@@ -1005,9 +1008,9 @@ add_action( 'admin_init', 'mt_ensure_service_pages_and_templates' );
 
 function mt_ensure_service_pages_and_templates() {
     // Only run once per day to avoid overhead.
-    if ( get_transient( 'mt_service_pages_synced' ) ) {
-        return;
-    }
+    // if ( get_transient( 'mt_service_pages_synced' ) ) {
+    //     return;
+    // }
 
     if ( ! function_exists( 'me_transfers_get_service_catalog' ) ) {
         return;

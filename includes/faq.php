@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'ME_TRANSFERS_FAQ_SYNC_VERSION' ) ) {
-	define( 'ME_TRANSFERS_FAQ_SYNC_VERSION', '2026-03-13-1' );
+	define( 'ME_TRANSFERS_FAQ_SYNC_VERSION', '2026-07-20-2' );
 }
 
 /**
