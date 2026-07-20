@@ -9143,3 +9143,51 @@ body .page-banner__meta {
         padding: 24px 20px;
     }
 }
+
+/* ============================================================
+   XI. CTA FINAL (SEO PAGES)
+   ============================================================ */
+:root {
+  --deep: #0B1F35;
+}
+
+.cta {background:#0B1F35;padding:90px 0;overflow:hidden;position:relative;}
+.cta::before {
+  content:'';position:absolute;right:-5%;top:-30%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(7,94,168,.25) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta__inner {
+  display:flex;justify-content:space-between;align-items:center;gap:48px;
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.cta__inner{flex-direction:column;text-align:center;}}
+.cta h2 { color: #ffffff !important; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; font-weight: 700; margin-bottom: 0; font-family: 'Archivo', sans-serif; letter-spacing: -0.02em; }
+.cta .tag { color: #FFB547 !important; display:inline-flex;align-items:center;gap:10px; font:700 12px/1 'Source Sans 3', sans-serif;letter-spacing:2px;text-transform:uppercase; margin-bottom:18px;}
+.cta .tag::after { background: #FFB547; content:'';width:24px;height:2px;display:block;}
+.cta__lead { color: rgba(255,255,255,.82) !important; font-size:18px;margin-top:12px; font-family: 'Source Sans 3', sans-serif;}
+.cta__btns { display:flex;gap:14px;flex-shrink:0; }
+@media(max-width:600px){.cta__btns{flex-direction:column;width:100%;}}
+
+.btn-solid {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:8px;
+  font:600 15px/1 'Source Sans 3', sans-serif;letter-spacing:.3px;
+  border:2px solid transparent;cursor:pointer;
+  transition:.25s ease;
+  background:#075EA8;color:#fff;
+  text-decoration:none;
+}
+.btn-solid:hover{background:#0B1F35;transform:translateY(-2px);color:#fff;}
+.btn-ghost-inv {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:8px;
+  font:600 15px/1 'Source Sans 3', sans-serif;letter-spacing:.3px;
+  cursor:pointer;
+  transition:.25s ease;
+  border:2px solid rgba(255,255,255,.35);color:#fff;
+  background:transparent;
+  text-decoration:none;
+}
+.btn-ghost-inv:hover{border-color:#fff;background:rgba(255,255,255,.08);color:#fff;}
