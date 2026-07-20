@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'ME_TRANSFERS_DESTINATIONS_SYNC_VERSION' ) ) {
-	define( 'ME_TRANSFERS_DESTINATIONS_SYNC_VERSION', '2026-07-20-2' );
+	define( 'ME_TRANSFERS_DESTINATIONS_SYNC_VERSION', '2026-07-20-3' );
 }
 
 /**
@@ -239,7 +239,7 @@ function me_transfers_sync_destination_pages() {
 				array(
 					'post_type'    => 'page',
 					'post_status'  => 'publish',
-					'post_title'   => 'Destinos',
+					'post_title'   => 'MeTransfers Barcelona - Destinos de traslados privados desde Barcelona',
 					'post_name'    => 'destinos',
 					'post_content' => '',
 				),
@@ -251,6 +251,14 @@ function me_transfers_sync_destination_pages() {
 	}
 
 	if ( $hub_id > 0 ) {
+		$hub_post = get_post( $hub_id );
+		$hub_new_title = 'MeTransfers Barcelona - Destinos de traslados privados desde Barcelona';
+		if ( $hub_post && $hub_post->post_title !== $hub_new_title ) {
+			wp_update_post( array(
+				'ID'         => $hub_id,
+				'post_title' => $hub_new_title,
+			) );
+		}
 		update_post_meta( $hub_id, '_me_transfers_page_role', 'destinations_hub' );
 	}
 
@@ -274,7 +282,7 @@ function me_transfers_sync_destination_pages() {
 					'post_type'    => 'page',
 					'post_status'  => 'publish',
 					'post_parent'  => $hub_id,
-					'post_title'   => $destination['title'],
+					'post_title'   => 'MeTransfers Barcelona - Traslado privado a ' . $destination['title'] . ' desde Barcelona',
 					'post_name'    => $destination['slug'],
 					'post_content' => '',
 				),
@@ -285,6 +293,14 @@ function me_transfers_sync_destination_pages() {
 		}
 
 		if ( $page_id > 0 ) {
+			$new_title = 'MeTransfers Barcelona - Traslado privado a ' . $destination['title'] . ' desde Barcelona';
+			$existing_post = get_post( $page_id );
+			if ( $existing_post && $existing_post->post_title !== $new_title ) {
+				wp_update_post( array(
+					'ID'         => $page_id,
+					'post_title' => $new_title,
+				) );
+			}
 			update_post_meta( $page_id, '_me_transfers_page_role', 'destination' );
 		}
 	}
