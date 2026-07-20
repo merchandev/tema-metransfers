@@ -92,6 +92,12 @@ get_header(); ?>
 .hero__checks svg {
     color: #FFB547;
 }
+.cta-section h2.section-title {
+    color: #fff !important;
+}
+.cta-section p {
+    color: rgba(255,255,255,0.7) !important;
+}
 </style>
 
 <main id="primary" class="site-main" style="background-color: var(--bg-secondary);">
