@@ -104,6 +104,7 @@ function mt_mensaje_custom_columns( $columns ) {
     $new_columns['title'] = __( 'Remitente', 'me-transfers' );
     $new_columns['origen'] = __( 'Origen', 'me-transfers' );
     $new_columns['email_tel'] = __( 'Email / Teléfono', 'me-transfers' );
+    $new_columns['mensaje_texto'] = __( 'Mensaje', 'me-transfers' );
     $new_columns['date'] = $columns['date'];
     return $new_columns;
 }
@@ -124,6 +125,17 @@ function mt_mensaje_custom_column_content( $column, $post_id ) {
             $tel = get_post_meta( $post_id, '_mt_mensaje_telefono', true );
             if ( $email ) echo esc_html( $email ) . '<br>';
             if ( $tel ) echo esc_html( $tel );
+            break;
+        case 'mensaje_texto':
+            $mensaje = get_post_meta( $post_id, '_mt_mensaje_texto', true );
+            if ( $mensaje ) {
+                $snippet = wp_trim_words( $mensaje, 10, '...' );
+                echo esc_html( $snippet ) . '<br>';
+                echo '<a href="' . get_edit_post_link( $post_id ) . '" class="button button-small button-primary" style="margin-top: 6px;">' . __( 'Ver Detalle', 'me-transfers' ) . '</a>';
+            } else {
+                echo '<em>' . __( 'Sin mensaje', 'me-transfers' ) . '</em><br>';
+                echo '<a href="' . get_edit_post_link( $post_id ) . '" class="button button-small" style="margin-top: 6px;">' . __( 'Ver Info', 'me-transfers' ) . '</a>';
+            }
             break;
     }
 }
