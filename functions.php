@@ -21,7 +21,36 @@ require_once get_template_directory() . '/includes/tours.php';
 require_once get_template_directory() . '/includes/services.php';
 require_once get_template_directory() . '/includes/request-cpt.php'; // Updated to trigger sync v6
 require_once get_template_directory() . '/includes/tour-bookings.php';
-require_once get_template_directory() . '/update_titles_once.php';
+
+// One-time script to update all page titles in the database
+add_action( 'admin_init', 'mt_update_all_page_titles_once' );
+function mt_update_all_page_titles_once() {
+    if ( get_option( 'mt_titles_updated_to_metransfers' ) ) {
+        return;
+    }
+    
+    $pages = get_posts( array(
+        'post_type'   => 'page',
+        'numberposts' => -1,
+        'post_status' => 'any',
+    ) );
+    
+    foreach ( $pages as $page ) {
+        $title = $page->post_title;
+        if ( strpos( $title, 'MeTransfers Barcelona' ) === false ) {
+            $clean_title = str_replace( array( 'Me Transfers Barcelona - ', 'Me Transfers Barcelona', 'MeTransfers - ' ), '', $title );
+            $new_title = 'MeTransfers Barcelona - ' . trim( $clean_title, ' -' );
+            wp_update_post( array(
+                'ID'         => $page->ID,
+                'post_title' => $new_title,
+                'post_name'  => $page->post_name, 
+            ) );
+        }
+    }
+    
+    update_option( 'mt_titles_updated_to_metransfers', true );
+}
+
 require_once get_template_directory() . '/includes/rutas-cpt.php';
 require_once get_template_directory() . '/includes/leads-cpt.php';
 
