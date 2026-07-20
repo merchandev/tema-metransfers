@@ -7,21 +7,123 @@
 
 get_header(); ?>
 
+<style>
+.seo-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0B1F35 0%, #0d3b6e 60%, #112a4a 100%);
+    padding: 120px 24px 64px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+.seo-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+@media (max-width: 1024px) {
+    .seo-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+.hero__panel {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.22);
+    position: relative;
+}
+.hero__panel::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: #0066CC;
+}
+.hero__panel h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0B1F35;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.hero-badge-seo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    color: #FFB547;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+.hero-title-seo {
+    color: #fff;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+.hero-lead-seo {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+.hero__checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+}
+.hero__checks span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.hero__checks svg {
+    color: #FFB547;
+}
+</style>
+
 <main id="primary" class="site-main" style="background-color: var(--bg-secondary);">
 
-    <!-- Hero Section -->
-    <section class="hero-section" style="padding-bottom: 4rem; position: relative; background: var(--bg-dark);">
-        <div class="hero-overlay-dark" style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(2,10,25,0.9) 0%, rgba(2,10,25,0.7) 100%);"></div>
-        <div class="container hero-container" style="position: relative; z-index: 2; text-align:center; padding-top: 100px;">
-            <div class="hero-badge" style="margin: 0 auto 1rem; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 50px; color: #fff; font-size: 0.9rem;">
-                <span class="hero-badge-dot" style="width: 8px; height: 8px; background: #0066CC; border-radius: 50%;"></span>
-                Taxis y traslados | Precio fijo, sin sorpresas
+    <!-- Hero Section con Formulario de Reservas -->
+    <section class="seo-hero">
+        <div class="seo-hero-grid">
+            <!-- TEXTO -->
+            <div>
+                <div class="hero-badge-seo">Taxis y traslados | Precio fijo, sin sorpresas</div>
+                <h1 class="hero-title-seo">Traslados privados y taxi en Barcelona</h1>
+                <p class="hero-lead-seo">
+                    Transporte Privado Barcelona - Tarifas claras y sin sorpresas. Te recogemos donde nos digas en Barcelona y te llevamos con total discreción y confort. Reserva ahora tu trayecto con chofer privado en Barcelona. VIP Private Transfer. Traslados a El Prat. Traslados al Aeropuerto. Chófer privado.
+                </p>
+                <div class="hero__checks">
+                  <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Presupuesto a medida</span>
+                  <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Cancelación gratuita hasta 24 h antes</span>
+                  <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Atención 24/7</span>
+                </div>
             </div>
-            <h1 class="hero-title" style="color:#fff; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">Traslados privados y taxi en Barcelona</h1>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem;">
-                Transporte Privado Barcelona - Tarifas claras y sin sorpresas. Te recogemos donde nos digas en Barcelona y te llevamos con total discreción y confort. Reserva ahora tu trayecto con chofer privado en Barcelona. VIP Private Transfer. Traslados a El Prat. Traslados al Aeropuerto. Chófer privado.
-            </p>
-            <a href="#contacto" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 32px;">Reserva ahora</a>
+
+            <!-- PANEL RESERVA -->
+            <div id="reservar">
+                <div class="hero__panel">
+                    <h2>Calcula tu traslado online</h2>
+                    <?php if ( shortcode_exists( 'wptb_booking_form' ) ) : ?>
+                        <?php echo do_shortcode( '[wptb_booking_form]' ); ?>
+                    <?php else : ?>
+                        <p style="text-align:center;padding:20px;color:var(--muted);">Activa el plugin de reservas (WPTB).</p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -84,106 +186,23 @@ get_header(); ?>
       </div>
     </section>
     
-    <!-- ══════════════════════════ CONTACT FORM ══════════════════════════ -->
-    <section class="contact-section section gs-reveal" id="contacto" style="background-color: var(--bg-dark); padding: 80px 16px;">
+    <!-- CTA FINAL -->
+    <section class="cta-section section gs-reveal" style="background-color: var(--bg-dark); padding: 80px 16px;">
         <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
-            <h2 class="section-title" style="color: #fff; margin-bottom: 20px;">Contacta con nosotros</h2>
-            <p style="color: rgba(255,255,255,0.7); font-size:1.1rem; margin-bottom: 40px;">Rellena el siguiente formulario para solicitarnos información o gestionar tu traslado.</p>
+            <h2 class="section-title" style="color: #fff; margin-bottom: 20px;">¿Necesitas un traslado?</h2>
+            <p style="color: rgba(255,255,255,0.7); font-size:1.1rem; margin-bottom: 40px;">Sube a la parte superior para calcular tu tarifa online en segundos o contáctanos por WhatsApp.</p>
             
-            <div style="background: #fff; padding: 40px; border-radius: 16px; text-align: left;">
-                <form class="cform" id="contactPageForm">
-                    <div class="cform__row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                        <div class="fg">
-                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;"><?php echo mt_translate( 'Nombre y apellidos', 'Full Name' ); ?></label>
-                            <input type="text" name="nombre" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-                        </div>
-                        <div class="fg">
-                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;"><?php echo mt_translate( 'Correo electrónico', 'Email address' ); ?></label>
-                            <input type="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-                        </div>
-                    </div>
-                    <div class="cform__row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                        <div class="fg">
-                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;"><?php echo mt_translate( 'Teléfono', 'Phone' ); ?></label>
-                            <input type="tel" name="telefono" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-                        </div>
-                        <div class="fg">
-                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;"><?php echo mt_translate( 'Servicio que necesitas', 'Service required' ); ?></label>
-                            <select name="servicio" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-                                <option value=""><?php echo mt_translate( 'Selecciona una opción', 'Select an option' ); ?></option>
-                                <option value="aeropuerto" selected><?php echo mt_translate( 'Traslado al aeropuerto', 'Airport transfer' ); ?></option>
-                                <option value="puerto"><?php echo mt_translate( 'Traslado al puerto', 'Port transfer' ); ?></option>
-                                <option value="horas"><?php echo mt_translate( 'Chófer por horas', 'Hourly chauffeur' ); ?></option>
-                                <option value="otro"><?php echo mt_translate( 'Otro servicio', 'Other service' ); ?></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="fg" style="margin-bottom: 20px;">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;"><?php echo mt_translate( 'Mensaje', 'Message' ); ?></label>
-                        <textarea name="mensaje" placeholder="<?php echo mt_translate( 'Indica origen, destino, fecha, hora, pasajeros, equipaje y cualquier petición especial.', 'Indicate origin, destination, date, time, passengers, luggage, and any special requests.' ); ?>" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; min-height: 120px;"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary cform__submit" style="width: 100%; padding: 16px; font-size: 1.1rem; border: none; border-radius: 8px; cursor: pointer;"><?php echo mt_translate( 'Enviar solicitud', 'Send request' ); ?></button>
-                    <div class="cform__ok" style="display: none; margin-top: 15px; padding: 15px; background: #e6f6e6; color: #25d366; border-radius: 8px; text-align: center; font-weight: bold;"><?php echo mt_translate( 'Gracias. Hemos recibido tu solicitud y te responderemos lo antes posible.', 'Thank you. We have received your request and will reply as soon as possible.' ); ?></div>
-                </form>
-            </div>
-            
-            <div style="margin-top:40px;">
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">O contáctanos directamente por WhatsApp:</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#reservar" class="btn btn-primary" style="padding: 14px 28px; font-weight: 600; border-radius: 8px; font-size: 1rem;">
+                    Calcula tu tarifa ahora
+                </a>
                 <a href="https://wa.me/34662024136?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20taxi%20privado%20en%20Barcelona" target="_blank" rel="noopener" class="btn" style="background:#25d366; color:#fff; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; font-weight:600; border-radius: 8px;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
                     Contactar por WhatsApp
                 </a>
             </div>
         </div>
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    /* Formulario contacto (AJAX) */
-    var cform = document.getElementById('contactPageForm');
-    if(cform){
-        cform.addEventListener('submit', function(e){
-            e.preventDefault();
-            var btn = cform.querySelector('.cform__submit');
-            var originalText = btn.innerHTML;
-            btn.innerHTML = '<?php echo esc_js( mt_translate( "Enviando...", "Sending..." ) ); ?>';
-            btn.disabled = true;
-
-            var formData = new FormData(cform);
-            formData.append('action', 'mt_save_lead');
-            if (typeof mtAjax !== 'undefined') {
-                formData.append('security', mtAjax.nonce);
-            }
-            formData.append('origen', 'Página Taxis Privado Barcelona');
-            
-            fetch(typeof mtAjax !== 'undefined' ? mtAjax.url : '/wp-admin/admin-ajax.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(function(res){ return res.json(); })
-            .then(function(data){
-                if(data.success){
-                    cform.querySelector('.cform__ok').style.display = 'block';
-                    cform.reset();
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                } else {
-                    alert('Hubo un error al enviar tu solicitud. Por favor, intenta de nuevo o escríbenos por WhatsApp.');
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                }
-            })
-            .catch(function(err){
-                console.error(err);
-                alert('Error de conexión. Intenta nuevamente.');
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            });
-        });
-    }
-});
-</script>
 
 <?php get_footer(); ?>
