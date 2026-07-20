@@ -1021,6 +1021,21 @@ function mt_ensure_seo_pages() {
             'slug'  => 'taxis-barcelona-port-aventura',
             'title' => 'Taxis Barcelona a Port Aventura',
             'template' => 'page-taxis-barcelona-port-aventura.php'
+        ),
+        array(
+            'slug'  => 'taxis-barcelona-salou',
+            'title' => 'Taxis Barcelona a Salou',
+            'template' => 'page-taxis-barcelona-salou.php'
+        ),
+        array(
+            'slug'  => 'taxis-barcelona-costa-brava',
+            'title' => 'Taxis Barcelona a Costa Brava',
+            'template' => 'page-taxis-barcelona-costa-brava.php'
+        ),
+        array(
+            'slug'  => 'taxis-barcelona-girona',
+            'title' => 'Taxis Barcelona a Girona',
+            'template' => 'page-taxis-barcelona-girona.php'
         )
     );
 
