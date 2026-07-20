@@ -9151,6 +9151,9 @@ body .page-banner__meta {
   --deep: #0B1F35;
 }
 
+.cta .wrap { max-width: 80%; margin: 0 auto; padding: 0 24px; }
+@media(max-width:900px){ .cta .wrap { max-width: 95%; } }
+
 .cta {background:#0B1F35;padding:90px 0;overflow:hidden;position:relative;}
 .cta::before {
   content:'';position:absolute;right:-5%;top:-30%;
