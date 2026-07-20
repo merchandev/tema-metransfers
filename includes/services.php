@@ -20,7 +20,7 @@ function me_transfers_get_service_catalog() {
 
 		// ─── 1. TRASLADOS AL AEROPUERTO ─────────────────────────────────────────────
 		'traslados-aeropuerto' => array(
-			'title'       => 'Traslado al Aeropuerto desde Barcelona',
+			'title'       => 'MeTransfers Barcelona - Traslado al Aeropuerto desde Barcelona',
 			'subtitle'    => 'Te recogemos en Barcelona y te llevamos a El Prat',
 			'slug'        => 'traslados-aeropuerto',
 			'badge'       => 'Aeropuerto El Prat · 24/7',
@@ -48,7 +48,7 @@ Y si llegas a El Prat, un chófer uniformado y bilingüe te recibirá en la zona
 
 		// ─── 2. TRASLADOS AL PUERTO ──────────────────────────────────────────────────
 		'traslados-puerto' => array(
-			'title'       => 'Traslado al Puerto de Barcelona desde la ciudad',
+			'title'       => 'MeTransfers Barcelona - Traslado al Puerto de Barcelona desde la ciudad',
 			'subtitle'    => 'Te recogemos en tu hotel en Barcelona y te llevamos al Puerto',
 			'slug'        => 'traslados-puerto',
 			'badge'       => 'Puerto de Barcelona · Cruceros y ferries',
@@ -78,7 +78,7 @@ Si llegas de un crucero, tu chófer te espera en el punto de salida de la termin
 
 		// ─── 3. CHÓFER PRIVADO POR HORAS ────────────────────────────────────────────
 		'chofer-por-horas' => array(
-			'title'       => 'Chófer Privado por Horas en Barcelona',
+			'title'       => 'MeTransfers Barcelona - Chófer Privado por Horas en Barcelona',
 			'subtitle'    => 'Tu conductor exclusivo por Barcelona y alrededores',
 			'slug'        => 'chofer-por-horas',
 			'badge'       => 'Disposición por horas · Mínimo 3h',
@@ -108,7 +108,7 @@ El conductor permanece a tu disposición exclusiva durante el tiempo contratado 
 
 		// ─── 4. CORPORATIVO Y EVENTOS ────────────────────────────────────────────────
 		'corporativo-y-eventos' => array(
-			'title'       => 'Transporte Corporativo y Eventos desde Barcelona',
+			'title'       => 'MeTransfers Barcelona - Transporte Corporativo y Eventos desde Barcelona',
 			'subtitle'    => 'Logística impecable para empresas y grandes eventos en Barcelona',
 			'slug'        => 'corporativo-y-eventos',
 			'badge'       => 'MWC · ISE · Congresos · Empresas',
@@ -138,7 +138,7 @@ Tanto si necesitas coordinar 3 traslados ejecutivos como 50 delegados en rotaci�
 
 		// ─── 5. TOURS PRIVADOS ───────────────────────────────────────────────────────
 		'tours-privados' => array(
-			'title'       => 'Tours Privados desde Barcelona',
+			'title'       => 'MeTransfers Barcelona - Tours Privados desde Barcelona',
 			'subtitle'    => 'Salimos desde tu hotel en Barcelona hacia los mejores destinos',
 			'slug'        => 'tours-privados',
 			'badge'       => 'Montserrat · Costa Brava · Girona · Andorra',
@@ -168,7 +168,7 @@ Desde Barcelona, operamos excursiones de medio día (4 horas), día completo (8 
 
 		// ─── 6. GRUPOS Y CELEBRACIONES ──────────────────────────────────────────────
 		'grupos' => array(
-			'title'       => 'Transporte para Grupos desde Barcelona',
+			'title'       => 'MeTransfers Barcelona - Transporte para Grupos desde Barcelona',
 			'subtitle'    => 'Movilidad coordinada desde Barcelona para grupos, bodas y celebraciones',
 			'slug'        => 'grupos',
 			'badge'       => 'Bodas · Despedidas · Grupos Privados',

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'ME_TRANSFERS_SEO_PAGE_TITLES_VERSION' ) ) {
-	define( 'ME_TRANSFERS_SEO_PAGE_TITLES_VERSION', '2026-04-08-1' );
+	define( 'ME_TRANSFERS_SEO_PAGE_TITLES_VERSION', '2026-07-20-1' );
 }
 
 /**
@@ -20,7 +20,7 @@ if ( ! defined( 'ME_TRANSFERS_SEO_PAGE_TITLES_VERSION' ) ) {
  * @return string
  */
 function me_transfers_get_destination_seo_page_title( $destination_title ) {
-	return sprintf( 'Traslado privado a %s desde Barcelona', $destination_title );
+	return sprintf( 'MeTransfers Barcelona - Traslado privado a %s desde Barcelona', $destination_title );
 }
 
 /**
@@ -30,21 +30,21 @@ function me_transfers_get_destination_seo_page_title( $destination_title ) {
  */
 function me_transfers_get_static_seo_page_titles() {
 	return array(
-		'destinos'               => 'Destinos de traslados privados desde Barcelona',
-		'preguntas-frecuentes'   => 'Preguntas frecuentes sobre traslados privados en Barcelona',
-		'finalizar-pago'         => 'Pago seguro de reserva de traslado privado',
-		'finalizar-reserva'      => 'Confirmar reserva de traslado privado',
-		'reservas-hotel'         => 'Reservas de traslados para hoteles en Barcelona',
-		'privacidad'             => 'PolÃ­tica de privacidad de MeTransfers Barcelona',
-		'privacy-policy'         => 'PolÃ­tica de privacidad de MeTransfers Barcelona',
-		'politica-de-privacidad' => 'PolÃ­tica de privacidad de MeTransfers Barcelona',
-		'politicas-de-privacidad'=> 'PolÃ­tica de privacidad de MeTransfers Barcelona',
-		'terminos-y-condiciones' => 'TÃ©rminos y condiciones de contrataciÃ³n de MeTransfers Barcelona',
-		'terminos-condiciones'   => 'TÃ©rminos y condiciones de contrataciÃ³n de MeTransfers Barcelona',
-		'terminos-y-condiciones-regulan-la-contratacion' => 'TÃ©rminos y condiciones de contrataciÃ³n de MeTransfers Barcelona',
-		'aviso-legal'            => 'Aviso legal de MeTransfers Barcelona',
-		'cookie'                 => 'PolÃ­tica de cookies de MeTransfers Barcelona',
-		'cookies'                => 'PolÃ­tica de cookies de MeTransfers Barcelona',
+		'destinos'               => 'MeTransfers Barcelona - Destinos de traslados privados desde Barcelona',
+		'preguntas-frecuentes'   => 'MeTransfers Barcelona - Preguntas frecuentes sobre traslados privados en Barcelona',
+		'finalizar-pago'         => 'MeTransfers Barcelona - Pago seguro de reserva de traslado privado',
+		'finalizar-reserva'      => 'MeTransfers Barcelona - Confirmar reserva de traslado privado',
+		'reservas-hotel'         => 'MeTransfers Barcelona - Reservas de traslados para hoteles en Barcelona',
+		'privacidad'             => 'MeTransfers Barcelona - Política de privacidad',
+		'privacy-policy'         => 'MeTransfers Barcelona - Política de privacidad',
+		'politica-de-privacidad' => 'MeTransfers Barcelona - Política de privacidad',
+		'politicas-de-privacidad'=> 'MeTransfers Barcelona - Política de privacidad',
+		'terminos-y-condiciones' => 'MeTransfers Barcelona - Términos y condiciones de contratación',
+		'terminos-condiciones'   => 'MeTransfers Barcelona - Términos y condiciones de contratación',
+		'terminos-y-condiciones-regulan-la-contratacion' => 'MeTransfers Barcelona - Términos y condiciones de contratación',
+		'aviso-legal'            => 'MeTransfers Barcelona - Aviso legal',
+		'cookie'                 => 'MeTransfers Barcelona - Política de cookies',
+		'cookies'                => 'MeTransfers Barcelona - Política de cookies',
 	);
 }
 

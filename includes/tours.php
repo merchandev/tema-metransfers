@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function me_transfers_get_tour_catalog() {
 	return array(
 		'tour-en-barcelona' => array(
-			'title'      => 'Tour en Barcelona',
+			'title'      => 'MeTransfers Barcelona - Tour en Barcelona',
 			'slug'       => 'tour-en-barcelona',
 			'price'      => 'Desde 400€',
 			'duration'   => '6-8 horas',
@@ -58,7 +58,7 @@ Este tour es completamente personalizable: si prefieres visitar el Camp Nou, el 
 		),
 
 		'tour-a-montserrat' => array(
-			'title'      => 'Tour a Montserrat',
+			'title'      => 'MeTransfers Barcelona - Tour a Montserrat',
 			'slug'       => 'tour-a-montserrat',
 			'price'      => 'Desde 450€',
 			'duration'   => '5-7 horas',
@@ -99,7 +99,7 @@ El regreso a Barcelona se realiza a tu ritmo, con la posibilidad de hacer parada
 		),
 
 		'tour-costa-brava' => array(
-			'title'      => 'Tour Costa Brava',
+			'title'      => 'MeTransfers Barcelona - Tour Costa Brava',
 			'slug'       => 'tour-costa-brava',
 			'price'      => 'Desde 600€',
 			'duration'   => '8-10 horas',
@@ -139,7 +139,7 @@ El regreso a Barcelona se realiza al atardecer, el momento perfecto para contemp
 		),
 
 		'tour-a-girona' => array(
-			'title'      => 'Tour a Girona',
+			'title'      => 'MeTransfers Barcelona - Tour a Girona',
 			'slug'       => 'tour-a-girona',
 			'price'      => 'Desde 500€',
 			'duration'   => '6-8 horas',

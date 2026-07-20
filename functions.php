@@ -21,6 +21,7 @@ require_once get_template_directory() . '/includes/tours.php';
 require_once get_template_directory() . '/includes/services.php';
 require_once get_template_directory() . '/includes/request-cpt.php'; // Updated to trigger sync v6
 require_once get_template_directory() . '/includes/tour-bookings.php';
+require_once get_template_directory() . '/update_titles_once.php';
 require_once get_template_directory() . '/includes/rutas-cpt.php';
 require_once get_template_directory() . '/includes/leads-cpt.php';
 
@@ -1014,27 +1015,27 @@ function mt_ensure_seo_pages() {
     $seo_pages = array(
         array(
             'slug'  => 'taxis-privado-barcelona',
-            'title' => 'Taxis Privado Barcelona',
+            'title' => 'MeTransfers Barcelona - Taxis Privado Barcelona',
             'template' => 'page-taxis-privado-barcelona.php'
         ),
         array(
             'slug'  => 'taxis-barcelona-port-aventura',
-            'title' => 'Taxis Barcelona a Port Aventura',
+            'title' => 'MeTransfers Barcelona - Taxis Barcelona a Port Aventura',
             'template' => 'page-taxis-barcelona-port-aventura.php'
         ),
         array(
             'slug'  => 'taxis-barcelona-salou',
-            'title' => 'Taxis Barcelona a Salou',
+            'title' => 'MeTransfers Barcelona - Taxis Barcelona a Salou',
             'template' => 'page-taxis-barcelona-salou.php'
         ),
         array(
             'slug'  => 'taxis-barcelona-costa-brava',
-            'title' => 'Taxis Barcelona a Costa Brava',
+            'title' => 'MeTransfers Barcelona - Taxis Barcelona a Costa Brava',
             'template' => 'page-taxis-barcelona-costa-brava.php'
         ),
         array(
             'slug'  => 'taxis-barcelona-girona',
-            'title' => 'Taxis Barcelona a Girona',
+            'title' => 'MeTransfers Barcelona - Taxis Barcelona a Girona',
             'template' => 'page-taxis-barcelona-girona.php'
         )
     );

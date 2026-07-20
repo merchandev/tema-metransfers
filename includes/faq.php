@@ -148,7 +148,7 @@ function me_transfers_sync_faq_page() {
 			array(
 				'post_type'    => 'page',
 				'post_status'  => 'publish',
-				'post_title'   => 'Preguntas Frecuentes',
+				'post_title'   => 'MeTransfers Barcelona - Preguntas Frecuentes',
 				'post_name'    => 'preguntas-frecuentes',
 				'post_content' => '',
 			),
