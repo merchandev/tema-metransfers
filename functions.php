@@ -51,16 +51,7 @@ function mt_update_all_page_titles_once() {
     update_option( 'mt_titles_updated_to_metransfers', true );
 }
 
-add_action( 'admin_notices', 'mt_debug_page_count_notice' );
-function mt_debug_page_count_notice() {
-    global $wpdb;
-    $results = $wpdb->get_results( "SELECT post_type, COUNT(*) as count FROM {$wpdb->posts} WHERE post_status NOT IN ('auto-draft', 'inherit') GROUP BY post_type ORDER BY count DESC" );
-    $msg = "<strong>Depuración MeTransfers (Tipos de Post en DB):</strong><br>";
-    foreach($results as $row) {
-        $msg .= " - " . esc_html($row->post_type) . ": " . intval($row->count) . "<br>";
-    }
-    echo "<div class='notice notice-error is-dismissible'><p>{$msg}</p></div>";
-}
+
 
 require_once get_template_directory() . '/includes/rutas-cpt.php';
 require_once get_template_directory() . '/includes/leads-cpt.php';
@@ -1008,9 +999,9 @@ add_action( 'admin_init', 'mt_ensure_service_pages_and_templates' );
 
 function mt_ensure_service_pages_and_templates() {
     // Only run once per day to avoid overhead.
-    // if ( get_transient( 'mt_service_pages_synced' ) ) {
-    //     return;
-    // }
+    if ( get_transient( 'mt_service_pages_synced' ) ) {
+        return;
+    }
 
     if ( ! function_exists( 'me_transfers_get_service_catalog' ) ) {
         return;
