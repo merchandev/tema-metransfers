@@ -552,9 +552,9 @@ a.contact__val:hover{color:var(--blue);}
 
       <!-- TEXTO -->
       <div>
-        <p class="tag" style="color: #FFB547;"><?php echo mt_translate('Traslados privados · Tours · Eventos'); ?></p>
-        <h1 class="hero__h1"><?php echo mt_translate('Traslados privados en Barcelona con chófer profesional'); ?></h1>
-        <p class="hero__lead"><?php echo mt_translate('Reserva tu recogida en el aeropuerto, puerto, hotel o cualquier dirección. Presupuesto a medida antes de confirmar y atención personalizada las 24 horas.'); ?></p>
+        <p class="tag" style="color: #FFB547;"><?php echo mt_translate('Traslados privados desde Barcelona · Tours · Eventos'); ?></p>
+        <h1 class="hero__h1"><?php echo mt_translate('Tu chófer privado para salir desde Barcelona'); ?></h1>
+        <p class="hero__lead"><?php echo mt_translate('Te recogemos en tu hotel, aeropuerto, puerto o cualquier dirección de Barcelona y te llevamos a donde necesites. Presupuesto a medida, precio fijo y atención personalizada las 24 horas.'); ?></p>
         <div class="hero__checks">
           <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <?php echo mt_translate('Presupuesto a medida'); ?></span>
           <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <?php echo mt_translate('Cancelación gratuita hasta 24 h antes'); ?></span>
@@ -600,25 +600,25 @@ a.contact__val:hover{color:var(--blue);}
 <!-- ══════════════════════════ 2. SERVICIOS ══════════════════════════ -->
 <section class="sp bg-white" id="servicios">
   <div class="wrap">
-    <p class="tag tc" style="justify-content:center;">Servicios de transporte privado</p>
-    <h2 class="tc">Un vehículo con chófer para cada momento de tu viaje</h2>
-    <p class="lead tc" style="margin:20px auto 0;">Desde una recogida en el aeropuerto hasta una jornada corporativa o un tour privado, organizamos cada servicio según tu ruta, horario y pasajeros.</p>
+    <p class="tag tc" style="justify-content:center;">Servicios de transporte privado desde Barcelona</p>
+    <h2 class="tc">Un vehículo con chófer para cada trayecto desde Barcelona</h2>
+    <p class="lead tc" style="margin:20px auto 0;">Desde una recogida en el aeropuerto hasta una jornada corporativa o un tour privado, organizamos cada salida desde Barcelona según tu ruta, horario y número de pasajeros.</p>
 
     <div class="srv__grid">
 
       <div class="srv__item">
         <span class="srv__num">01</span>
         <div class="srv__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <h3>Traslados al Aeropuerto</h3>
-        <p>Recogida privada desde o hacia Barcelona-El Prat con seguimiento del vuelo, bienvenida en la terminal y hasta 60 min de espera de cortesía en llegadas.</p>
+        <h3>Traslados al Aeropuerto desde Barcelona</h3>
+        <p>Recogida privada en tu hotel u oficina en Barcelona con destino a El Prat. Seguimiento del vuelo, bienvenida en la terminal y hasta 60 min de espera de cortesía en llegadas.</p>
         <a href="/traslados-aeropuerto/" class="btn-link">Ver traslados al aeropuerto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="srv__item">
         <span class="srv__num">02</span>
         <div class="srv__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <h3>Traslados al Puerto</h3>
-        <p>Conectamos el aeropuerto, tu hotel o cualquier dirección con las terminales de cruceros. Tu chófer te recoge en el punto acordado y ayuda con el equipaje.</p>
+        <h3>Traslados al Puerto desde Barcelona</h3>
+        <p>Conectamos tu hotel o dirección en Barcelona con todas las terminales de cruceros. Tu chófer te recoge puntual y ayuda con el equipaje.</p>
         <a href="/traslados-puerto/" class="btn-link">Ver traslados al puerto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
@@ -800,9 +800,9 @@ a.contact__val:hover{color:var(--blue);}
 <!-- ══════════════════════════ 6. RUTAS ══════════════════════════ -->
 <section class="sp bg-white" id="destinos">
   <div class="wrap">
-    <p class="tag tc" style="justify-content:center;">Rutas más solicitadas</p>
-    <h2 class="tc">Traslados privados desde Barcelona y su aeropuerto</h2>
-    <p class="lead tc" style="margin:20px auto 0;">Reserva una ruta directa desde aeropuertos, estaciones, hoteles, puertos, oficinas o domicilios. También organizamos trayectos de larga distancia.</p>
+    <p class="tag tc" style="justify-content:center;">Rutas más solicitadas desde Barcelona</p>
+    <h2 class="tc">Traslados privados desde Barcelona — Destinos más populares</h2>
+    <p class="lead tc" style="margin:20px auto 0;">Salidas desde el Aeropuerto El Prat, cualquier hotel, estación o domicilio en Barcelona hacia tu destino. También organizamos trayectos de larga distancia.</p>
 
     <div class="routes__grid">
       <div class="route__item">
@@ -945,12 +945,16 @@ a.contact__val:hover{color:var(--blue);}
   <div class="wrap">
     <p class="tag tc" style="justify-content:center;">Preguntas frecuentes</p>
     <h2 class="tc">Todo lo que necesitas saber antes de reservar</h2>
-    <p class="lead tc" style="margin:20px auto 0;">Condiciones principales de nuestros traslados, vehículos con chófer y tours desde Barcelona.</p>
+    <p class="lead tc" style="margin:20px auto 0;">Condiciones principales de nuestros traslados privados, chófer por horas y tours con salida desde Barcelona.</p>
 
     <div class="faq__wrap">
       <div class="faq__item">
-        <button class="faq__q">¿Puedo reservar un traslado desde el Aeropuerto de Barcelona? <span class="faq__icon"></span></button>
-        <div class="faq__a">Sí. Puedes reservar traslados privados desde o hacia el Aeropuerto Josep Tarradellas Barcelona-El Prat. Al completar la reserva, indica el número de vuelo para coordinar la recogida.</div>
+        <button class="faq__q">¿Desde dónde podéis recogerme en Barcelona? <span class="faq__icon"></span></button>
+        <div class="faq__a">Te recogemos en cualquier punto de Barcelona: hotel, apartamento, oficina, Aeropuerto El Prat, Puerto de Cruceros o estación de tren. Solo indícanos la dirección exacta y la hora al hacer la reserva.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">¿Podéis llevarme desde Barcelona al Aeropuerto de El Prat? <span class="faq__icon"></span></button>
+        <div class="faq__a">Sí. Puedes reservar traslados privados desde Barcelona al Aeropuerto Josep Tarradellas Barcelona-El Prat. Al confirmar la reserva, indica la hora de salida de tu vuelo para que calculemos la hora de recogida óptima.</div>
       </div>
       <div class="faq__item">
         <button class="faq__q">¿Qué ocurre si mi vuelo se retrasa? <span class="faq__icon"></span></button>

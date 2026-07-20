@@ -108,9 +108,9 @@ get_header(); ?>
             <!-- TEXTO -->
             <div>
                 <div class="hero-badge-seo">Taxis y traslados | Precio fijo, sin sorpresas</div>
-                <h1 class="hero-title-seo">Traslados privados y taxi en Barcelona</h1>
+                <h1 class="hero-title-seo">Traslados privados desde Barcelona — Precio fijo, sin sorpresas</h1>
                 <p class="hero-lead-seo">
-                    Transporte Privado Barcelona - Tarifas claras y sin sorpresas. Te recogemos donde nos digas en Barcelona y te llevamos con total discreción y confort. Reserva ahora tu trayecto con chofer privado en Barcelona. VIP Private Transfer. Traslados a El Prat. Traslados al Aeropuerto. Chófer privado.
+                    Te recogemos en tu hotel, apartamento u oficina en Barcelona y te llevamos directamente a tu destino: aeropuerto El Prat, Puerto de Cruceros, otra ciudad o cualquier dirección. Chófer privado, tarifa cerrada y atención 24 h.
                 </p>
                 <div class="hero__checks">
                   <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Presupuesto a medida</span>
@@ -137,26 +137,26 @@ get_header(); ?>
     <section class="section container gs-reveal" style="padding: 80px 16px;">
         <div class="entry-content" style="max-width: 900px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             
-            <h2 style="color: var(--text-dark); margin-bottom: 1.5rem;">¿Necesitas un traslado desde el Barcelona?</h2>
+            <h2 style="color: var(--text-dark); margin-bottom: 1.5rem;">Traslados privados desde Barcelona al aeropuerto, puerto y más</h2>
             <p>
-                El Barcelona está ubicado en España y es uno de los aeropuertos más importantes del país. A través de nosotros, podrás reservar tu traslado privado a cualquier destino en España o a localidades en países vecinos.
+                Barcelona es el punto de partida para miles de viajeros cada día. Tanto si necesitas llegar al Aeropuerto Josep Tarradellas Barcelona-El Prat, al Puerto de Cruceros, a otra ciudad de España o a un destino en el extranjero, en MeTransfers nos encargamos de que llegues a tiempo, cómodo y sin estrés.
             </p>
             <p>
-                Nuestro conductor te esperará en la terminal de llegadas con un cartel de bienvenida con tu nombre y te llevará en el vehículo seleccionado directamente a tu destino. El coche estará disponible solo para ti, tu familia o tu grupo, sin necesidad de compartirlo con otras personas.
+                Nuestro conductor te recogerá en la dirección que indiques — tu hotel, apartamento, oficina o cualquier punto de Barcelona — y te llevará directamente a tu destino. El vehículo estará reservado en exclusiva para ti, tu familia o tu grupo; no compartirás el coche con otras personas ni harás paradas no acordadas.
             </p>
             <p>
-                Del mismo modo, podemos llevarte en un traslado de regreso al Barcelona al finalizar tu estancia. Recuerda seleccionar la fecha y el horario de tu viaje de regreso al realizar tu reserva. Ingresa siempre la hora de salida de tu vuelo; nuestro sistema calculará automáticamente el tiempo de viaje desde tu destino hasta el Barcelona y te propondrá la hora de recogida óptima.
+                También organizamos el trayecto de vuelta: si llegas a Barcelona desde otro destino, tu chófer te esperará con un cartel personalizado en la zona de llegadas y te acompañará hasta el vehículo, ayudándote con el equipaje. Indícanos siempre el número de vuelo o barco para que podamos monitorizar el horario y ajustar la recogida en tiempo real.
             </p>
 
-            <h3 style="color: var(--text-dark); margin-top: 2.5rem; margin-bottom: 1rem;">Viaja sin límite de equipaje ni pasajeros</h3>
+            <h3 style="color: var(--text-dark); margin-top: 2.5rem; margin-bottom: 1rem;">Elige el vehículo ideal para tu salida desde Barcelona</h3>
             <p>
-                Reserva el vehículo que mejor se adapte a tus necesidades. Contamos con sedanes, minibuses, autocares y coches de lujo. Disponemos de una amplia gama de vehículos en el Barcelona. Ten en cuenta que se permite una pieza de equipaje por pasajero; por ejemplo, si viajas con 6 maletas, necesitarás contratar un vehículo con capacidad para 6 pasajeros.
+                Disponemos de berlinas ejecutivas para 1–3 pasajeros, MINI VAN «V» Class para grupos de hasta 7 personas y vehículos BUSINESS CLASS para servicios VIP y corporativos. Si viajas con mucho equipaje, material deportivo o equipamiento especial, indícanoslo antes de confirmar para asignarte el vehículo más adecuado.
             </p>
 
             <div style="background: #eef2ff; border-left: 4px solid #0066CC; padding: 20px; border-radius: 0 8px 8px 0; margin-top: 2rem;">
-                <h4 style="margin-top:0; color:#0066CC;">CONSEJO: ¡No pierdas tiempo, reserva ahora!</h4>
+                <h4 style="margin-top:0; color:#0066CC;">CONSEJO: Reserva con antelación para garantizar tu plaza</h4>
                 <p style="margin-bottom:0;">
-                    Los precios de los traslados en el Barcelona suelen variar según la temporada y la disponibilidad. Reservando con anticipación podrás asegurar la mejor tarifa.
+                    Los servicios de traslado privado desde Barcelona tienen alta demanda, especialmente en temporada alta y fines de semana. Reservando con antelación aseguras disponibilidad, precio cerrado y sin sorpresas el día del viaje.
                 </p>
             </div>
 
