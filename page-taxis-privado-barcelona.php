@@ -193,21 +193,20 @@ get_header(); ?>
     </section>
     
     <!-- CTA FINAL -->
-    <section class="cta-section section gs-reveal" style="background-color: var(--bg-dark); padding: 80px 16px;">
-        <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
-            <h2 class="section-title" style="color: #fff; margin-bottom: 20px;">¿Necesitas un traslado?</h2>
-            <p style="color: rgba(255,255,255,0.7); font-size:1.1rem; margin-bottom: 40px;">Sube a la parte superior para calcular tu tarifa online en segundos o contáctanos por WhatsApp.</p>
-            
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="#reservar" class="btn btn-primary" style="padding: 14px 28px; font-weight: 600; border-radius: 8px; font-size: 1rem;">
-                    Calcula tu tarifa ahora
-                </a>
-                <a href="https://wa.me/34662024136?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20taxi%20privado%20en%20Barcelona" target="_blank" rel="noopener" class="btn" style="background:#25d366; color:#fff; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; font-weight:600; border-radius: 8px;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-                    Contactar por WhatsApp
-                </a>
-            </div>
+    <section class="cta" id="cta-final">
+      <div class="wrap">
+        <div class="cta__inner">
+          <div>
+            <p class="tag">Reserva tu próximo traslado</p>
+            <h2>Tu viaje comienza con una recogida bien organizada</h2>
+            <p class="cta__lead">Indica el origen, el destino, la fecha y la hora. Te mostraremos las opciones disponibles para que reserves el vehículo que mejor se adapta a tu trayecto.</p>
+          </div>
+          <div class="cta__btns">
+            <a href="#reservar" class="btn btn-solid" style="background:#fff;color:var(--deep);">Presupuestar y reservar</a>
+            <a href="https://wa.me/34662024136?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20taxi%20privado%20en%20Barcelona" class="btn btn-ghost-inv" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          </div>
         </div>
+      </div>
     </section>
 </main>
 
