@@ -35,16 +35,6 @@ function me_transfers_get_static_seo_page_titles() {
 		'finalizar-pago'         => 'MeTransfers Barcelona - Pago seguro de reserva de traslado privado',
 		'finalizar-reserva'      => 'MeTransfers Barcelona - Confirmar reserva de traslado privado',
 		'reservas-hotel'         => 'MeTransfers Barcelona - Reservas de traslados para hoteles en Barcelona',
-		'privacidad'             => 'MeTransfers Barcelona - Política de privacidad',
-		'privacy-policy'         => 'MeTransfers Barcelona - Política de privacidad',
-		'politica-de-privacidad' => 'MeTransfers Barcelona - Política de privacidad',
-		'politicas-de-privacidad'=> 'MeTransfers Barcelona - Política de privacidad',
-		'terminos-y-condiciones' => 'MeTransfers Barcelona - Términos y condiciones de contratación',
-		'terminos-condiciones'   => 'MeTransfers Barcelona - Términos y condiciones de contratación',
-		'terminos-y-condiciones-regulan-la-contratacion' => 'MeTransfers Barcelona - Términos y condiciones de contratación',
-		'aviso-legal'            => 'MeTransfers Barcelona - Aviso legal',
-		'cookie'                 => 'MeTransfers Barcelona - Política de cookies',
-		'cookies'                => 'MeTransfers Barcelona - Política de cookies',
 	);
 }
 

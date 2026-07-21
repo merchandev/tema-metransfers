@@ -1302,3 +1302,34 @@ add_filter( 'wp_robots', static function ( array $robots ): array {
 	}
 	return $robots;
 } );
+
+/**
+ * One-time script to restore legal page titles to their exact original XML values.
+ */
+add_action( 'admin_init', 'mt_restore_legal_pages_titles_once' );
+function mt_restore_legal_pages_titles_once() {
+    if ( get_transient( 'mt_restored_legal_pages_xml' ) ) {
+        return;
+    }
+    
+    $pages_to_restore = array(
+        'privacy-policy'         => 'Política de privacidad de MeTransfers Barcelona',
+        'terminos-y-condiciones' => 'Términos y Condiciones regulan la contratación',
+        'aviso-legal'            => 'Aviso Legal',
+        'cookies'                => 'Política de cookies de MeTransfers Barcelona',
+        'politica-de-cookies'    => 'Política de Cookies',
+        'cookie'                 => 'Política de Cookies'
+    );
+    
+    foreach ( $pages_to_restore as $slug => $original_title ) {
+        $page = get_page_by_path( $slug );
+        if ( $page ) {
+            wp_update_post( array(
+                'ID'         => $page->ID,
+                'post_title' => $original_title
+            ) );
+        }
+    }
+    
+    set_transient( 'mt_restored_legal_pages_xml', true, DAY_IN_SECONDS * 365 );
+}
