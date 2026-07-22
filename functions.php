@@ -853,15 +853,15 @@ if ( defined( 'WPSEO_VERSION' ) ) {
     } );
 }
 
-// 3. Motor de Redirecciones 301 y 410 (PÃ¡ginas Muertas)
+// 3. Motor de Redirecciones 301, 410 y Smart Redirect (SEO 404 Recovery)
 add_action( 'template_redirect', 'me_transfers_custom_redirects' );
 function me_transfers_custom_redirects() {
     if ( is_404() ) {
         $requested_url = $_SERVER['REQUEST_URI'];
         
-        // Array de redirecciones 301. Formato: '/url-antigua/' => '/url-nueva/'
+        // Array de redirecciones 301 exactas. Formato: '/url-antigua/' => '/url-nueva/'
         $redirects_301 = array(
-            // '/ejemplo-url-rota/' => '/tours/',
+            '/transporte-en-barcelona-para-grupos-grandes-y-equipaje-extra-la-solucion-mercedes-clase-v/' => '/tours/',
         );
 
         foreach ( $redirects_301 as $old => $new ) {
@@ -871,7 +871,7 @@ function me_transfers_custom_redirects() {
             }
         }
         
-        // Array de pÃ¡ginas 410 (Gone) para purga de contenido zombi
+        // Array de URLS 410 (Gone) para eliminar definitivamente de Google
         $gone_urls = array(
             // '/pagina-eliminada-permanentemente/'
         );
@@ -883,6 +883,31 @@ function me_transfers_custom_redirects() {
                 status_header( 410 );
                 nocache_headers();
                 return;
+            }
+        }
+
+        // SMART GUESS REDIRECT: Intenta recuperar visitas perdidas (Recomendación SEO)
+        // Si el slug tiene suficientes palabras, busca si coincide con un post o página viva.
+        $slug_parts = explode('/', trim( parse_url($requested_url, PHP_URL_PATH), '/' ));
+        $last_part = end($slug_parts);
+        
+        if ( !empty($last_part) && strlen($last_part) > 6 ) {
+            // Convierte guiones en espacios para buscar
+            $search_term = str_replace( array('-', '_'), ' ', $last_part );
+            
+            $smart_query = new WP_Query( array(
+                's' => $search_term,
+                'post_type' => array('post', 'page', 'tour', 'product'),
+                'post_status' => 'publish',
+                'posts_per_page' => 1,
+                'fields' => 'ids',
+                'no_found_rows' => true,
+            ) );
+            
+            if ( $smart_query->have_posts() ) {
+                $match_id = $smart_query->posts[0];
+                wp_redirect( get_permalink( $match_id ), 301 );
+                exit;
             }
         }
     }
